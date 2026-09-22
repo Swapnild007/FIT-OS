@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "focus": ["full_body","chest","back","triceps","biceps","legs","abs"],
+  "where": ["gym","home","outdoor"],
+  "goals": ["strength","hypertrophy","fat_loss","cardio","hiit","functional","mobility","general_fitness"],
+  "experience": ["beginner","intermediate","advanced"],
+  "equipment": ["none","dumbbell","barbell","machine","cable","kettlebell","resistance_band","bench","pull_up_bar"],
+  "movement_patterns": ["squat","hinge","horizontal_push","horizontal_pull","vertical_push","vertical_pull","lunge","carry","rotation","anti_rotation","anti_extension","anti_flexion","locomotion"],
+  "session_types": ["strength","hypertrophy","conditioning","hiit","cardio","mobility","recovery","full_body"],
+  "note": "Muscle focus is separate from movement pattern and equipment. Secondary muscle involvement must be represented separately in exercise records."
+}
