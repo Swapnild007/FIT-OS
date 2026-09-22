@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "goals": ["fat_loss","maintenance","muscle_gain","performance","general_health"],
+  "dietary_patterns": ["omnivore","vegetarian","vegan","eggetarian"],
+  "cuisines": ["indian","mediterranean","global"],
+  "meal_types": ["breakfast","lunch","dinner","snack","pre_workout","post_workout"],
+  "nutrition_focus": ["high_protein","balanced","calorie_control","performance_fuel","recovery"],
+  "food_properties": ["calorie","protein","carbohydrate","fat","fiber"],
+  "constraints": ["allergy","intolerance","personal_exclusion","dislike","availability","budget","cooking_time"],
+  "principles": ["Targets are estimates and adjustable.","Food substitutions should preserve the nutrition objective where practical.","Indian food and household meals are first-class data.","Clinical nutrition cases require qualified professional input."]
+}
