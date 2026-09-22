@@ -3,163 +3,226 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#edf4f4"><meta name="color-scheme" content="light"><meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f2f2f7">
+<meta name="color-scheme" content="light">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="description" content="FIT-OS — your personal fitness operating system.">
+<meta name="description" content="FIT-OS — personal fitness intelligence.">
 <link rel="manifest" href="./manifest.json">
-<link rel="stylesheet" href="./styles.css?v=20260922-04">
-<title>FIT-OS · Stronger You</title>
+<link rel="stylesheet" href="./styles.css?v=20260922-05">
+<title>FIT-OS · Health</title>
 </head>
 <body>
 <div class="app-shell">
-  <header class="topbar">
-  <button class="brand" data-page="home" aria-label="FIT-OS Home">
+<header class="topbar">
+  <button class="brand" data-page="home" aria-label="FIT-OS Summary">
     <span class="brand-mark"><i></i><i></i><i></i></span>
-    <span><b>FIT-OS</b><small>PERSONAL FITNESS OS</small></span>
+    <span><b>FIT-OS</b><small>HEALTH & FITNESS</small></span>
   </button>
-  <div class="topbar-state"><span class="state-dot"></span><span id="topState">BODY STATE</span></div>
+  <div class="topbar-state"><span class="state-dot"></span><span id="topState">BODY STATE · READY</span></div>
   <button class="avatar" data-page="more" aria-label="Profile">S</button>
 </header>
 
-  <main id="app">
-    <section class="screen active" id="home">
-  <div class="spatial-home">
-    <div class="home-grain"></div>
-    <div class="home-orbit orbit-a"></div><div class="home-orbit orbit-b"></div>
-    <div class="home-header">
-      <div><small id="greetingTime">GOOD MORNING</small><h1>Swapnil<span>.</span></h1><p id="dailyMessage">Your plan is ready. Let's make today count.</p></div>
-      <div class="home-date"><span id="todayDate">TODAY</span><i></i><span id="dayStatus">DEMO DATA</span></div>
-    </div>
-
-    <div class="body-interface">
-      <div class="body-label"><span>01</span><b>BODY STATE</b><em>LIVE MODEL</em></div>
-      <div class="body-glow"></div>
-      <div class="readiness-planet">
-        <div class="planet-core"><span>READINESS</span><strong>78</strong><small>/ 100</small></div>
-        <div class="planet-ring ring-one"></div><div class="planet-ring ring-two"></div>
-        <button class="planet-info" id="readinessInfo">i</button>
+<main id="app">
+<section class="screen active" id="home">
+  <div class="health-summary">
+    <div class="summary-head">
+      <div>
+        <small id="greetingTime">GOOD MORNING</small>
+        <h1>Summary</h1>
+        <p id="dailyMessage">Your health and fitness at a glance.</p>
       </div>
-      <div class="signal signal-sleep"><small>SLEEP</small><b>7h 32m</b><i></i></div>
-      <div class="signal signal-rhr"><small>RHR</small><b>62</b><em>bpm</em><i></i></div>
-      <div class="signal signal-load"><small>LOAD</small><b>42</b><em>%</em><i></i></div>
-      <div class="signal signal-stress"><small>STRESS</small><b>LOW</b><i></i></div>
-      <div class="body-verdict"><small>FIT-OS READS</small><b>Good day for strength.</b><p>Recovery supports the session. Keep effort controlled and let quality lead.</p><button data-page="recovery">Open body state →</button></div>
+      <button class="profile-button" data-page="more" aria-label="Profile">S</button>
     </div>
-  </div>
 
-  <div class="decision-field">
-    <div class="field-head"><div><small>02 · TODAY</small><h2>One decision.<br>Then move.</h2></div><span id="nextAction">Next: Start workout</span></div>
-    <div class="day-arc"><div class="arc-track"></div><i id="dayBar"></i><div class="arc-center"><strong id="dayPercent">0%</strong><small id="planDone">0 of 4 complete</small></div><div class="arc-node n1"><span>01</span><b>TRAIN</b></div><div class="arc-node n2"><span>02</span><b>MOVE</b></div><div class="arc-node n3"><span>03</span><b>FUEL</b></div><div class="arc-node n4"><span>04</span><b>RECOVER</b></div></div>
+    <section class="insight-card health-blue">
+      <div class="insight-icon">✦</div>
+      <div>
+        <small>FIT-OS INSIGHT</small>
+        <b>Good day for strength</b>
+        <p>Recovery supports today's planned session. Keep effort controlled and focus on quality.</p>
+      </div>
+      <button data-page="recovery" aria-label="Open recovery">›</button>
+    </section>
 
-    <button class="primary-decision" data-page="train"><span>TRAIN</span><div><b>Upper Body Strength</b><small>48 min · Moderate · Recovery-informed</small></div><strong id="workoutState">START ›</strong></button>
+    <div class="section-title"><h2>Pinned</h2><button data-page="more">Edit</button></div>
 
-    <div class="micro-rail">
-      <button data-action="steps"><span>02</span><div><small>MOVE</small><b><span id="stepsValue">2,864</span> / 8,000</b></div><em id="walkState">36%</em></button>
-      <button data-page="nutrition"><span>03</span><div><small>FUEL</small><b><span id="proteinToday">126</span> / 150g</b></div><em id="fuelState">84%</em></button>
-      <button data-action="checkin"><span>04</span><div><small>RECOVER</small><b id="checkinStatus">Quick check-in</b></div><em id="recoverState">OPEN</em></button>
+    <div class="health-grid">
+      <button class="health-card readiness-card" id="readinessInfo">
+        <div class="card-top"><span class="metric-icon blue">◔</span><small>READINESS</small></div>
+        <strong>78</strong><span class="unit">/100</span>
+        <div class="mini-bar"><i style="width:78%"></i></div>
+        <p>Good recovery</p>
+      </button>
+
+      <button class="health-card activity-card" data-action="steps">
+        <div class="card-top"><span class="metric-icon red">⌁</span><small>STEPS</small></div>
+        <strong id="stepsValue">2,864</strong><span class="unit"> / 8,000</span>
+        <div class="mini-bar"><i id="stepBar" style="width:36%"></i></div>
+        <p id="walkState">36% of goal</p>
+      </button>
+
+      <button class="health-card sleep-card" data-page="recovery">
+        <div class="card-top"><span class="metric-icon purple">◒</span><small>SLEEP</small></div>
+        <strong>7h 32m</strong>
+        <div class="sleep-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p>Within target</p>
+      </button>
+
+      <button class="health-card heart-card" data-page="recovery">
+        <div class="card-top"><span class="metric-icon pink">♥</span><small>RESTING HEART RATE</small></div>
+        <strong>62</strong><span class="unit"> bpm</span>
+        <p>Current baseline</p>
+        <svg class="sparkline" viewBox="0 0 180 42" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 27 C12 24 15 30 26 25 S42 17 52 24 S68 34 79 20 S96 11 106 22 S122 31 133 18 S151 15 160 22 S173 26 180 14"/>
+        </svg>
+      </button>
     </div>
-  </div>
 
-  <div class="body-data-line">
-    <button data-action="hydration"><span>HYDRATION</span><b><span id="waterValue">2.1</span> L</b><i>＋</i></button>
-    <button data-page="nutrition"><span>ENERGY</span><b><span id="caloriesToday">1,840</span> kcal</b><i>→</i></button>
-    <button data-page="progress"><span>CONSISTENCY</span><b>5 days</b><i>→</i></button>
-    <button data-page="coach"><span>INTELLIGENCE</span><b>Ask FIT-OS</b><i>✦</i></button>
+    <div class="section-title trends-title"><h2>Trends</h2><button data-page="progress">Show All</button></div>
+
+    <div class="trend-list">
+      <button class="trend-row" data-page="progress">
+        <span class="trend-icon green">↗</span>
+        <div><small>WEIGHT</small><b>110 kg</b><p>Goal 85 kg · Tracking</p></div>
+        <span class="trend-chart"><i style="height:72%"></i><i style="height:65%"></i><i style="height:58%"></i><i style="height:52%"></i><i style="height:45%"></i></span>
+        <em>›</em>
+      </button>
+      <button class="trend-row" data-page="nutrition">
+        <span class="trend-icon orange">◉</span>
+        <div><small>PROTEIN</small><b><span id="proteinToday">126</span> g</b><p>Target 150 g</p></div>
+        <span class="trend-progress"><i id="fuelState" style="width:84%"></i></span>
+        <em>›</em>
+      </button>
+      <button class="trend-row" data-page="nutrition">
+        <span class="trend-icon amber">ϟ</span>
+        <div><small>ENERGY</small><b><span id="caloriesToday">1,840</span> kcal</b><p>Target 2,300 kcal</p></div>
+        <span class="trend-progress"><i style="width:80%"></i></span>
+        <em>›</em>
+      </button>
+    </div>
+
+    <div class="section-title"><h2>Today's Plan</h2><span id="nextAction">Next: Start workout</span></div>
+    <button class="plan-card" data-page="train">
+      <span class="plan-number">01</span>
+      <div><small>TRAIN</small><b>Upper Body Strength</b><p>48 min · Moderate · Recovery-informed</p></div>
+      <strong id="workoutState">START ›</strong>
+    </button>
+    <div class="plan-mini-grid">
+      <button data-action="hydration"><span class="mini-icon cyan">＋</span><div><small>HYDRATION</small><b><span id="waterValue">2.1</span> L</b></div><em>ADD</em></button>
+      <button data-action="checkin"><span class="mini-icon teal">◌</span><div><small>STATE OF MIND</small><b id="checkinStatus">Quick check-in</b></div><em id="recoverState">OPEN</em></button>
+    </div>
+
+    <div class="health-footer">FIT-OS · Personal fitness intelligence · Demo values until personal data sources are connected.</div>
   </div>
-  <div class="today-footer">FIT-OS · Personal fitness intelligence · Demo state until personal data sources are connected.</div>
 </section>
+
 <div class="modal-backdrop" id="todayModal" aria-hidden="true"><div class="today-modal glass"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+
 <section class="screen" id="train">
-<div class="train-hero">
-  <div class="train-bg"></div>
-  <div class="back-row train-nav"><button class="back" data-page="home">‹</button><div><small>02 · TRAIN</small><b>Today's Session</b></div><button class="settings" data-page="more">⚙</button></div>
-  <div class="train-kicker"><span>PLAN PREPARED</span><span>48 MIN</span></div>
-  <div class="train-title"><small>UPPER BODY</small><h1>Strength<br>Session.</h1><p>Build strength without wasting effort.</p></div>
-  <div class="train-summary glass"><div><small>INTENSITY</small><b>MODERATE</b></div><div><small>VOLUME</small><b>18 SETS</b></div><div><small>FOCUS</small><b>UPPER</b></div></div>
-  <button class="workout-start train-start" id="startWorkout"><span>▶</span> Start Session <b>›</b></button>
-</div>
-<div class="train-content">
-  <div class="session-state glass-light" id="sessionState"><div><small>SESSION</small><b id="sessionLabel">Ready when you are</b></div><strong id="sessionProgress">0 / 6</strong></div>
-  <div class="train-section-head"><div><small>WORKOUT FLOW</small><h2>Move with intent.</h2></div><button class="text-btn" id="warmupAction">Warm up ›</button></div>
-  <div class="exercise-list train-exercises">
-    <button class="exercise train-exercise" data-exercise="0"><span>01</span><div><small>PREP</small><b>Warm Up</b><em>8 min · Mobility + pulse</em></div><i>›</i></button>
-    <button class="exercise train-exercise" data-exercise="1"><span>02</span><div><small>PRIMARY</small><b>Bench Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
-    <button class="exercise train-exercise" data-exercise="2"><span>03</span><div><small>PRIMARY</small><b>Seated Row</b><em>4 sets · 8–12 reps · 60–90s rest</em></div><i>›</i></button>
-    <button class="exercise train-exercise" data-exercise="3"><span>04</span><div><small>SECONDARY</small><b>Shoulder Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
-    <button class="exercise train-exercise" data-exercise="4"><span>05</span><div><small>SECONDARY</small><b>Lat Pulldown</b><em>3 sets · 10–12 reps · 60s rest</em></div><i>›</i></button>
-    <button class="exercise train-exercise" data-exercise="5"><span>06</span><div><small>FINISH</small><b>Cool Down</b><em>8 min · Breathing + mobility</em></div><i>›</i></button>
+  <div class="app-page">
+    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>WORKOUT</small><h1>Train</h1></div><button class="header-more" data-page="more">•••</button></div>
+    <div class="workout-overview">
+      <div><small>TODAY'S SESSION</small><h2>Upper Body Strength</h2><p>48 min · Moderate intensity</p></div>
+      <button class="start-pill" id="startWorkout">Start <b>›</b></button>
+    </div>
+    <div class="section-title"><h2>Workout Flow</h2><button id="warmupAction">Warm Up</button></div>
+    <div class="session-state" id="sessionState"><div><small>SESSION</small><b id="sessionLabel">Ready when you are</b></div><strong id="sessionProgress">0 / 6</strong></div>
+    <div class="exercise-list">
+      <button class="exercise train-exercise" data-exercise="0"><span>01</span><div><small>PREP</small><b>Warm Up</b><em>8 min · Mobility + pulse</em></div><i>›</i></button>
+      <button class="exercise train-exercise" data-exercise="1"><span>02</span><div><small>PRIMARY</small><b>Bench Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
+      <button class="exercise train-exercise" data-exercise="2"><span>03</span><div><small>PRIMARY</small><b>Seated Row</b><em>4 sets · 8–12 reps · 60–90s rest</em></div><i>›</i></button>
+      <button class="exercise train-exercise" data-exercise="3"><span>04</span><div><small>SECONDARY</small><b>Shoulder Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
+      <button class="exercise train-exercise" data-exercise="4"><span>05</span><div><small>SECONDARY</small><b>Lat Pulldown</b><em>3 sets · 10–12 reps · 60s rest</em></div><i>›</i></button>
+      <button class="exercise train-exercise" data-exercise="5"><span>06</span><div><small>FINISH</small><b>Cool Down</b><em>8 min · Breathing + mobility</em></div><i>›</i></button>
+    </div>
+    <div class="info-card"><small>FIT-OS TRAINING LOGIC</small><p><b>Readiness first.</b> Today's session adapts to recovery signals.</p><p><b>Quality before volume.</b> Reduce load when technique drops.</p><p><b>Progress gradually.</b> Log performance so future sessions can adapt.</p></div>
   </div>
-  <div class="training-principles glass-light"><small>FIT-OS TRAINING LOGIC</small><div><span>01</span><p><b>Readiness first</b>Today's session is matched to the current demo readiness signal.</p></div><div><span>02</span><p><b>Quality before volume</b>Stop or reduce load when technique cannot be maintained.</p></div><div><span>03</span><p><b>Progress gradually</b>Log performance so future sessions can adapt.</p></div></div>
-</div>
-<div class="train-modal-backdrop" id="exerciseModal"><div class="exercise-modal glass"><button class="modal-close" id="exerciseClose">×</button><div id="exerciseModalContent"></div></div></div>
+  <div class="train-modal-backdrop" id="exerciseModal"><div class="exercise-modal glass"><button class="modal-close" id="exerciseClose">×</button><div id="exerciseModalContent"></div></div></div>
 </section>
+
 <section class="screen" id="coach">
-      <div class="coach-bg">
-        <div class="back-row"><button class="back" data-page="home">‹</button><div><small>COACH</small><b>Your AI Coach</b></div><button class="settings" data-page="more">⚙</button></div>
-        <div class="coach-hero"><div class="ai-face">◈</div><h1>Your AI Coach</h1><p>Always here. Always with you.</p></div>
-        <div class="coach-card glass">
-          <small>GOOD MORNING, SWAPNIL.</small>
-          <p>Your body is ready for a productive session today.</p>
-          <p>Based on your recovery, I recommend the Upper Body Strength workout we planned.</p>
-          <button class="coach-primary" data-page="train">Start Workout <b>›</b></button>
-          <button class="coach-secondary" data-page="train">Adjust Plan</button>
-          <button class="coach-secondary" data-page="recovery">Why this plan?</button>
-        </div>
-        <div class="coach-input glass"><span>Ask anything...</span><button id="coachSend">›</button></div>
-        <div class="suggestions"><button>Nutrition advice</button><button>Recovery tips</button><button>Explain my progress</button><button>Plan my week</button><button>What should I eat today?</button><button>How can I improve?</button></div>
-      </div>
-    </section>
+  <div class="app-page">
+    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>FIT-OS INTELLIGENCE</small><h1>Coach</h1></div><button class="header-more">•••</button></div>
+    <div class="coach-profile"><div class="coach-avatar">✦</div><div><small>YOUR FITNESS INTELLIGENCE</small><h2>What should I do today?</h2><p>Your coach can use recovery, training, nutrition and progress data when those sources are connected.</p></div></div>
+    <div class="coach-actions">
+      <button data-page="train"><span>↗</span><div><b>Start today's workout</b><small>Upper Body Strength · 48 min</small></div><em>›</em></button>
+      <button data-page="recovery"><span>◔</span><div><b>Explain my recovery</b><small>Sleep, resting heart rate and load</small></div><em>›</em></button>
+      <button data-page="nutrition"><span>ϟ</span><div><b>Help with nutrition</b><small>Calories and protein targets</small></div><em>›</em></button>
+    </div>
+    <div class="coach-input"><span>Ask FIT-OS anything…</span><button id="coachSend">↑</button></div>
+    <div class="suggestions"><button>Why this workout?</button><button>How is my recovery?</button><button>What should I eat?</button><button>Plan my week</button></div>
+  </div>
+</section>
 
-    <section class="screen" id="recovery">
-      <div class="hero-scene recovery-scene">
-        <div class="back-row"><button class="back" data-page="home">‹</button><div><small>RECOVERY</small><b>Body State</b></div><button class="settings">···</button></div>
-        <div class="recovery-title"><small>RECOVERY SCORE</small><div class="score-ring"><strong>82</strong><span>WELL RECOVERED</span></div><p>Your body is in good shape.<br>You're ready for training.</p></div>
-      </div>
-      <div class="content-block compact">
-        <div class="four-grid"><div class="data-tile"><small>◔ SLEEP</small><b>7h 32m</b></div><div class="data-tile"><small>♡ HRV</small><b>58 ms</b></div><div class="data-tile"><small>♥ RESTING HR</small><b>62 bpm</b></div><div class="data-tile"><small>⌁ LOAD</small><b>42%</b></div></div>
-        <div class="insight-card"><small>RECOVERY INSIGHTS</small><p>Your sleep and HRV are within optimal range. Maintain training and mobility work today.</p></div>
-        <button class="recommend-card" data-page="train"><span>☼</span><div><small>TODAY'S RECOMMENDATION</small><b>Train normally</b></div><strong>›</strong></button>
-      </div>
-    </section>
+<section class="screen" id="recovery">
+  <div class="app-page">
+    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>VITALS</small><h1>Recovery</h1></div><button class="header-more">•••</button></div>
+    <div class="score-card"><small>RECOVERY SCORE</small><div><strong>82</strong><span>/ 100</span></div><p>Good recovery context for today's planned session.</p></div>
+    <div class="section-title"><h2>Vitals</h2><button>Show All</button></div>
+    <div class="vitals-list">
+      <button><span class="vital-icon purple">◒</span><div><small>SLEEP</small><b>7h 32m</b><p>Within target</p></div><em>›</em></button>
+      <button><span class="vital-icon red">♥</span><div><small>RESTING HEART RATE</small><b>62 bpm</b><p>Current baseline</p></div><em>›</em></button>
+      <button><span class="vital-icon blue">⌁</span><div><small>HRV</small><b>58 ms</b><p>Recent reading</p></div><em>›</em></button>
+      <button><span class="vital-icon green">↘</span><div><small>TRAINING LOAD</small><b>42%</b><p>Moderate</p></div><em>›</em></button>
+    </div>
+    <div class="info-card"><small>RECOVERY INSIGHT</small><p>Your sleep and current recovery signals support normal training. Demo values are shown until real sources are connected.</p></div>
+  </div>
+</section>
 
-    <section class="screen" id="nutrition">
-      <div class="hero-scene nutrition-scene"><div class="nutrition-overlay"></div><div class="back-row"><button class="back" data-page="home">‹</button><div><small>NUTRITION</small><b>Fuel Your Performance</b></div><button class="settings" data-page="more">⚙</button></div><div class="nutrition-hero glass"><div><small>CALORIES</small><strong>1,840 <em>/ 2,300 kcal</em></strong></div><b>80%</b></div></div>
-      <div class="content-block compact"><div class="macro-grid"><div><b>126g</b><small>Protein · target 150g</small></div><div><b>182g</b><small>Carbs · target 250g</small></div><div><b>54g</b><small>Fat · target 70g</small></div></div><div class="block-head"><div><small>TODAY'S MEALS</small></div></div><div class="meal-list"><div><span>🍳</span><b>Breakfast</b><small>Oats, Eggs, Banana</small><strong>420 kcal</strong></div><div><span>🥗</span><b>Lunch</b><small>Rice, Dal, Vegetables</small><strong>680 kcal</strong></div><div><span>🥤</span><b>Snack</b><small>Protein Shake</small><strong>220 kcal</strong></div><div><span>🥘</span><b>Dinner</b><small>Paneer, Salad</small><strong>520 kcal</strong></div></div><button class="log-meal" id="logMeal">＋ Log Meal</button></div>
-    </section>
+<section class="screen" id="nutrition">
+  <div class="app-page">
+    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>FUEL</small><h1>Nutrition</h1></div><button class="header-more">•••</button></div>
+    <div class="nutrition-summary"><div><small>ENERGY</small><strong><span id="nutritionCalories">1,840</span> <em>/ 2,300 kcal</em></strong></div><b>80%</b></div>
+    <div class="macro-grid"><div><b><span id="nutritionProtein">126</span>g</b><small>Protein · 150g</small></div><div><b>182g</b><small>Carbs · 250g</small></div><div><b>54g</b><small>Fat · 70g</small></div></div>
+    <div class="section-title"><h2>Today's Meals</h2><button id="logMeal">Add</button></div>
+    <div class="meal-list"><div><span>01</span><div><b>Breakfast</b><small>Oats, eggs, banana</small></div><strong>420 kcal</strong></div><div><span>02</span><div><b>Lunch</b><small>Rice, dal, vegetables</small></div><strong>680 kcal</strong></div><div><span>03</span><div><b>Snack</b><small>Protein shake</small></div><strong>220 kcal</strong></div><div><span>04</span><div><b>Dinner</b><small>Paneer, salad</small></div><strong>520 kcal</strong></div></div>
+  </div>
+</section>
 
-    <section class="screen" id="progress">
-      <div class="progress-head"><div class="back-row"><button class="back" data-page="home">‹</button><div><small>PROGRESS</small><b>Track Your Transformation</b></div></div><div class="segmented"><button class="active">Weight</button><button>Strength</button><button>Body</button><button>Activity</button></div></div>
-      <div class="content-block compact"><div class="chart-card glass"><div class="block-head"><div><small>WEIGHT TREND</small><h2>110 kg <em>→ 103.8 kg</em></h2></div><small>Last 3 months</small></div><div class="chart"><i style="height:78%"></i><i style="height:74%"></i><i style="height:67%"></i><i style="height:61%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:39%"></i></div><div class="chart-labels"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div><div class="progress-stats"><span><b>-6.2 kg</b>Total change</span><span><b>0.5 kg</b>Avg. per week</span><span><b>85%</b>Goal progress</span></div></div><div class="milestones"><div class="block-head"><div><small>MILESTONES</small></div></div><div><span>✦</span><p><b>First 5 kg lost</b><small>Completed · 12 Aug 2026</small></p><i>✓</i></div><div><span>✦</span><p><b>Consistent for 4 weeks</b><small>Completed · 1 Sep 2026</small></p><i>✓</i></div><div><span>◇</span><p><b>Reach 100 kg</b><small>Target · Oct 2026</small></p><i>○</i></div></div><div class="quote-card">“You are not just losing weight.<br>You are building a stronger you.”</div></div>
-    </section>
+<section class="screen" id="progress">
+  <div class="app-page">
+    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>HEALTH DATA</small><h1>Progress</h1></div><button class="header-more">•••</button></div>
+    <div class="segmented"><button class="active">Weight</button><button>Strength</button><button>Body</button><button>Activity</button></div>
+    <div class="chart-card"><div class="chart-head"><div><small>WEIGHT TREND</small><h2>110 kg <em>→ 103.8 kg</em></h2></div><small>Last 3 months</small></div><div class="chart"><i style="height:78%"></i><i style="height:74%"></i><i style="height:67%"></i><i style="height:61%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:39%"></i></div><div class="chart-labels"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div></div>
+    <div class="section-title"><h2>Milestones</h2></div>
+    <div class="milestones"><div><span>✓</span><p><b>First 5 kg lost</b><small>Completed · 12 Aug 2026</small></p></div><div><span>✓</span><p><b>Consistent for 4 weeks</b><small>Completed · 1 Sep 2026</small></p></div><div><span>○</span><p><b>Reach 100 kg</b><small>Target · Oct 2026</small></p></div></div>
+  </div>
+</section>
 
-    <section class="screen" id="journey">
-      <div class="journey-scene"><div class="back-row"><button class="back" data-page="home">‹</button><div><small>JOURNEY</small><b>From goals to lifelong results</b></div><button class="settings" data-page="more">⚙</button></div><div class="journey-path"><div class="path-line"></div><div class="jnode done"><span>✓</span><div><b>Goal</b><small>Lose 25 kg · Get stronger</small></div></div><div class="jnode done"><span>✓</span><div><b>Foundation</b><small>Build habits · Week 1–4</small></div></div><div class="jnode current"><span>●</span><div><b>Progress</b><small>See real changes · Week 5–12</small></div></div><div class="jnode locked"><span>○</span><div><b>Adaptation</b><small>Optimize performance · Week 13–24</small></div></div><div class="jnode locked"><span>○</span><div><b>Lifestyle</b><small>Make it permanent · Week 25+</small></div></div></div><p class="journey-quote">“A year from now,<br>you will thank yourself.”</p></div>
-    </section>
+<section class="screen" id="journey">
+  <div class="app-page"><div class="page-header"><button class="back" data-page="home">‹</button><div><small>GOALS</small><h1>Journey</h1></div><button class="header-more">•••</button></div>
+  <div class="journey-list"><div class="jnode done"><span>✓</span><div><b>Goal</b><small>Lose 25 kg · Get stronger</small></div></div><div class="jnode done"><span>✓</span><div><b>Foundation</b><small>Build habits · Week 1–4</small></div></div><div class="jnode current"><span>●</span><div><b>Progress</b><small>See real changes · Week 5–12</small></div></div><div class="jnode"><span>○</span><div><b>Adaptation</b><small>Optimize performance · Week 13–24</small></div></div><div class="jnode"><span>○</span><div><b>Lifestyle</b><small>Make it permanent · Week 25+</small></div></div></div>
+  </div>
+</section>
 
-    <section class="screen" id="more">
-      <div class="more-head"><div class="profile glass"><div class="profile-photo">S</div><div><h2>Swapnil</h2><p>33 years · 110 kg · 5'8"</p><button>Edit Profile ›</button></div></div></div>
-      <div class="settings-list">
-        <button data-page="journey"><span>✦</span><div><b>Goals</b><small>Weight loss · Strength</small></div><i>›</i></button>
-        <button><span>♧</span><div><b>Reminders</b><small>Workouts · Meals · Sleep</small></div><i>›</i></button>
-        <button><span>⌁</span><div><b>Wearables</b><small>Connect device</small></div><i>›</i></button>
-        <button><span>◐</span><div><b>Appearance</b><small>Light · Dark · System</small></div><i>›</i></button>
-        <button><span>▣</span><div><b>Data & Privacy</b><small>Your data, your control</small></div><i>›</i></button>
-        <button><span>?</span><div><b>Help & Support</b><small>We're here for you</small></div><i>›</i></button>
-      </div>
-      <div class="fitos-card glass"><div>♡</div><b>FIT-OS</b><small>Version 1.0.0 · Stronger You, Every Day.</small></div>
-    </section>
-  </main>
+<section class="screen" id="more">
+  <div class="app-page">
+    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>PROFILE</small><h1>More</h1></div><button class="header-more">•••</button></div>
+    <div class="profile-card"><div class="profile-photo">S</div><div><h2>Swapnil</h2><p>33 years · 110 kg · 5'8"</p><button>Edit Health Details ›</button></div></div>
+    <div class="section-title"><h2>Settings</h2></div>
+    <div class="settings-list">
+      <button data-page="journey"><span>◎</span><div><b>Goals</b><small>Weight loss · Strength</small></div><i>›</i></button>
+      <button><span>◷</span><div><b>Reminders</b><small>Workouts · Meals · Sleep</small></div><i>›</i></button>
+      <button><span>⌁</span><div><b>Data Sources</b><small>Wearables and apps</small></div><i>›</i></button>
+      <button><span>◐</span><div><b>Appearance</b><small>Light · System</small></div><i>›</i></button>
+      <button><span>▣</span><div><b>Data & Privacy</b><small>Your data, your control</small></div><i>›</i></button>
+      <button><span>?</span><div><b>Help & Support</b><small>FIT-OS help</small></div><i>›</i></button>
+    </div>
+    <div class="health-footer">FIT-OS · Version 1.0.0 · Private personal use.</div>
+  </div>
+</section>
+</main>
 
-  <nav class="bottom-nav" aria-label="Primary navigation">
-  <div class="dock-glow"></div>
-  <button class="dock-item active" data-page="home"><span>◉</span><b>Today</b></button>
+<nav class="bottom-nav" aria-label="Primary navigation">
+  <button class="dock-item active" data-page="home"><span>⌂</span><b>Summary</b></button>
+  <button class="dock-item" data-page="progress"><span>⌁</span><b>Trends</b></button>
+  <button class="dock-coach" data-page="coach" aria-label="Open FIT-OS Coach"><span>✦</span><b>Coach</b></button>
   <button class="dock-item" data-page="train"><span>↗</span><b>Train</b></button>
-  <button class="dock-coach" data-page="coach" aria-label="Open AI Coach"><span>✦</span><b>Coach</b></button>
-  <button class="dock-item" data-page="progress"><span>⌁</span><b>Progress</b></button>
   <button class="dock-item" data-page="more"><span>•••</span><b>More</b></button>
 </nav>
 </div>
 <div class="toast" id="toast"></div>
-<script src="./app.js?v=20260922-04"></script>
+<script src="./app.js?v=20260922-05"></script>
 </body>
 </html>
