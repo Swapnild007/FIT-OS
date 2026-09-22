@@ -16,7 +16,7 @@ function updateToday(){
   const water=Math.min(3,Math.max(0,state.water)),steps=Math.max(0,state.steps),cal=Math.max(0,state.calories),protein=Math.max(0,state.protein);
   const completed=(state.workout?1:0)+(steps>=8000?1:0)+(protein>=150?1:0)+(state.checkin?1:0),pct=Math.round(completed/4*100);
   const set=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value};
-  set("waterValue",water.toFixed(1));set("waterSmall",water.toFixed(1)+"L");set("stepsValue",steps.toLocaleString());set("planSteps",steps.toLocaleString());set("proteinToday",protein);set("proteinSmall",protein+"g");set("caloriesToday",cal.toLocaleString());set("dayPercent",pct+"%");set("planDone",completed+" of 4 complete");set("walkState",Math.min(100,Math.round(steps/8000*100))+"%");set("fuelState",Math.min(100,Math.round(protein/150*100))+"%");set("workoutState",state.workout?"DONE ✓":"START ›");set("recoverState",state.checkin?"DONE ✓":"OPEN");set("checkinStatus",state.checkin?(state.mood+" · logged"):"Quick check-in");
+  set("waterValue",water.toFixed(1));set("waterSmall",water.toFixed(1)+"L");set("osWater",water.toFixed(1));set("stepsValue",steps.toLocaleString());set("planSteps",steps.toLocaleString());set("proteinToday",protein);set("proteinSmall",protein+"g");set("caloriesToday",cal.toLocaleString());set("dayPercent",pct+"%");set("planDone",completed+" of 4 complete");set("walkState",Math.min(100,Math.round(steps/8000*100))+"%");set("fuelState",Math.min(100,Math.round(protein/150*100))+"%");set("workoutState",state.workout?"DONE ✓":"START ›");set("recoverState",state.checkin?"DONE ✓":"OPEN");set("checkinStatus",state.checkin?(state.mood+" · logged"):"Quick check-in");
   const bar=document.getElementById("dayBar");if(bar)bar.style.width=pct+"%";const calorieBar=document.getElementById("calorieBar");if(calorieBar)calorieBar.style.width=Math.min(100,Math.round(cal/2300*100))+"%";
   set("nextAction",completed===4?"Day complete · great work":!state.workout?"Next: Start workout":steps<8000?"Next: keep moving":protein<150?"Next: close protein target":"Next: evening check-in");
 }
@@ -88,6 +88,6 @@ document.getElementById("startWorkout")?.addEventListener("click",()=>{if(state.
 document.getElementById("coachSend")?.addEventListener("click",()=>showToast("Remote AI coach connection will be added in the AI layer."));
 document.querySelectorAll(".segmented button").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll(".segmented button").forEach(x=>x.classList.remove("active"));button.classList.add("active");showToast(button.textContent+" view selected.")}));
 
-updateTopDate();setTodayCopy();updateToday();syncTrainingUI();
+updateTopDate();setTodayCopy();updateToday();syncTrainingUI();const osDate=document.getElementById("osDate");if(osDate){const now=new Date();osDate.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short"}).toUpperCase()}
 window.addEventListener("hashchange",()=>go(location.hash.slice(1)||"home"));
 go(location.hash.slice(1)||"home");
