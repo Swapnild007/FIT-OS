@@ -12,11 +12,14 @@
 </head>
 <body>
 <div class="app-shell">
-  <header class="topbar glass">
-    <button class="brand" data-page="home"><span class="brand-mark"><i></i><i></i><i></i></span><span><b>FIT-OS</b><small>STRONGER YOU</small></span></button>
-    <div class="date">SAT, 20 SEP 2026</div>
-    <div class="top-actions"><button class="icon-btn" aria-label="Search">⌕</button><button class="icon-btn" aria-label="Notifications">♧</button><button class="avatar" data-page="more">S</button></div>
-  </header>
+  <header class="topbar">
+  <button class="brand" data-page="home" aria-label="FIT-OS Home">
+    <span class="brand-mark"><i></i><i></i><i></i></span>
+    <span><b>FIT-OS</b><small>PERSONAL FITNESS OS</small></span>
+  </button>
+  <div class="topbar-state"><span class="state-dot"></span><span id="topState">BODY STATE</span></div>
+  <button class="avatar" data-page="more" aria-label="Profile">S</button>
+</header>
 
   <main id="app">
     <section class="screen active" id="home">
@@ -112,13 +115,14 @@
     </section>
   </main>
 
-  <nav class="bottom-nav glass">
-    <button class="active" data-page="home"><span>⌂</span><b>Today</b></button>
-    <button data-page="train"><span>⌁</span><b>Train</b></button>
-    <button data-page="coach"><span>◈</span><b>Coach</b></button>
-    <button data-page="progress"><span>▥</span><b>Progress</b></button>
-    <button data-page="more"><span>⊞</span><b>More</b></button>
-  </nav>
+  <nav class="bottom-nav" aria-label="Primary navigation">
+  <div class="dock-glow"></div>
+  <button class="dock-item active" data-page="home"><span>◉</span><b>Today</b></button>
+  <button class="dock-item" data-page="train"><span>↗</span><b>Train</b></button>
+  <button class="dock-coach" data-page="coach" aria-label="Open AI Coach"><span>✦</span><b>Coach</b></button>
+  <button class="dock-item" data-page="progress"><span>⌁</span><b>Progress</b></button>
+  <button class="dock-item" data-page="more"><span>•••</span><b>More</b></button>
+</nav>
 </div>
 <div class="toast" id="toast"></div>
 <script src="./app.js"></script>
