@@ -25,25 +25,62 @@
 
 <main id="app">
 <section class="screen active" id="home">
-  <div class="health-summary">
-    <div class="summary-head">
-      <div>
-        <small id="greetingTime">GOOD MORNING</small>
-        <h1>Summary</h1>
-        <p id="dailyMessage">Your health and fitness at a glance.</p>
-      </div>
-      <button class="profile-button" data-page="more" aria-label="Profile">S</button>
+  <div class="fitness-plus-home">
+    <div class="fp-header">
+      <div><small>FIT-OS</small><h1>For You</h1></div>
+      <button class="fp-profile" data-page="more">S</button>
     </div>
 
-    <section class="insight-card health-blue">
-      <div class="insight-icon">✦</div>
-      <div>
-        <small>FIT-OS INSIGHT</small>
-        <b>Good day for strength</b>
-        <p>Recovery supports today's planned session. Keep effort controlled and focus on quality.</p>
+    <div class="fp-hero">
+      <div class="fp-hero-art">
+        <div class="hero-orb"></div><div class="hero-person">FIT</div>
       </div>
-      <button data-page="recovery" aria-label="Open recovery">›</button>
-    </section>
+      <div class="fp-hero-copy">
+        <small>RECOMMENDED FOR YOU</small>
+        <h2>Upper Body<br>Strength</h2>
+        <p>48 min · Moderate · Strength</p>
+        <div class="fp-hero-actions">
+          <button data-page="train">Let's Go <b>›</b></button>
+          <button class="fp-circle" data-page="recovery">i</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="fp-section-head"><h2>Today's Plan</h2><button data-page="train">See All</button></div>
+    <div class="plan-strip">
+      <button data-page="train"><span>01</span><div><small>STRENGTH</small><b>Upper Body</b><p>48 min</p></div><strong>›</strong></button>
+      <button data-page="recovery"><span>02</span><div><small>RECOVERY</small><b>Mindful Cooldown</b><p>10 min</p></div><strong>›</strong></button>
+    </div>
+
+    <div class="fp-section-head"><h2>Choose an Activity</h2><button data-page="train">See All</button></div>
+    <div class="activity-scroll">
+      <button><i class="act-strength">↗</i><b>Strength</b></button>
+      <button><i class="act-hiit">ϟ</i><b>HIIT</b></button>
+      <button><i class="act-yoga">◌</i><b>Yoga</b></button>
+      <button><i class="act-core">●</i><b>Core</b></button>
+      <button><i class="act-cardio">♥</i><b>Cardio</b></button>
+      <button><i class="act-mobility">⌁</i><b>Mobility</b></button>
+    </div>
+
+    <div class="fp-section-head"><h2>Made for You</h2><button data-page="progress">See All</button></div>
+    <div class="workout-row">
+      <button class="workout-card wc-one" data-page="train"><div class="trainer-mark">S</div><div><small>STRENGTH · 30 MIN</small><b>Build Your Base</b><p>Moderate · No equipment</p></div></button>
+      <button class="workout-card wc-two" data-page="train"><div class="trainer-mark">F</div><div><small>HIIT · 20 MIN</small><b>Move With Power</b><p>High energy · Full body</p></div></button>
+      <button class="workout-card wc-three" data-page="recovery"><div class="trainer-mark">R</div><div><small>MINDFUL · 10 MIN</small><b>Reset & Recover</b><p>Breathing · Mobility</p></div></button>
+    </div>
+
+    <div class="fp-section-head"><h2>Collections</h2><button data-page="journey">See All</button></div>
+    <div class="collection-card">
+      <div><small>FIT-OS COLLECTION</small><h2>Stronger,<br>one session at a time.</h2><p>A progressive strength path built around your current readiness and schedule.</p></div>
+      <span>FIT-OS</span>
+    </div>
+
+    <div class="fp-section-head"><h2>Trainer Tips</h2><button data-page="coach">See All</button></div>
+    <div class="tip-card"><span>✦</span><div><small>FIT-OS COACH</small><b>Quality before volume</b><p>Keep the movement controlled. If technique drops, reduce load or stop the set.</p></div><em>›</em></div>
+
+    <div class="fp-footer">FIT-OS · Fitness intelligence for private personal use.</div>
+  </div>
+</section>
 
     <div class="section-title"><h2>Pinned</h2><button data-page="more">Edit</button></div>
 
