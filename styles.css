@@ -1106,3 +1106,33 @@ body{background:#fff;color:var(--fp-ink)}
 @media(prefers-reduced-motion:reduce){
   .fitos-dark #explore .explore-filter,.fitos-dark #explore .explore-result{transition:none}
 }
+/* SCREEN 02 RESEARCHED DISCOVERY LAYER */
+.fitos-dark #explore .explore-ai-pick{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;margin:12px 0 24px;padding:13px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.018));}
+.fitos-dark #explore .ai-pick-mark{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#ff8ba6,#7c5665);color:#fff;font-size:16px;box-shadow:0 8px 24px rgba(255,110,145,.18)}
+.fitos-dark #explore .explore-ai-pick small{display:block;font-size:7px;letter-spacing:.13em;color:#777982;font-weight:900}
+.fitos-dark #explore .explore-ai-pick b{display:block;margin:3px 0;color:#f7f7f8;font-size:12px}
+.fitos-dark #explore .explore-ai-pick p{margin:0;color:#81828b;font-size:9px;line-height:1.35}
+.fitos-dark #explore .explore-ai-pick button{border:0;border-radius:12px;padding:10px 11px;background:#f3f3f4;color:#111;font-size:9px;font-weight:900}
+.fitos-dark #explore .explore-searchbox{display:flex;align-items:center;gap:10px;height:48px;margin-top:18px;padding:0 12px;border:1px solid rgba(255,255,255,.09);border-radius:15px;background:rgba(0,0,0,.22);box-sizing:border-box}
+.fitos-dark #explore .explore-searchbox span{font-size:21px;color:#72737b}
+.fitos-dark #explore .explore-searchbox input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:#eee;font:600 11px inherit}
+.fitos-dark #explore .explore-searchbox input::placeholder{color:#73747c}
+.fitos-dark #explore .explore-searchbox kbd{font:700 8px inherit;color:#686970;border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:4px 6px}
+.fitos-dark #explore .explore-refine-head{display:flex;align-items:center;justify-content:space-between;margin:26px 0 12px}
+.fitos-dark #explore .explore-refine-head small{display:block;color:#777982;font-size:7px;font-weight:900;letter-spacing:.13em}
+.fitos-dark #explore .explore-refine-head b{display:block;color:#e9e9eb;font-size:12px;margin-top:3px}
+.fitos-dark #explore #exploreRefineToggle{border:1px solid rgba(255,255,255,.09);border-radius:11px;background:#17171c;color:#bdbec4;padding:9px 11px;font:700 9px inherit}
+.fitos-dark #explore #exploreRefineToggle.active{background:#222229;color:#fff}
+.fitos-dark #explore .explore-refine{display:none;padding:14px;border:1px solid rgba(255,255,255,.07);border-radius:16px;background:#15151a}
+.fitos-dark #explore .explore-refine.open{display:grid;gap:16px}
+.fitos-dark #explore .explore-refine label{display:block;margin-bottom:8px;color:#666771;font-size:7px;font-weight:900;letter-spacing:.12em}
+.fitos-dark #explore .mini-filter-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.fitos-dark #explore .mini-filter-row::-webkit-scrollbar{display:none}
+.fitos-dark #explore .mini-filter{flex:0 0 auto;border:1px solid rgba(255,255,255,.07);border-radius:9px;background:#1b1b20;color:#85868e;padding:7px 9px;font:700 8px inherit}
+.fitos-dark #explore .mini-filter.active{background:#eeeef0;color:#111;border-color:#eeeef0}
+.fitos-dark #explore .results-label small{font-size:7px}
+@media(max-width:520px){
+ .fitos-dark #explore .explore-ai-pick{grid-template-columns:32px 1fr auto}
+ .fitos-dark #explore .explore-ai-pick button{padding:9px}
+ .fitos-dark #explore .explore-searchbox kbd{display:none}
+}
