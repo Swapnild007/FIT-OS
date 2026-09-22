@@ -1,15 +1,9 @@
-const pages={home:"Today",journey:"Journey",train:"Train",coach:"Coach",recovery:"Recovery",nutrition:"Fuel",progress:"Progress",settings:"Settings"};const all=[...document.querySelectorAll("[data-page]")],title=document.getElementById("title"),rail=document.querySelector(".rail"),toast=document.getElementById("toast");let timer;
-function go(name){if(!pages[name])name="home";document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===name));document.querySelectorAll(".nav").forEach(n=>n.classList.toggle("active",n.dataset.page===name));title.textContent=pages[name];history.replaceState(null,"",`#${name}`);rail.classList.remove("open");scrollTo({top:0,behavior:"smooth"})}
-all.forEach(x=>x.addEventListener("click",()=>go(x.dataset.page)));
-document.getElementById("menu").addEventListener("click",()=>rail.classList.toggle("open"));
-function note(t){clearTimeout(timer);toast.textContent=t;toast.classList.add("show");timer=setTimeout(()=>toast.classList.remove("show"),2400)}
-document.getElementById("bell").addEventListener("click",()=>note("Your plan is ready."));
-document.getElementById("start").addEventListener("click",e=>{e.currentTarget.textContent="Session active";e.currentTarget.disabled=true;note("Workout started. Live Coach is ready.")});
-document.querySelectorAll(".log").forEach(b=>b.addEventListener("click",()=>{b.textContent="DONE";b.disabled=true;note("Set logged.")}));
-document.getElementById("weekly").addEventListener("click",()=>note("Weekly check-in is ready for the next journey step."));
-document.getElementById("dinner").addEventListener("click",()=>note("Dinner target: 35g+ protein · 540–700 kcal."));
-const messages=document.getElementById("messages"),input=document.getElementById("input");
-function msg(role,text){const d=document.createElement("div");d.className=`bubble ${role}`;d.innerHTML=`<small>${role==="ai"?"FIT-OS":"YOU"}</small><p></p>`;d.querySelector("p").textContent=text;messages.appendChild(d);messages.scrollTop=messages.scrollHeight}
-document.querySelectorAll(".quick button").forEach(b=>b.addEventListener("click",()=>{input.value=b.dataset.q;document.getElementById("chat").requestSubmit()}));
-document.getElementById("chat").addEventListener("submit",e=>{e.preventDefault();const q=input.value.trim();if(!q)return;msg("user",q);input.value="";setTimeout(()=>{const s=q.toLowerCase();let r="The remote AI layer is not connected yet, but FIT-OS will use your training, recovery, nutrition and journey context here.";if(s.includes("strength")||s.includes("train"))r="Readiness is 78 and training load is moderate, so today's prototype plan is Upper Body Strength for 45 minutes. Keep 1–3 reps in reserve.";else if(s.includes("recover"))r="Sleep is 7h 32m, resting HR is 61 bpm and load is 42%. Today's recommendation is normal training without extra volume.";else if(s.includes("eat")||s.includes("food")||s.includes("protein"))r="Protein is 112g against a 130g target. FIT-OS would use your remaining calories and today's training to shape the next meal.";msg("ai",r)},400)});
-addEventListener("hashchange",()=>go(location.hash.slice(1)||"home"));go(location.hash.slice(1)||"home");
+const pages=[...document.querySelectorAll(".screen")];const buttons=[...document.querySelectorAll("[data-page]")];const toast=document.getElementById("toast");let toastTimer;
+function showToast(t){clearTimeout(toastTimer);toast.textContent=t;toast.classList.add("show");toastTimer=setTimeout(()=>toast.classList.remove("show"),2200)}
+function go(id){const target=document.getElementById(id)||document.getElementById("home");pages.forEach(p=>p.classList.toggle("active",p===target));document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===target.id));history.replaceState(null,"","#"+target.id);scrollTo({top:0,behavior:"smooth"})}
+buttons.forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));
+document.getElementById("startWorkout")?.addEventListener("click",e=>{e.currentTarget.innerHTML="<span>✓</span> Workout Active <b>›</b>";showToast("Workout started. Your session is live.")});
+document.getElementById("logMeal")?.addEventListener("click",()=>showToast("Meal logging is ready for the next build."));
+document.getElementById("coachSend")?.addEventListener("click",()=>showToast("Coach input will connect to the remote AI layer."));
+document.querySelectorAll(".segmented button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".segmented button").forEach(x=>x.classList.remove("active"));b.classList.add("active");showToast(b.textContent+" view selected.")}));
+window.addEventListener("hashchange",()=>go(location.hash.slice(1)||"home"));go(location.hash.slice(1)||"home");
