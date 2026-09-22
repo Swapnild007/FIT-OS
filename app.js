@@ -8,7 +8,8 @@ try{state={...defaultState,...JSON.parse(localStorage.getItem("fitos.today")||"{
 
 const save=()=>localStorage.setItem("fitos.today",JSON.stringify(state));
 function showToast(message){if(!toast)return;clearTimeout(toastTimer);toast.textContent=message;toast.classList.add("show");toastTimer=setTimeout(()=>toast.classList.remove("show"),2200)}
-function go(id){const target=document.getElementById(id)||document.getElementById("home");pages.forEach(page=>page.classList.toggle("active",page===target));document.querySelectorAll(".bottom-nav button").forEach(button=>button.classList.toggle("active",button.dataset.page===target.id));history.replaceState(null,"","#"+target.id);window.scrollTo({top:0,behavior:"smooth"})}
+function syncLiquidNav(id){const nav=document.querySelector(".os-nav");if(!nav)return;const items=[...nav.querySelectorAll("button[data-page]")];const index=Math.max(0,items.findIndex(button=>button.dataset.page===id));nav.style.setProperty("--nav-index",index)}
+function go(id){const target=document.getElementById(id)||document.getElementById("home");pages.forEach(page=>page.classList.toggle("active",page===target));document.querySelectorAll(".bottom-nav button").forEach(button=>button.classList.toggle("active",button.dataset.page===target.id));syncLiquidNav(target.id);history.replaceState(null,"","#"+target.id);window.scrollTo({top:0,behavior:"smooth"})}
 buttons.forEach(button=>button.addEventListener("click",()=>go(button.dataset.page)));
 
 function updateTopDate(){const now=new Date();const el=document.querySelector(".topbar .date");if(el)el.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short",year:"numeric"}).toUpperCase();const stateEl=document.getElementById("topState");if(stateEl)stateEl.textContent="BODY STATE · "+(state.workout?"TRAINED":"READY")}
@@ -88,6 +89,6 @@ document.getElementById("startWorkout")?.addEventListener("click",()=>{if(state.
 document.getElementById("coachSend")?.addEventListener("click",()=>showToast("Remote AI coach connection will be added in the AI layer."));
 document.querySelectorAll(".segmented button").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll(".segmented button").forEach(x=>x.classList.remove("active"));button.classList.add("active");showToast(button.textContent+" view selected.")}));
 
-updateTopDate();setTodayCopy();updateToday();syncTrainingUI();const osDate=document.getElementById("osDate");if(osDate){const now=new Date();osDate.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short"}).toUpperCase()}
+updateTopDate();setTodayCopy();updateToday();syncTrainingUI();syncLiquidNav(location.hash.slice(1)||"home");const osDate=document.getElementById("osDate");if(osDate){const now=new Date();osDate.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short"}).toUpperCase()}
 window.addEventListener("hashchange",()=>go(location.hash.slice(1)||"home"));
 go(location.hash.slice(1)||"home");
