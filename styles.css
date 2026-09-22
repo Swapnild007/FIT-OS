@@ -360,3 +360,436 @@ body{background:#fff;color:var(--fp-ink)}
 @media(prefers-reduced-motion:reduce){
   .fitos-dark .os-nav:before,.fitos-dark .os-nav:after,.fitos-dark .os-nav button span{transition:none!important}
 }
+
+
+/* ============================================================
+   FIT-OS SYSTEM THEME · ALL SCREENS
+   The Today dashboard is the visual source of truth.
+   ============================================================ */
+.fitos-dark .app-page,
+.fitos-dark .fp-page{
+  width:min(100%,760px);
+  margin:0 auto;
+  padding:28px 22px 122px;
+  color:#f7f7f8;
+}
+.fitos-dark .page-header{
+  min-height:64px;
+  display:grid!important;
+  grid-template-columns:42px 1fr 42px;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+  color:#fff!important;
+}
+.fitos-dark .page-header>div{text-align:left}
+.fitos-dark .page-header small{
+  display:block;
+  color:#777982!important;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+.fitos-dark .page-header h1{
+  margin:5px 0 0!important;
+  color:#f7f7f8!important;
+  font-size:34px!important;
+  line-height:1!important;
+  letter-spacing:-.055em;
+}
+.fitos-dark .back,
+.fitos-dark .header-more{
+  width:42px!important;
+  height:42px!important;
+  display:grid!important;
+  place-items:center!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:14px!important;
+  background:#18181d!important;
+  color:#aaa!important;
+  box-shadow:none!important;
+}
+.fitos-dark .section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:28px 2px 10px;
+}
+.fitos-dark .section-title h2{
+  margin:0;
+  color:#f7f7f8;
+  font-size:18px;
+  letter-spacing:-.035em;
+}
+.fitos-dark .section-title button{
+  border:0;
+  background:none;
+  color:#777982;
+}
+
+/* shared surface */
+.fitos-dark .explore-hero,
+.fitos-dark .plan-hero,
+.fitos-dark .coach-profile,
+.fitos-dark .library-feature,
+.fitos-dark .workout-detail-hero,
+.fitos-dark .score-card,
+.fitos-dark .nutrition-summary,
+.fitos-dark .profile-card,
+.fitos-dark .info-card,
+.fitos-dark .filter-grid,
+.fitos-dark .explore-list,
+.fitos-dark .library-tabs,
+.fitos-dark .stack-card,
+.fitos-dark .exercise-list,
+.fitos-dark .vitals-list,
+.fitos-dark .meal-list,
+.fitos-dark .settings-list{
+  background:#17171c!important;
+  color:#f7f7f8!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:22px;
+  box-shadow:0 18px 45px rgba(0,0,0,.16);
+}
+
+/* Explore */
+.fitos-dark .explore-hero,
+.fitos-dark .plan-hero{
+  padding:22px!important;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(255,120,152,.18),transparent 10rem),
+    linear-gradient(145deg,#242029,#17171c)!important;
+}
+.fitos-dark .explore-hero h2,
+.fitos-dark .plan-hero h2{
+  color:#fff!important;
+  font-size:30px;
+  letter-spacing:-.05em;
+}
+.fitos-dark .explore-hero p,
+.fitos-dark .plan-hero p{color:#85868f!important}
+.fitos-dark .filter-grid{
+  padding:8px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+  background:#141419!important;
+}
+.fitos-dark .filter-grid button,
+.fitos-dark .filter-scroll button{
+  border:1px solid rgba(255,255,255,.07)!important;
+  border-radius:14px!important;
+  background:#1c1c22!important;
+  color:#8c8d95!important;
+}
+.fitos-dark .filter-grid button.active,
+.fitos-dark .filter-scroll button.active{
+  background:linear-gradient(145deg,#ff7898,#806fff)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+}
+.fitos-dark .explore-list{
+  padding:8px!important;
+  background:#141419!important;
+}
+.fitos-dark .explore-workout{
+  background:#1b1b21!important;
+  border:1px solid rgba(255,255,255,.07)!important;
+  border-radius:18px!important;
+  color:#fff!important;
+}
+.fitos-dark .explore-workout b,
+.fitos-dark .explore-workout h3{color:#fff!important}
+.fitos-dark .explore-workout small,
+.fitos-dark .explore-workout p{color:#777982!important}
+.fitos-dark .explore-thumb{
+  border-radius:14px!important;
+  background:radial-gradient(circle at 70% 25%,#ff8d72,#653449 44%,#202029)!important;
+}
+
+/* Plans */
+.fitos-dark .plan-session{
+  display:grid;
+  grid-template-columns:78px 1fr 20px;
+  gap:13px;
+  align-items:center;
+  background:#18181d!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:20px!important;
+  color:#fff!important;
+}
+.fitos-dark .plan-session-art{
+  border-radius:15px!important;
+  background:linear-gradient(145deg,#ff7898,#5c3b53)!important;
+}
+.fitos-dark .plan-session b{color:#fff!important}
+.fitos-dark .plan-session small,
+.fitos-dark .plan-session em{color:#777982!important}
+.fitos-dark .week-strip button{
+  background:#17171c!important;
+  color:#85868e!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+}
+.fitos-dark .week-strip button.active{
+  background:linear-gradient(145deg,#ff7898,#7f70ff)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+}
+
+/* Coach */
+.fitos-dark .coach-profile{
+  padding:20px!important;
+  background:
+    radial-gradient(circle at 90% 0,rgba(128,112,255,.18),transparent 12rem),
+    #17171c!important;
+}
+.fitos-dark .coach-avatar{
+  background:linear-gradient(145deg,#ff7898,#7e70ff)!important;
+  color:#fff!important;
+  box-shadow:0 12px 30px rgba(126,112,255,.2);
+}
+.fitos-dark .coach-profile h2,
+.fitos-dark .coach-profile b{color:#fff!important}
+.fitos-dark .coach-profile p,
+.fitos-dark .coach-profile small{color:#7d7e87!important}
+.fitos-dark .coach-actions{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+}
+.fitos-dark .coach-actions button,
+.fitos-dark .suggestions button{
+  background:#18181d!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:16px!important;
+  color:#ddd!important;
+}
+.fitos-dark .coach-input{
+  background:#18181d!important;
+  border:1px solid rgba(255,255,255,.1)!important;
+  color:#fff!important;
+  border-radius:18px!important;
+}
+.fitos-dark .coach-input::placeholder{color:#65666f!important}
+
+/* Library */
+.fitos-dark .library-tabs{
+  padding:5px!important;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  background:#141419!important;
+}
+.fitos-dark .library-tabs button{
+  border:0!important;
+  border-radius:14px!important;
+  background:transparent!important;
+  color:#777982!important;
+}
+.fitos-dark .library-tabs button.active{
+  background:#24242b!important;
+  color:#fff!important;
+}
+.fitos-dark .library-feature{
+  min-height:180px;
+  padding:22px!important;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(255,120,152,.2),transparent 11rem),
+    linear-gradient(145deg,#242029,#17171c)!important;
+}
+.fitos-dark .library-feature h2,
+.fitos-dark .library-feature b{color:#fff!important}
+.fitos-dark .library-feature p,
+.fitos-dark .stack-card p{color:#777982!important}
+
+/* Training */
+.fitos-dark .workout-detail-hero{
+  overflow:hidden;
+  min-height:260px;
+  padding:24px!important;
+  background:
+    radial-gradient(circle at 78% 25%,rgba(255,120,152,.23),transparent 12rem),
+    linear-gradient(145deg,#29202a,#17171c)!important;
+}
+.fitos-dark .workout-detail-hero h2{font-size:34px;color:#fff!important;letter-spacing:-.055em}
+.fitos-dark .workout-detail-hero p{color:#85868e!important}
+.fitos-dark .detail-meta span{
+  background:#222229!important;
+  border:1px solid rgba(255,255,255,.07)!important;
+  color:#bbb!important;
+}
+.fitos-dark .exercise-list{
+  overflow:hidden;
+  padding:7px!important;
+  background:#141419!important;
+}
+.fitos-dark .train-exercise{
+  width:100%;
+  display:grid;
+  grid-template-columns:40px 1fr 18px;
+  gap:12px;
+  align-items:center;
+  text-align:left;
+  padding:14px!important;
+  background:#1a1a20!important;
+  border:1px solid rgba(255,255,255,.06)!important;
+  border-radius:16px!important;
+  color:#fff!important;
+}
+.fitos-dark .train-exercise>span{
+  color:#777982!important;
+  font-size:10px;
+  font-weight:800;
+}
+.fitos-dark .train-exercise b{color:#fff!important}
+.fitos-dark .train-exercise small,
+.fitos-dark .train-exercise em{color:#777982!important}
+.fitos-dark .info-card{padding:19px!important}
+.fitos-dark .info-card small{color:#9c91ff!important;font-weight:800}
+.fitos-dark .info-card p{color:#85868e!important}
+.fitos-dark .info-card b{color:#fff!important}
+
+/* Recovery */
+.fitos-dark .score-card{
+  padding:24px!important;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(155,140,255,.18),transparent 10rem),
+    #17171c!important;
+}
+.fitos-dark .score-card small{color:#9c91ff!important;font-weight:800}
+.fitos-dark .score-card strong{font-size:72px;color:#fff!important;letter-spacing:-.07em}
+.fitos-dark .score-card span{color:#777982!important}
+.fitos-dark .score-card p{color:#85868e!important}
+.fitos-dark .vitals-list{
+  overflow:hidden;
+  padding:7px!important;
+  background:#141419!important;
+}
+.fitos-dark .vitals-list button{
+  width:100%;
+  background:#1a1a20!important;
+  border:1px solid rgba(255,255,255,.06)!important;
+  border-radius:16px!important;
+  color:#fff!important;
+}
+.fitos-dark .vitals-list small,
+.fitos-dark .vitals-list p{color:#777982!important}
+.fitos-dark .vitals-list b{color:#fff!important}
+
+/* Nutrition */
+.fitos-dark .nutrition-summary{
+  padding:22px!important;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(200,232,91,.12),transparent 10rem),
+    #17171c!important;
+}
+.fitos-dark .nutrition-summary small{color:#c8e85b!important}
+.fitos-dark .nutrition-summary strong{color:#fff!important;font-size:34px}
+.fitos-dark .nutrition-summary em{color:#777982!important;font-style:normal;font-size:13px}
+.fitos-dark .nutrition-summary>b{color:#c8e85b!important}
+.fitos-dark .macro-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:10px;
+}
+.fitos-dark .macro-grid>div{
+  background:#17171c!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:18px!important;
+  padding:15px!important;
+}
+.fitos-dark .macro-grid b{color:#fff!important;font-size:22px}
+.fitos-dark .macro-grid small{color:#777982!important}
+.fitos-dark .meal-list{
+  overflow:hidden;
+  padding:7px!important;
+  background:#141419!important;
+}
+.fitos-dark .meal-list>div{
+  background:#1a1a20!important;
+  border:1px solid rgba(255,255,255,.06)!important;
+  border-radius:16px!important;
+}
+.fitos-dark .meal-list b,
+.fitos-dark .meal-list strong{color:#fff!important}
+.fitos-dark .meal-list small{color:#777982!important}
+
+/* Profile / settings */
+.fitos-dark .profile-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:20px!important;
+  background:
+    radial-gradient(circle at 90% 0,rgba(255,120,152,.14),transparent 10rem),
+    #17171c!important;
+}
+.fitos-dark .profile-photo{
+  width:64px!important;
+  height:64px!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:20px!important;
+  background:linear-gradient(145deg,#ff7898,#7e70ff)!important;
+  color:#fff!important;
+  font-size:24px!important;
+  font-weight:900!important;
+}
+.fitos-dark .profile-card h2{color:#fff!important}
+.fitos-dark .profile-card p,
+.fitos-dark .profile-card button{color:#777982!important}
+.fitos-dark .settings-list{
+  overflow:hidden;
+  padding:7px!important;
+  background:#141419!important;
+}
+.fitos-dark .settings-list button{
+  width:100%;
+  display:grid;
+  grid-template-columns:42px 1fr 16px;
+  gap:12px;
+  align-items:center;
+  text-align:left;
+  background:#1a1a20!important;
+  border:1px solid rgba(255,255,255,.06)!important;
+  border-radius:16px!important;
+  color:#fff!important;
+}
+.fitos-dark .settings-list button>span{
+  width:38px;height:38px;
+  display:grid;place-items:center;
+  border-radius:12px;
+  background:#24242b;
+  color:#ff7898;
+}
+.fitos-dark .settings-list b{color:#fff!important}
+.fitos-dark .settings-list small,
+.fitos-dark .settings-list i{color:#777982!important}
+
+/* all dialogs */
+.fitos-dark .modal-backdrop,
+.fitos-dark .train-modal-backdrop{
+  background:rgba(0,0,0,.72)!important;
+  backdrop-filter:blur(14px);
+}
+.fitos-dark .today-modal,
+.fitos-dark .exercise-modal{
+  background:#18181d!important;
+  border:1px solid rgba(255,255,255,.1)!important;
+  color:#fff!important;
+  box-shadow:0 30px 80px rgba(0,0,0,.55)!important;
+}
+.fitos-dark .modal-close{
+  background:#24242b!important;
+  color:#aaa!important;
+  border:1px solid rgba(255,255,255,.07)!important;
+}
+
+/* mobile */
+@media(max-width:600px){
+  .fitos-dark .app-page,.fitos-dark .fp-page{padding:20px 16px 112px}
+  .fitos-dark .page-header h1{font-size:31px!important}
+  .fitos-dark .filter-grid{grid-template-columns:repeat(2,1fr)}
+  .fitos-dark .macro-grid{grid-template-columns:1fr 1fr 1fr}
+}
