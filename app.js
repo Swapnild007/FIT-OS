@@ -11,7 +11,7 @@ function showToast(message){if(!toast)return;clearTimeout(toastTimer);toast.text
 function go(id){const target=document.getElementById(id)||document.getElementById("home");pages.forEach(page=>page.classList.toggle("active",page===target));document.querySelectorAll(".bottom-nav button").forEach(button=>button.classList.toggle("active",button.dataset.page===target.id));history.replaceState(null,"","#"+target.id);window.scrollTo({top:0,behavior:"smooth"})}
 buttons.forEach(button=>button.addEventListener("click",()=>go(button.dataset.page)));
 
-function updateTopDate(){const now=new Date();const el=document.querySelector(".topbar .date");if(el)el.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short",year:"numeric"}).toUpperCase()}
+function updateTopDate(){const now=new Date();const el=document.querySelector(".topbar .date");if(el)el.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short",year:"numeric"}).toUpperCase();const stateEl=document.getElementById("topState");if(stateEl)stateEl.textContent="BODY STATE · "+(state.workout?"TRAINED":"READY")}
 function updateToday(){
   const water=Math.min(3,Math.max(0,state.water)),steps=Math.max(0,state.steps),cal=Math.max(0,state.calories),protein=Math.max(0,state.protein);
   const completed=(state.workout?1:0)+(steps>=8000?1:0)+(protein>=150?1:0)+(state.checkin?1:0),pct=Math.round(completed/4*100);
