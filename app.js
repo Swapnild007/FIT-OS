@@ -144,6 +144,7 @@ document.querySelectorAll(".segmented button").forEach(button=>button.addEventLi
     if(empty)empty.classList.toggle("show",visible===0);
   });
   refresh();
-})();\nupdateTopDate();setTodayCopy();updateToday();syncTrainingUI();syncLiquidNav(location.hash.slice(1)||"home");const osDate=document.getElementById("osDate");if(osDate){const now=new Date();osDate.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short"}).toUpperCase()}
+})();
+updateTopDate();setTodayCopy();updateToday();syncTrainingUI();syncLiquidNav(location.hash.slice(1)||"home");const osDate=document.getElementById("osDate");if(osDate){const now=new Date();osDate.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short"}).toUpperCase()}
 window.addEventListener("hashchange",()=>go(location.hash.slice(1)||"home"));
 go(location.hash.slice(1)||"home");
