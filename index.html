@@ -3,377 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#101013">
+<meta name="theme-color" content="#09090b">
 <meta name="color-scheme" content="dark">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="FIT-OS — personal fitness intelligence.">
+<meta name="description" content="FIT-OS — personal fitness operating system">
 <link rel="manifest" href="./manifest.json">
-<link rel="stylesheet" href="./styles.css?v=20260922-15">
 <title>FIT-OS</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#09090b;color:#f4f4f6;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}button,input,select{font:inherit;color:inherit}button{border:0;background:none;cursor:pointer}input,select{outline:0}.shell{min-height:100vh;background:radial-gradient(circle at 50% -12%,#242429 0,transparent 32%),#09090b}.top{position:fixed;z-index:20;top:0;left:50%;transform:translateX(-50%);width:min(920px,100%);height:68px;padding:12px 16px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:linear-gradient(#09090bf2,#09090bba,transparent);backdrop-filter:blur(18px)}.brand{justify-self:start;display:flex;gap:9px;align-items:center}.brand i{font-style:normal;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#f4f4f6;color:#09090b;font-weight:900}.brand b{font-size:12px;letter-spacing:.18em}.route{text-align:center}.route small{display:block;font-size:8px;letter-spacing:.16em;color:#707078}.route b{font-size:11px}.avatar{justify-self:end;width:34px;height:34px;border-radius:50%;border:1px solid #303037;background:#151519}.screen{display:none;min-height:100vh;padding:86px 0 108px}.screen.on{display:block}.wrap{width:min(920px,100%);margin:auto;padding:0 18px}.head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}.head h1{margin:4px 0 0;font-size:37px;letter-spacing:-.05em}.eyebrow,.section small,.head small,.label{font-size:8px;letter-spacing:.16em;color:#707078}.icon,.back{width:42px;height:42px;border-radius:14px;border:1px solid #29292f;background:#111114}.back{font-size:26px}.glass{border:1px solid #2b2b31;border-radius:27px;background:linear-gradient(145deg,#ffffff10,#ffffff03);box-shadow:0 22px 70px #0005,inset 0 1px #ffffff08}.hero{padding:22px}.hero h2{margin:12px 0 8px;font-size:34px;line-height:1;letter-spacing:-.05em}.hero p{margin:0;color:#85858d;font-size:12px;line-height:1.6}.hero-meta{display:flex;justify-content:space-between;font-size:9px;color:#777;letter-spacing:.14em}.activity{display:flex;justify-content:space-between;align-items:center;padding:34px 0 20px}.activity strong{display:block;font-size:58px;letter-spacing:-.07em}.activity span{display:block;margin-top:7px;color:#707078;font-size:8px;letter-spacing:.15em}.ring{width:122px;height:122px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#eee 0 80%,#29292e 80%);position:relative}.ring:after{content:"";position:absolute;inset:10px;border-radius:50%;background:#0d0d10}.ring b,.ring small{position:relative;z-index:1}.ring b{font-size:30px}.metrics,.stats,.profile-grid,.signals{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:10px 0}.card,.metric,.stat,.profile-grid button,.signal{border:1px solid #25252a;border-radius:18px;background:#111114;padding:15px;text-align:left}.metric{min-height:112px}.metric small,.stat small,.profile-grid small,.signal small{display:block;color:#707078;font-size:8px;letter-spacing:.12em}.metric strong,.stat strong,.profile-grid strong,.signal strong{display:block;margin:17px 0 4px;font-size:21px}.metric span,.stat span,.profile-grid span,.signal span{font-size:9px;color:#696970}.section{margin-top:28px}.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:11px}.section-title h2{margin:4px 0 0;font-size:21px;letter-spacing:-.03em}.section-title button{font-size:10px;color:#aaa}.recovery,.row,.feature,.insight,.meal,.setting,.coach-action,.exercise,.library-card{width:100%;border:1px solid #25252a;border-radius:19px;background:#111114}.recovery{display:flex;justify-content:space-between;gap:15px;padding:16px;align-items:center}.recovery b{white-space:nowrap}.recovery p{margin:5px 0 0;color:#777;font-size:10px;line-height:1.5}.chip{padding:9px 11px;border-radius:11px;background:#1d1d21;font-size:10px}.bars{height:140px;display:flex;align-items:end;gap:10px;padding:10px 3px 23px;border-bottom:1px solid #242429}.bars i{position:relative;flex:1;max-width:58px;min-height:8px;background:linear-gradient(#ddd,#666);border-radius:7px 7px 2px 2px}.bars i.today{background:#f4f4f6}.bars i b{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);font-size:8px;color:#707078}.feature,.insight,.row,.meal,.setting,.coach-action,.exercise{display:flex;align-items:center;gap:13px;padding:12px;text-align:left}.art{width:62px;height:62px;flex:0 0 62px;border-radius:17px;background:linear-gradient(145deg,#29292f,#111114);display:grid;place-items:center;font-weight:900;font-size:10px;letter-spacing:.12em}.feature div,.insight div,.row div,.meal div,.setting div,.coach-action div,.exercise div{flex:1}.feature h3,.insight h3,.row h3,.meal h3,.setting h3,.exercise h3{margin:4px 0;font-size:14px}.feature p,.insight p,.row p,.meal p,.setting p,.exercise p{margin:0;color:#7e7e86;font-size:10px}.feature em,.row small,.meal small,.setting small,.exercise small{display:block;color:#707078;font-size:8px;letter-spacing:.1em;font-style:normal;margin-top:6px}.feature>strong,.row>strong,.meal>strong,.setting>em,.coach-action>strong,.exercise>strong{font-size:21px;color:#666}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.mini-grid>div{padding:15px;border:1px solid #25252a;border-radius:17px;background:#111114}.mini-grid strong{display:block;font-size:20px;margin:14px 0 3px}.mini-grid span{font-size:9px;color:#707078}.search{height:53px;display:flex;align-items:center;gap:9px;padding:0 13px;border:1px solid #303037;border-radius:16px;background:#0e0e11;margin:17px 0}.search span{font-size:21px;color:#666}.search input{flex:1;min-width:0;background:none;border:0;font-size:12px}.search kbd{font-size:8px;color:#666;border:1px solid #2b2b30;padding:4px 6px;border-radius:6px}.filter{margin:23px 0}.label{display:flex;justify-content:space-between;margin-bottom:9px}.chips{display:flex;gap:7px;flex-wrap:wrap}.chips button,.tabs button,.suggestions button{padding:9px 12px;border:1px solid #29292f;background:#111114;border-radius:999px;font-size:10px;color:#85858d}.chips button.active,.tabs button.active{background:#f4f4f6;color:#09090b}.focus{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.focus button{min-height:82px;text-align:left;padding:12px;border:1px solid #29292f;background:#111114;border-radius:16px}.focus button.active{background:#1a1a1e;border-color:#ddd}.focus b{display:block;font-size:12px}.focus small{display:block;margin-top:6px;color:#707078;font-size:8px}.refine{display:none;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.refine.open{display:grid}.refine label{font-size:8px;color:#707078}.refine select{display:block;width:100%;margin-top:6px;padding:10px;border:1px solid #29292f;background:#111114;border-radius:11px;font-size:9px}.refine-toggle{width:100%;padding:14px 0;border-bottom:1px solid #242429;color:#aaa;text-align:left;font-size:10px}.results{display:grid;gap:8px}.result{display:flex;gap:12px;align-items:center;padding:10px;border:1px solid #25252a;border-radius:18px;background:#101013;text-align:left}.result[hidden]{display:none}.result .art{width:58px;height:58px;flex-basis:58px}.result h3{margin:4px 0;font-size:13px}.result p{margin:0;color:#808087;font-size:9px}.result small,.result em{font-size:8px;color:#707078;font-style:normal;letter-spacing:.08em}.result em{display:block;margin-top:6px}.result>b{font-size:21px;color:#666}.empty{display:none;text-align:center;padding:40px}.empty.show{display:block}.empty p{color:#777;font-size:11px}.empty button,.primary,.secondary{padding:11px 14px;border-radius:12px;font-size:10px}.empty button,.secondary{border:1px solid #303037;background:#151519}.primary{background:#f4f4f6;color:#09090b;font-weight:800}.schedule{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-bottom:25px}.schedule button{padding:11px 4px;border:1px solid #25252a;border-radius:14px;background:#111114}.schedule .selected{background:#f4f4f6;color:#09090b}.schedule small,.schedule span{display:block;font-size:7px;color:#707078}.schedule b{display:block;margin:7px 0;font-size:15px}.schedule .selected small,.schedule .selected span{color:#444}.coach-hero,.profile-hero{display:flex;gap:15px;align-items:center}.coach-mark,.avatar-lg{width:54px;height:54px;flex:0 0 54px;border-radius:17px;display:grid;place-items:center;background:#f4f4f6;color:#09090b;font-weight:900;font-size:22px}.coach-actions{display:grid;gap:8px}.coach-action{padding:13px}.coach-action>span{width:36px;height:36px;border-radius:11px;background:#1d1d21;display:grid;place-items:center}.coach-action small{display:block;color:#707078;font-size:9px;margin-top:4px}.chat{display:grid;gap:7px;margin:18px 0}.bubble{max-width:86%;padding:12px 14px;border-radius:15px;background:#17171b;color:#aaa;font-size:10px;line-height:1.5}.bubble.user{justify-self:end;background:#f4f4f6;color:#09090b}.composer{display:flex;gap:7px;padding:7px;border:1px solid #2a2a30;border-radius:16px;background:#111114}.composer input{flex:1;border:0;background:none;padding:9px;font-size:11px}.composer button{width:38px;height:38px;border-radius:11px;background:#f4f4f6;color:#09090b}.suggestions{display:flex;gap:7px;overflow:auto;margin-top:9px}.library-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.library-card{padding:16px;text-align:left}.library-card b{display:block;font-size:13px;margin-bottom:6px}.library-card span{font-size:9px;color:#777;line-height:1.5}.session-actions{display:flex;gap:8px;margin:14px 0}.session-actions>*{flex:1}.progress-line{height:5px;border-radius:99px;background:#29292f;overflow:hidden;margin:10px 0 18px}.progress-line i{display:block;height:100%;width:0;background:#eee}.readiness strong{font-size:68px;letter-spacing:-.08em}.readiness span{color:#666}.signals{grid-template-columns:repeat(4,1fr)}.signals strong{font-size:15px}.muscles{display:grid;gap:11px}.muscles div{display:grid;grid-template-columns:85px 1fr 42px;gap:8px;align-items:center}.muscles span,.muscles b{font-size:9px;color:#888}.muscles b{text-align:right}.muscles i{height:6px;background:#29292f;border-radius:99px;overflow:hidden}.muscles i b{display:block;height:100%;background:#ddd}.macro{display:grid;gap:10px;margin-top:18px}.macro div{display:grid;grid-template-columns:55px 1fr 85px;gap:8px;align-items:center;font-size:8px}.macro i{height:6px;display:block;background:#ddd;border-radius:99px}.macro b{height:6px;background:#29292f;border-radius:99px;overflow:hidden}.macro strong{font-size:8px;color:#777;text-align:right}.tabs{display:flex;gap:7px;overflow:auto;margin-bottom:15px}.trend{height:135px;display:flex;align-items:end;gap:8px;padding:10px 0 20px;border-bottom:1px solid #25252a}.trend i{flex:1;max-width:55px;background:linear-gradient(#ddd,#666);border-radius:6px 6px 0 0}.timeline{display:grid}.timeline div{display:grid;grid-template-columns:72px 1fr auto;gap:8px;padding:14px 0;border-bottom:1px solid #242429}.timeline b,.timeline em{font-size:8px;color:#707078}.timeline em{font-style:normal}.profile-grid{grid-template-columns:repeat(3,1fr);margin:20px 0}.model{display:grid;border:1px solid #25252a;border-radius:17px;overflow:hidden}.model div{display:flex;justify-content:space-between;padding:13px;border-bottom:1px solid #25252a}.model div:last-child{border:0}.model span{font-size:10px;color:#888}.model b{font-size:9px}.settings-group{margin:0 0 25px}.settings-group>small{display:block;margin-bottom:8px}.setting{margin-bottom:7px}.setting>span{width:34px;height:34px;border-radius:10px;background:#1d1d21;display:grid;place-items:center}.setting small{display:block}.toggle{width:36px;height:21px;border-radius:99px;background:#29292f;position:relative}.toggle:after{content:"";position:absolute;width:15px;height:15px;top:3px;left:3px;border-radius:50%;background:#aaa}.toggle.on{background:#ddd}.toggle.on:after{left:18px;background:#111}.danger{color:#d0a0a0}.nav{position:fixed;z-index:50;bottom:17px;left:50%;transform:translateX(-50%);width:min(430px,calc(100% - 28px));height:65px;padding:7px;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #303036;border-radius:24px;background:#111114dd;backdrop-filter:blur(24px);box-shadow:0 22px 60px #0008}.nav-indicator{position:absolute;top:7px;bottom:7px;left:7px;width:calc((100% - 14px)/5);border-radius:18px;background:linear-gradient(#f4f4f6,#bbb);transition:transform .35s cubic-bezier(.2,.9,.2,1)}.nav button{position:relative;z-index:1;color:#707078;display:grid;place-items:center;gap:2px;border-radius:18px}.nav button.active{color:#09090b}.nav button span{font-size:16px}.nav button b{font-size:8px}.toast{position:fixed;z-index:100;left:50%;bottom:96px;transform:translate(-50%,12px);opacity:0;pointer-events:none;padding:10px 14px;border:1px solid #33333a;border-radius:12px;background:#18181c;font-size:10px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.modal{position:fixed;z-index:90;inset:0;display:none;align-items:end;background:#000a;backdrop-filter:blur(8px)}.modal.open{display:flex}.sheet{position:relative;width:min(700px,100%);max-height:88vh;overflow:auto;padding:24px 18px 32px;border:1px solid #303037;border-radius:27px 27px 0 0;background:#101013}.close{position:absolute;right:13px;top:12px;width:35px;height:35px;border-radius:11px;background:#1a1a1e;font-size:21px}.sheet h2{font-size:25px;margin:12px 0 7px}.sheet p{font-size:11px;line-height:1.6;color:#85858d}.sets{display:grid;grid-template-columns:42px repeat(3,1fr);gap:6px;margin:15px 0}.sets>*{min-width:0;padding:9px;border:1px solid #29292f;border-radius:9px;background:#151519;font-size:9px}.action{width:100%;padding:12px;border-radius:12px;background:#f4f4f6;color:#09090b;font-weight:800;font-size:10px}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.check-grid button{padding:12px;border:1px solid #29292f;border-radius:12px;background:#151519;text-align:left;font-size:10px}@media(max-width:720px){.wrap{padding:0 14px}.top{height:62px}.screen{padding-top:76px}.metrics{grid-template-columns:repeat(2,1fr)}.focus{grid-template-columns:repeat(2,1fr)}.refine{grid-template-columns:1fr}.signals{grid-template-columns:repeat(2,1fr)}.profile-grid{grid-template-columns:repeat(2,1fr)}.mini-grid{grid-template-columns:1fr}.schedule{overflow:auto;grid-template-columns:repeat(7,70px)}.activity strong{font-size:49px}.ring{width:105px;height:105px}.hero h2{font-size:30px}.timeline div{grid-template-columns:60px 1fr}.timeline em{display:none}}
+</style>
 </head>
-<body class="fitos-dark">
-<div class="app-shell">
+<body>
+<div class="shell">
+<header class="top"><button class="brand" data-page="home"><i>F</i><b>FIT-OS</b></button><div class="route"><small id="routeSmall">PERSONAL FITNESS OS</small><b id="routeTitle">Today</b></div><button class="avatar" data-page="profile">S</button></header>
 
-<main id="app">
+<main>
+<section class="screen on" id="home"><div class="wrap">
+<div class="head"><div><small>TUE · 22 SEP</small><h1>Today</h1></div><button class="icon" data-page="coach">✦</button></div>
+<section class="hero glass"><div class="hero-meta"><span>FIT-OS ACTIVITY · PROTOTYPE DATA</span><b>80%</b></div><div class="activity"><div><strong>8,240</strong><span>STEPS TODAY</span><p>1,760 steps from today's movement target.</p></div><div class="ring"><b>80</b><small>%</small></div></div></section>
+<div class="metrics"><button class="metric" data-page="recovery"><small>♥ HEART</small><strong>72</strong><span>BPM AVG · DEMO</span></button><button class="metric" data-page="recovery"><small>◔ SLEEP</small><strong>7h 32m</strong><span>RECENT NIGHT · DEMO</span></button><button class="metric" data-page="nutrition"><small>● FUEL</small><strong id="homeKcal">1,840</strong><span>KCAL IN · DEMO</span></button><button class="metric" data-action="water"><small>◆ WATER</small><strong id="water">2.4</strong><span>L INTAKE · LOCAL</span></button></div>
+<button class="recovery" data-page="recovery"><div><small class="eyebrow">RECOVERY CONTEXT</small><b>Good context for planned strength</b><p>Available prototype signals support today's planned session.</p></div><span class="chip">82% · EST.</span></button>
+<div class="section"><div class="section-title"><div><small>THIS WEEK</small><h2>Activity</h2></div><button data-page="progress">View</button></div><div class="bars"><i style="height:42%"><b>M</b></i><i class="today" style="height:67%"><b>T</b></i><i style="height:88%"><b>W</b></i><i style="height:54%"><b>T</b></i><i style="height:76%"><b>F</b></i><i style="height:48%"><b>S</b></i><i style="height:31%"><b>S</b></i></div></div>
+<div class="section"><div class="section-title"><div><small>RECOMMENDED NEXT</small><h2>Today's training</h2></div><button data-page="train">Open</button></div><button class="feature"><span class="art">FIT</span><div><small>STRENGTH · 48 MIN</small><h3>Upper Body Strength</h3><p>Chest · Back · Shoulders · Triceps</p><em>Recovery-informed · Moderate</em></div><strong>›</strong></button></div>
+<div class="section"><div class="section-title"><div><small>PERSONAL INTELLIGENCE</small><h2>FIT-OS insight</h2></div><button data-page="coach">Coach</button></div><button class="insight"><span class="art">✦</span><div><h3>Train with quality today.</h3><p>Your current context supports the planned session. What you log shapes the next recommendation.</p></div><strong>›</strong></button></div>
+<div class="section"><div class="section-title"><div><small>PROGRESS</small><h2>What is moving</h2></div><button data-page="progress">See all</button></div><div class="mini-grid"><div><small>CONSISTENCY</small><strong>4/5</strong><span>sessions</span></div><div><small>ACTIVE TIME</small><strong>186</strong><span>min</span></div><div><small>STRENGTH</small><strong>+8%</strong><span>trend</span></div></div></div>
+</div></section>
 
-<section class="screen active" id="home">
-  <div class="os-dashboard">
-    <header class="os-header">
-      <div>
-        <div class="os-brand"><span class="os-brand-mark">F</span><span>FIT-OS</span></div>
-        <h1>Today</h1>
-        <p id="osDate">TUE · 22 SEP</p>
-      </div>
-      <button type="button" class="os-profile" data-page="more" aria-label="Profile">S</button>
-    </header>
+<section class="screen" id="explore"><div class="wrap"><div class="head"><button class="back" data-page="train">‹</button><div><small>DISCOVERY</small><h1>Explore</h1></div><button class="icon" data-page="coach">✦</button></div>
+<section class="hero glass"><small class="eyebrow">FIND YOUR NEXT SESSION</small><h2>Train for what<br>you need today.</h2><p>Training, recovery and nutrition options, refined by real constraints.</p><label class="search"><span>⌕</span><input id="search" placeholder="Search workouts, goals or muscles"><kbd>⌘ K</kbd></label></section>
+<div class="filter"><div class="label"><span>WHERE YOU TRAIN</span><b>01</b></div><div class="chips" data-group="where"><button class="active" data-value="all">All</button><button data-value="gym">Gym</button><button data-value="home">Home</button><button data-value="none">No equipment</button><button data-value="outdoor">Outdoor</button></div></div>
+<div class="filter"><div class="label"><span>WHAT YOU WANT TO TRAIN</span><b>02</b></div><div class="chips" data-group="goal"><button class="active" data-value="all">All</button><button data-value="strength">Strength</button><button data-value="muscle">Muscle building</button><button data-value="fatloss">Fat loss</button><button data-value="hiit">HIIT</button><button data-value="cardio">Cardio</button><button data-value="functional">Functional</button><button data-value="mobility">Mobility</button></div></div>
+<div class="filter"><div class="label"><span>TRAINING FOCUS</span><b>03</b></div><div class="focus" data-group="focus"><button class="active" data-value="all"><b>Full range</b><small>Any focus</small></button><button data-value="full"><b>Full body</b><small>Complete</small></button><button data-value="chest"><b>Chest</b><small>Press · Push</small></button><button data-value="back"><b>Back</b><small>Pull · Row</small></button><button data-value="triceps"><b>Triceps</b><small>Extension</small></button><button data-value="biceps"><b>Biceps</b><small>Curl · Pull</small></button><button data-value="legs"><b>Legs</b><small>Squat · Hinge</small></button><button data-value="abs"><b>Abs</b><small>Stability</small></button></div></div>
+<button class="refine-toggle" id="refineToggle">Refine duration, level and equipment <span>⌄</span></button><div class="refine" id="refine"><label>Duration<select data-refine="duration"><option value="all">Any</option><option value="short">≤20 min</option><option value="medium">21–45 min</option><option value="long">46+ min</option></select></label><label>Experience<select data-refine="level"><option value="all">Any</option><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option></select></label><label>Equipment<select data-refine="equipment"><option value="all">Any</option><option value="none">None</option><option value="dumbbell">Dumbbell</option><option value="barbell">Barbell</option><option value="machine">Machine</option></select></label></div>
+<div class="section-title section"><div><small>DISCOVERY RESULTS</small><h2><span id="count">12</span> options</h2></div><button id="clear">Clear</button></div>
+<div class="results" id="results">
+<button class="result" data-page="train" data-where="gym" data-goal="strength muscle" data-focus="chest" data-duration="long" data-level="intermediate" data-equipment="barbell dumbbell machine" data-search="upper body strength chest shoulders triceps gym"><span class="art">01</span><div><small>GYM · 48 MIN · MODERATE</small><h3>Upper Body Strength</h3><p>Chest · Shoulders · Triceps</p><em>Progressive · Guided</em></div><b>›</b></button>
+<button class="result" data-page="train" data-where="home none" data-goal="hiit fatloss functional" data-focus="full" data-duration="short" data-level="beginner intermediate" data-equipment="none" data-search="home hiit fat loss full body no equipment"><span class="art">02</span><div><small>HOME · 20 MIN · HIGH</small><h3>Move With Power</h3><p>Full body · No equipment</p><em>Intervals · 6 rounds</em></div><b>›</b></button>
+<button class="result" data-page="recovery" data-where="home none" data-goal="mobility" data-focus="full" data-duration="short" data-level="beginner" data-equipment="none" data-search="mobility recovery cooldown breathing"><span class="art">03</span><div><small>HOME · 10 MIN · EASY</small><h3>Mindful Cooldown</h3><p>Full body · Breathing</p><em>Reset · Mobility</em></div><b>›</b></button>
+<button class="result" data-page="train" data-where="gym" data-goal="strength muscle" data-focus="back" data-duration="medium" data-level="intermediate" data-equipment="cable machine dumbbell" data-search="back builder pull row biceps gym"><span class="art">04</span><div><small>GYM · 42 MIN · MODERATE</small><h3>Back Builder</h3><p>Back · Biceps · Rear delts</p><em>Progressive · Pull focus</em></div><b>›</b></button>
+<button class="result" data-page="train" data-where="gym home" data-goal="strength muscle functional" data-focus="legs" data-duration="medium" data-level="beginner intermediate" data-equipment="none dumbbell barbell" data-search="legs lower body squat hinge glutes"><span class="art">05</span><div><small>GYM / HOME · 35 MIN</small><h3>Lower Body Foundation</h3><p>Legs · Glutes · Core</p><em>Form first</em></div><b>›</b></button>
+<button class="result" data-page="train" data-where="outdoor none" data-goal="cardio fatloss functional" data-focus="full" data-duration="medium" data-level="beginner intermediate" data-equipment="none" data-search="outdoor cardio fat loss walking running"><span class="art">06</span><div><small>OUTDOOR · 30 MIN · STEADY</small><h3>Outdoor Conditioning</h3><p>Full body · No equipment</p><em>Walk / run</em></div><b>›</b></button>
+<button class="result" data-page="train" data-where="gym home" data-goal="strength muscle" data-focus="triceps" data-duration="medium" data-level="beginner intermediate" data-equipment="dumbbell cable" data-search="triceps arms extension push"><span class="art">07</span><div><small>GYM / HOME · 28 MIN</small><h3>Triceps Builder</h3><p>Triceps · Chest</p><em>Push focus</em></div><b>›</b></button>
+<button class="result" data-page="train" data-where="gym home" data-goal="strength muscle" data-focus="biceps" data-duration="medium" data-level="beginner intermediate" data-equipment="dumbbell cable" data-search="biceps arms curl pull"><span class="art">08</span><div><small>GYM / HOME · 28 MIN</small><h3>Biceps Builder</h3><p>Biceps · Back</p><em>Pull focus</em></div><b>›</b></button>
+<button class="result" data-page="train" data-where="home none" data-goal="strength functional" data-focus="abs" data-duration="short" data-level="beginner" data-equipment="none" data-search="abs core abdominal stability"><span class="art">09</span><div><small>HOME · 15 MIN</small><h3>Core Foundation</h3><p>Abs · Core stability</p><em>No equipment</em></div><b>›</b></button>
+<button class="result" data-page="nutrition" data-where="home" data-goal="fatloss" data-focus="all" data-duration="short" data-level="all" data-equipment="none" data-search="indian fat loss meal plan high protein"><span class="art">N1</span><div><small>NUTRITION · INDIAN · FAT LOSS</small><h3>Indian Fat-Loss Day</h3><p>Protein-aware · Balanced</p><em>Meals · Snacks</em></div><b>›</b></button>
+<button class="result" data-page="nutrition" data-where="home gym" data-goal="muscle strength" data-focus="all" data-duration="short" data-level="all" data-equipment="none" data-search="vegetarian high protein indian meals muscle"><span class="art">N2</span><div><small>NUTRITION · HIGH PROTEIN · VEGETARIAN</small><h3>High-Protein Indian Fuel</h3><p>Vegetarian · Training support</p><em>Targets · Swaps</em></div><b>›</b></button>
+<button class="result" data-page="nutrition" data-where="home" data-goal="strength muscle" data-focus="all" data-duration="short" data-level="all" data-equipment="none" data-search="post workout protein carbohydrate recovery"><span class="art">N3</span><div><small>POST-WORKOUT · RECOVERY</small><h3>Recovery Fuel</h3><p>Protein · Carbohydrate · Hydration</p><em>Next meal guidance</em></div><b>›</b></button>
+</div><div class="empty" id="empty"><h3>No options match</h3><p>Change a filter or clear the search.</p><button id="emptyClear">Clear filters</button></div>
+</div></section>
 
-    <section class="os-hero">
-      <div class="os-hero-top"><span>FIT-OS ACTIVITY</span><b>GOAL 80%</b></div>
-      <div class="os-steps"><strong>8,240</strong><span>STEPS TODAY</span></div>
-      <div class="os-ring" aria-label="Activity goal 80 percent"><i></i></div>
-      <p>You're 1,760 steps from today's movement target.</p>
-    </section>
+<section class="screen" id="plans"><div class="wrap"><div class="head"><button class="back" data-page="home">‹</button><div><small>PERSONAL PROGRAMMING</small><h1>Plans</h1></div><button class="icon" data-page="profile">⚙</button></div>
+<section class="hero glass"><small class="eyebrow">ADAPTIVE WEEK</small><h2>Build consistency,<br>not a perfect week.</h2><p>Training intent stays stable while details can adapt around your actual time, recovery and completed work.</p><button class="primary" data-page="train">Start today's session ›</button></section>
+<div class="section-title"><div><small>WEEK OF 21 SEP</small><h2>Schedule</h2></div><button id="customize">Customize</button></div><div class="schedule"><button><small>MON</small><b>21</b><span>Rest</span></button><button class="selected"><small>TUE</small><b>22</b><span>Train</span></button><button><small>WED</small><b>23</b><span>Recover</span></button><button><small>THU</small><b>24</b><span>Train</span></button><button><small>FRI</small><b>25</b><span>Rest</span></button><button><small>SAT</small><b>26</b><span>Move</span></button><button><small>SUN</small><b>27</b><span>Rest</span></button></div>
+<div class="section-title"><div><small>TODAY</small><h2>Session path</h2></div><span>48 min</span></div><button class="row" data-page="train"><span class="art">01</span><div><small>STRENGTH · MODERATE</small><h3>Upper Body Strength</h3><p>Chest · Back · Shoulders · Triceps</p></div><strong>›</strong></button><button class="row" data-page="recovery"><span class="art">02</span><div><small>RECOVERY · 10 MIN</small><h3>Mindful Cooldown</h3><p>Breathing · Mobility</p></div><strong>›</strong></button><div class="card" style="margin-top:12px"><small class="eyebrow">PLAN LOGIC</small><h3>Intent stays stable. Details can adapt.</h3><p>Time, equipment, recovery and recent workload are constraints the engine can use.</p></div>
+</div></section>
 
-    <section class="os-metric-grid">
-      <button type="button" class="os-metric heart" data-page="recovery"><span>♥ HEART</span><strong>72</strong><small>BPM AVG</small></button>
-      <button type="button" class="os-metric sleep" data-page="recovery"><span>◔ SLEEP</span><strong>88</strong><small>SCORE</small></button>
-      <button type="button" class="os-metric fuel" data-page="nutrition"><span>● FUEL</span><strong>1,840</strong><small>KCAL IN</small></button>
-      <button type="button" class="os-metric water" data-action="hydration"><span>◆ WATER</span><strong id="osWater">2.4</strong><small>L INTAKE</small></button>
-    </section>
+<section class="screen" id="coach"><div class="wrap"><div class="head"><button class="back" data-page="home">‹</button><div><small>PERSONAL INTELLIGENCE</small><h1>Coach</h1></div><button class="icon" data-page="profile">⚙</button></div>
+<section class="hero glass coach-hero"><span class="coach-mark">✦</span><div><small class="eyebrow">FIT-OS COACH</small><h2>What should I do today?</h2><p>Ask about training, recovery, nutrition, progress or why a recommendation changed.</p></div></section>
+<div class="coach-actions"><button class="coach-action" data-page="train"><span>↗</span><div><b>Start today's workout</b><small>Upper Body Strength · 48 min</small></div><strong>›</strong></button><button class="coach-action" data-page="recovery"><span>◔</span><div><b>Explain my recovery</b><small>Sleep · soreness · recent load</small></div><strong>›</strong></button><button class="coach-action" data-page="nutrition"><span>ϟ</span><div><b>Review nutrition</b><small>Calories · protein · meal timing</small></div><strong>›</strong></button><button class="coach-action" data-page="progress"><span>↗</span><div><b>Review my progress</b><small>Performance · body · consistency</small></div><strong>›</strong></button></div>
+<div class="chat" id="chat"><div class="bubble">FIT-OS is ready. Ask a specific question using the context currently available.</div></div><div class="composer"><input id="coachInput" placeholder="Ask FIT-OS anything…"><button id="coachSend">↑</button></div><div class="suggestions"><button>Why this workout?</button><button>How is my recovery?</button><button>What should I eat?</button><button>Plan my week</button></div>
+</div></section>
 
-    <section class="os-recovery">
-      <div class="os-recovery-head"><span>✦ RECOVERY</span><strong>82%</strong></div>
-      <div class="os-recovery-bar"><i></i><i></i><i></i><i></i><i></i></div>
-      <p>Good context for today's planned strength session.</p>
-    </section>
+<section class="screen" id="library"><div class="wrap"><div class="head"><button class="back" data-page="home">‹</button><div><small>EXERCISE LIBRARY</small><h1>Library</h1></div><button class="icon" data-page="explore">⌕</button></div><label class="search"><span>⌕</span><input id="librarySearch" placeholder="Search exercises or movements"></label><div class="library-grid" id="libraryGrid"></div><div class="section"><div class="section-title"><div><small>TOOLS</small><h2>Assessments</h2></div></div><button class="row" data-action="assessment"><span class="art">01</span><div><h3>Movement readiness</h3><p>Range, control and comfort self-checks.</p></div><strong>›</strong></button><button class="row" data-action="assessment"><span class="art">02</span><div><h3>Training baseline</h3><p>Experience, capacity and preferences.</p></div><strong>›</strong></button></div>
+</div></section>
 
-    <section class="os-section">
-      <div class="os-section-head"><h2>Weekly activity</h2><button type="button" data-page="explore">View</button></div>
-      <div class="os-chart">
-        <div><i style="height:42%"></i><b>M</b></div><div><i style="height:67%"></i><b>T</b></div><div><i style="height:88%"></i><b>W</b></div><div><i style="height:54%"></i><b>T</b></div><div><i style="height:76%"></i><b>F</b></div><div><i style="height:48%"></i><b>S</b></div><div><i style="height:31%"></i><b>S</b></div>
-      </div>
-    </section>
+<section class="screen" id="train"><div class="wrap"><div class="head"><button class="back" data-page="home">‹</button><div><small>TRAINING ENGINE</small><h1>Train</h1></div><button class="icon" data-page="explore">⌕</button></div>
+<section class="hero glass"><small class="eyebrow">RECOMMENDED SESSION · 48 MIN</small><h2>Upper Body Strength</h2><p>Chest · Back · Shoulders · Triceps</p></section><div class="session-actions"><button class="primary" id="start">Start session ›</button><button class="secondary" id="adapt">Adapt session</button></div><div><small class="eyebrow">SESSION PROGRESS</small><b id="sessionCount">0 / 6</b><div class="progress-line"><i id="sessionBar"></i></div></div><div class="results" id="exerciseList"></div><div class="card" style="margin-top:12px"><small class="eyebrow">WHY THIS SESSION</small><h3>Current context supports upper-body work.</h3><p>Lower body was recently trained. The session fits the planned window and can adapt if reality changes.</p></div>
+</div></section>
 
-    <section class="os-section">
-      <div class="os-section-head"><h2>Today's training</h2><button type="button" data-page="train">Open</button></div>
-      <button type="button" class="os-workout" data-page="train">
-        <div class="os-workout-art"><span>FIT</span></div>
-        <div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Moderate · No equipment</p></div>
-        <em>›</em>
-      </button>
-    </section>
+<section class="screen" id="recovery"><div class="wrap"><div class="head"><button class="back" data-page="home">‹</button><div><small>RECOVERY ENGINE</small><h1>Recovery</h1></div><button class="icon" data-action="checkin">＋</button></div>
+<section class="hero glass"><small class="eyebrow">CURRENT CONTEXT · ESTIMATE</small><div class="readiness"><strong>82</strong><span>/ 100</span></div><h2>Good context for planned strength.</h2><p>Contextual estimate only. Not a physiological measurement.</p></section><div class="signals"><button class="signal" data-action="checkin"><small>SLEEP</small><strong>7h 32m</strong><span>Demo</span></button><button class="signal" data-action="checkin"><small>SORENESS</small><strong>Moderate</strong><span>User entered</span></button><button class="signal" data-action="checkin"><small>STRESS</small><strong>Low</strong><span>User entered</span></button><button class="signal" data-action="checkin"><small>LOAD</small><strong>42%</strong><span>Derived demo</span></button></div><div class="section-title section"><div><small>MUSCLE CONTEXT</small><h2>Training readiness</h2></div></div><div class="muscles"><div><span>Chest</span><i><b style="width:86%"></b></i><b>86%</b></div><div><span>Back</span><i><b style="width:90%"></b></i><b>90%</b></div><div><span>Shoulders</span><i><b style="width:78%"></b></i><b>78%</b></div><div><span>Legs</span><i><b style="width:54%"></b></i><b>54%</b></div><div><span>Core</span><i><b style="width:84%"></b></i><b>84%</b></div></div><div class="card" style="margin-top:20px"><small class="eyebrow">RECOMMENDED ACTION</small><h3>Train as planned.</h3><p>If your experience differs, update the check-in rather than forcing the estimate.</p><button class="secondary" data-action="checkin">Update check-in</button></div>
+</div></section>
 
-    <section class="os-section">
-      <div class="os-section-head"><h2>FIT-OS insight</h2><button type="button" data-page="coach">Coach</button></div>
-      <button type="button" class="os-insight" data-page="coach">
-        <span class="os-insight-icon">✦</span>
-        <div><small>PERSONAL INTELLIGENCE</small><b>Train with quality today.</b><p>Your recovery context supports the planned session. FIT-OS will adjust future sessions from what you log.</p></div>
-        <em>›</em>
-      </button>
-    </section>
+<section class="screen" id="nutrition"><div class="wrap"><div class="head"><button class="back" data-page="home">‹</button><div><small>NUTRITION ENGINE</small><h1>Nutrition</h1></div><button class="icon" data-page="coach">✦</button></div>
+<section class="hero glass"><small class="eyebrow">TODAY'S ESTIMATE</small><h2>2,150 kcal</h2><p>Targets are estimates and can adapt as training, body data and adherence change.</p><div class="macro"><div><span>Protein</span><b><i style="width:72%"></i></b><strong>118 / 164 g</strong></div><div><span>Carbs</span><b><i style="width:61%"></i></b><strong>146 / 240 g</strong></div><div><span>Fat</span><b><i style="width:48%"></i></b><strong>39 / 80 g</strong></div></div></section><div class="section-title"><div><small>MEALS</small><h2>Today</h2></div><button id="mealAdd">Log meal</button></div><div class="results"><button class="meal" data-meal="Breakfast"><span class="art">01</span><div><small>BREAKFAST</small><h3>Poha · Eggs · Curd</h3><p>Protein-aware Indian meal</p></div><strong>410 kcal</strong></button><button class="meal" data-meal="Lunch"><span class="art">02</span><div><small>LUNCH</small><h3>Dal · Roti · Sabzi · Curd</h3><p>Balanced · High fiber</p></div><strong>620 kcal</strong></button><button class="meal" data-meal="Snack"><span class="art">03</span><div><small>SNACK</small><h3>Fruit · Roasted chana</h3><p>Simple training-day fuel</p></div><strong>240 kcal</strong></button><button class="meal" data-meal="Dinner"><span class="art">04</span><div><small>DINNER</small><h3>Paneer · Rice · Vegetables</h3><p>Protein · Carbohydrate</p></div><strong>570 kcal</strong></button></div><div class="section"><div class="section-title"><div><small>PERSONALIZATION</small><h2>Nutrition profile</h2></div><button data-page="profile">Edit</button></div><div class="card"><p>Diet: <b>Vegetarian + eggs</b><br>Focus: <b>Fat loss / muscle retention</b><br>Cuisine: <b>Indian</b></p></div></div>
+</div></section>
 
-    <section class="os-section os-progress">
-      <div class="os-section-head"><h2>Progress</h2><button type="button" data-page="plans">See all</button></div>
-      <div class="os-progress-grid">
-        <div><small>CONSISTENCY</small><strong>4/5</strong><span>sessions</span></div>
-        <div><small>ACTIVE TIME</small><strong>186</strong><span>min this week</span></div>
-        <div><small>STRENGTH</small><strong>+8%</strong><span>recent trend</span></div>
-      </div>
-    </section>
-  </div>
-</section>
+<section class="screen" id="progress"><div class="wrap"><div class="head"><button class="back" data-page="home">‹</button><div><small>PROGRESS ENGINE</small><h1>Progress</h1></div><button class="icon" data-action="measurement">＋</button></div><div class="tabs"><button class="active">Overview</button><button>Strength</button><button>Body</button><button>Consistency</button></div><section class="hero glass"><small class="eyebrow">RECENT TREND</small><h2>Progress is a trajectory.</h2><p>Measurements, user entries and derived trends stay distinguishable.</p><div class="trend"><i style="height:32%"></i><i style="height:44%"></i><i style="height:40%"></i><i style="height:57%"></i><i style="height:64%"></i><i style="height:71%"></i><i style="height:78%"></i></div></section><div class="stats"><div class="stat"><small>WEIGHT</small><strong>110.0</strong><span>kg · entered</span></div><div class="stat"><small>SESSIONS</small><strong>14</strong><span>30 days</span></div><div class="stat"><small>ACTIVE TIME</small><strong>9h 42m</strong><span>30 days</span></div><div class="stat"><small>STRENGTH</small><strong>+8%</strong><span>derived estimate</span></div></div><div class="section-title"><div><small>FITNESS MEMORY</small><h2>Recent events</h2></div><button data-action="measurement">Add</button></div><div class="timeline"><div><b>Today</b><span>Upper Body Strength recommended</span><em>System</em></div><div><b>Yesterday</b><span>Lower Body Foundation completed</span><em>Logged</em></div><div><b>19 Sep</b><span>Weight updated</span><em>User entered</em></div></div>
+</div></section>
 
-<section class="screen" id="explore">
-  <div class="app-page explore-screen">
-    <div class="page-header">
-      <button type="button" class="back" data-page="home" aria-label="Back">‹</button>
-      <div><small>FIT-OS TRAINING DISCOVERY</small><h1>Explore</h1></div>
-      <button type="button" class="header-more" data-page="more" aria-label="More">•••</button>
-    </div>
+<section class="screen" id="profile"><div class="wrap"><div class="head"><button class="back" data-page="home">‹</button><div><small>PERSONAL MODEL</small><h1>Profile</h1></div><button class="icon" data-page="settings">⚙</button></div><section class="hero glass profile-hero"><span class="avatar-lg">S</span><div><small class="eyebrow">FIT-OS PROFILE</small><h2>Personal model</h2><p>Goals, preferences and constraints shape recommendations.</p></div></section><div class="profile-grid"><button data-action="profile"><small>GOAL</small><strong>Fat loss</strong><span>Primary</span></button><button data-action="profile"><small>EXPERIENCE</small><strong>Intermediate</strong><span>Training</span></button><button data-action="profile"><small>TRAINING</small><strong>3–4 days</strong><span>Weekly</span></button><button data-action="profile"><small>SESSION</small><strong>30–60 min</strong><span>Typical</span></button><button data-action="profile"><small>LOCATION</small><strong>Gym + Home</strong><span>Available</span></button><button data-action="profile"><small>DIET</small><strong>Vegetarian + eggs</strong><span>Preference</span></button></div><div class="section-title"><div><small>PERSONAL MODEL</small><h2>What FIT-OS knows</h2></div></div><div class="model"><div><span>Goals & targets</span><b>Configured</b></div><div><span>Training history</span><b>Prototype data</b></div><div><span>Recovery signals</span><b>User entered</b></div><div><span>Nutrition preferences</span><b>Configured</b></div><div><span>Wearables</span><b>Not connected</b></div><div><span>Medical data</span><b>Not used</b></div></div><button class="setting" data-page="settings" style="margin-top:10px"><span>⚙</span><div><b>Settings & privacy</b><small>Data, integrations and reset</small></div><strong>›</strong></button>
+</div></section>
 
-    <section class="explore-hero">
-      <div class="explore-hero-glow"></div>
-      <small>FIND YOUR NEXT SESSION</small>
-      <h2>Train for what<br>you need today.</h2>
-      <p>Personalized discovery across gym, home, no-equipment and outdoor training.</p>
-      <button type="button" class="explore-search" id="exploreSearch" aria-label="Search workouts">
-        <span>⌕</span><b>Search workouts, goals or muscles</b><em>⌘ K</em>
-      </button>
-    </section>
-
-    <div class="explore-section-label"><span>WHERE YOU TRAIN</span><small>01</small></div>
-    <div class="explore-filter-row" id="whereFilters">
-      <button type="button" class="explore-filter active" data-filter-group="where" data-value="all"><span>✦</span>All</button>
-      <button type="button" class="explore-filter" data-filter-group="where" data-value="gym"><span>▦</span>Gym</button>
-      <button type="button" class="explore-filter" data-filter-group="where" data-value="home"><span>⌂</span>Home</button>
-      <button type="button" class="explore-filter" data-filter-group="where" data-value="none"><span>○</span>No equipment</button>
-      <button type="button" class="explore-filter" data-filter-group="where" data-value="outdoor"><span>↗</span>Outdoor</button>
-    </div>
-
-    <div class="explore-section-label"><span>WHAT YOU WANT TO TRAIN</span><small>02</small></div>
-    <div class="explore-filter-row compact" id="goalFilters">
-      <button type="button" class="explore-filter active" data-filter-group="goal" data-value="all">All</button>
-      <button type="button" class="explore-filter" data-filter-group="goal" data-value="strength">Strength</button>
-      <button type="button" class="explore-filter" data-filter-group="goal" data-value="muscle">Muscle building</button>
-      <button type="button" class="explore-filter" data-filter-group="goal" data-value="fatloss">Fat loss</button>
-      <button type="button" class="explore-filter" data-filter-group="goal" data-value="hiit">HIIT</button>
-      <button type="button" class="explore-filter" data-filter-group="goal" data-value="cardio">Cardio</button>
-      <button type="button" class="explore-filter" data-filter-group="goal" data-value="functional">Functional</button>
-      <button type="button" class="explore-filter" data-filter-group="goal" data-value="mobility">Mobility</button>
-    </div>
-
-    <div class="explore-section-label"><span>TRAINING FOCUS</span><small>03</small></div>
-    <div class="explore-focus-grid" id="focusFilters">
-      <button type="button" class="active" data-filter-group="focus" data-value="all"><b>All focus</b><small>Any muscle group</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="full"><b>Full body</b><small>Complete session</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="chest"><b>Chest</b><small>Press · Push</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="back"><b>Back</b><small>Pull · Row</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="triceps"><b>Triceps</b><small>Push · Extension</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="biceps"><b>Biceps</b><small>Curl · Pull</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="legs"><b>Legs</b><small>Squat · Hinge</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="abs"><b>Abs</b><small>Flexion · Stability</small><span>›</span></button>
-    </div>
-
-    <div class="explore-section-label results-label"><span>SESSIONS FOR YOU</span><small id="exploreResultCount">12</small></div>
-    <div class="explore-results" id="exploreResults">
-      <button type="button" class="explore-result nutrition-result" data-page="nutrition" data-where="home" data-goal="fatloss" data-focus="all" data-duration="medium" data-level="all" data-equipment="none" data-nutrition="fatloss indian" data-search="indian fat loss high protein meal plan nutrition">
-        <span class="result-art art-mobility"><b>N1</b><i>NUTRITION</i></span><div><small>MEAL PLAN · INDIAN · FAT LOSS</small><b>Indian Fat-Loss Day</b><p>Protein-aware · Balanced meals</p><em>Breakfast · Lunch · Dinner · Snacks</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result nutrition-result" data-page="nutrition" data-where="home gym" data-goal="muscle strength" data-focus="all" data-duration="short" data-level="all" data-equipment="none" data-nutrition="highprotein muscle vegetarian indian" data-search="high protein vegetarian indian muscle building nutrition meals">
-        <span class="result-art art-strength"><b>N2</b><i>PROTEIN</i></span><div><small>NUTRITION · HIGH PROTEIN · VEGETARIAN</small><b>High-Protein Indian Fuel</b><p>Vegetarian · Training support</p><em>Protein targets · Meal swaps</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result nutrition-result" data-page="nutrition" data-where="home" data-goal="strength muscle" data-focus="all" data-duration="short" data-level="all" data-equipment="none" data-nutrition="muscle highprotein" data-search="post workout meal protein recovery nutrition">
-        <span class="result-art art-cardio"><b>N3</b><i>RECOVERY</i></span><div><small>POST-WORKOUT · 30–90 MIN WINDOW</small><b>Recovery Fuel</b><p>Protein · Carbohydrate · Hydration</p><em>What to eat next · Portion guidance</em></div><span class="result-arrow">›</span>
-      </button>
-
-      <button type="button" class="explore-result" data-page="train" data-where="gym" data-goal="strength muscle" data-focus="chest" data-search="upper body strength chest bench press gym muscle building">
-        <span class="result-art art-strength"><b>01</b><i>STRENGTH</i></span>
-        <div><small>GYM · 48 MIN · MODERATE</small><b>Upper Body Strength</b><p>Chest · Shoulders · Triceps</p><em>4 movements · Guided</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="home none" data-goal="hiit fatloss functional" data-focus="full" data-search="home hiit fat loss full body no equipment">
-        <span class="result-art art-hiit"><b>02</b><i>HIIT</i></span>
-        <div><small>HOME · 20 MIN · HIGH</small><b>Move With Power</b><p>Full body · No equipment</p><em>Intervals · 6 rounds</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="recovery" data-where="home none" data-goal="mobility" data-focus="full" data-search="mobility recovery home no equipment cooldown">
-        <span class="result-art art-mobility"><b>03</b><i>MOBILITY</i></span>
-        <div><small>HOME · 10 MIN · EASY</small><b>Mindful Cooldown</b><p>Full body · Breathing</p><em>Reset · Mobility flow</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="gym" data-goal="muscle strength" data-focus="back" data-search="gym back muscle strength pull row">
-        <span class="result-art art-back"><b>04</b><i>PULL</i></span>
-        <div><small>GYM · 42 MIN · MODERATE</small><b>Back Builder</b><p>Back · Biceps · Rear delts</p><em>5 movements · Progressive</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle functional" data-focus="legs" data-search="legs strength muscle gym home squat lower body">
-        <span class="result-art art-legs"><b>05</b><i>LOWER</i></span>
-        <div><small>GYM / HOME · 35 MIN · MODERATE</small><b>Lower Body Foundation</b><p>Legs · Glutes · Core</p><em>5 movements · Form first</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="outdoor none" data-goal="cardio fatloss functional" data-focus="full" data-search="outdoor cardio fat loss no equipment walking run">
-        <span class="result-art art-cardio"><b>06</b><i>CARDIO</i></span>
-        <div><small>OUTDOOR · 30 MIN · STEADY</small><b>Outdoor Conditioning</b><p>Full body · No equipment</p><em>Walk / run · Aerobic base</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle" data-focus="triceps" data-search="triceps arms strength muscle gym home push extension">
-        <span class="result-art art-strength"><b>07</b><i>ARMS</i></span>
-        <div><small>GYM / HOME · 28 MIN · MODERATE</small><b>Triceps Builder</b><p>Triceps · Chest</p><em>4 movements · Push focus</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle" data-focus="biceps" data-search="biceps arms strength muscle gym home curl pull">
-        <span class="result-art art-back"><b>08</b><i>ARMS</i></span>
-        <div><small>GYM / HOME · 28 MIN · MODERATE</small><b>Biceps Builder</b><p>Biceps · Back</p><em>4 movements · Pull focus</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="home" data-where="home none" data-goal="strength functional" data-focus="abs" data-search="abs core strength functional home no equipment abdominal">
-        <span class="result-art art-mobility"><b>09</b><i>CORE</i></span>
-        <div><small>HOME · 15 MIN · MODERATE</small><b>Core Foundation</b><p>Abs · Core stability</p><em>5 movements · No equipment</em></div><span class="result-arrow">›</span>
-      </button>
-    </div>
-
-    <div class="explore-empty" id="exploreEmpty">
-      <span>⌕</span><b>No sessions match these filters.</b><p>Try another training goal, location or focus.</p><button type="button" id="clearExploreFilters">Clear filters</button>
-    </div>
-
-    <section class="explore-insight">
-      <span>✦</span><div><small>FIT-OS DISCOVERY</small><b>Start with your constraint.</b><p>Choose where you can train first. FIT-OS then narrows sessions by goal, focus and equipment.</p></div>
-    </section>
-  </div>
-</section>
-
-<section class="screen" id="plans">
-  <div class="app-page fp-page">
-    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>PERSONAL PLAN</small><h1>Plans</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
-    <div class="plan-hero"><small>THIS WEEK</small><h2>Build consistency.</h2><p>Three training days, recovery between sessions, and room for real life.</p><button type="button" data-page="train">Start today's session ›</button></div>
-    <div class="section-title"><h2>Weekly schedule</h2><button type="button">Customize</button></div>
-    <div class="week-strip"><button type="button"><small>MON</small><b>21</b><span>Rest</span></button><button type="button" class="selected"><small>TUE</small><b>22</b><span>Train</span></button><button type="button"><small>WED</small><b>23</b><span>Recover</span></button><button type="button"><small>THU</small><b>24</b><span>Train</span></button><button type="button"><small>FRI</small><b>25</b><span>Rest</span></button><button type="button"><small>SAT</small><b>26</b><span>Move</span></button><button type="button"><small>SUN</small><b>27</b><span>Rest</span></button></div>
-    <div class="section-title"><h2>Today's session</h2></div>
-    <button type="button" class="plan-session" data-page="train"><span class="plan-session-art">01</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Moderate · Recovery-informed</p></div><em>›</em></button>
-    <button type="button" class="plan-session" data-page="recovery"><span class="plan-session-art recovery">02</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Breathing · Mobility</p></div><em>›</em></button>
-    <div class="info-card"><small>PLAN LOGIC</small><p><b>Adaptable.</b> Sessions are designed around your available time, training goal and recovery context.</p></div>
-  </div>
-</section>
-
-<section class="screen" id="coach">
-  <div class="app-page fp-page">
-    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>FIT-OS INTELLIGENCE</small><h1>Coach</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
-    <div class="coach-profile"><div class="coach-avatar">✦</div><div><small>YOUR FITNESS INTELLIGENCE</small><h2>What should I do today?</h2><p>Your coach can use recovery, training, nutrition and progress data when those sources are connected.</p></div></div>
-    <div class="coach-actions"><button type="button" data-page="train"><span>↗</span><div><b>Start today's workout</b><small>Upper Body Strength · 48 min</small></div><em>›</em></button><button type="button" data-page="recovery"><span>◔</span><div><b>Explain my recovery</b><small>Sleep, resting heart rate and load</small></div><em>›</em></button><button type="button" data-page="nutrition"><span>ϟ</span><div><b>Help with nutrition</b><small>Calories and protein targets</small></div><em>›</em></button></div>
-    <div class="coach-input"><span>Ask FIT-OS anything…</span><button type="button" id="coachSend">↑</button></div>
-    <div class="suggestions"><button type="button">Why this workout?</button><button type="button">How is my recovery?</button><button type="button">What should I eat?</button><button type="button">Plan my week</button></div>
-  </div>
-</section>
-
-<section class="screen" id="library">
-  <div class="app-page fp-page">
-    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>YOUR COLLECTION</small><h1>Library</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
-    <div class="library-tabs"><button type="button" class="active">Saved</button><button type="button">Stacks</button><button type="button">History</button></div>
-    <div class="library-feature"><small>SAVED COLLECTION</small><h2>Stronger,<br>one session at a time.</h2><p>Keep your favorite sessions together for easy access.</p><button type="button" data-page="train">Open collection ›</button></div>
-    <div class="section-title"><h2>Saved workouts</h2><button type="button">Edit</button></div>
-    <div class="explore-list"><button type="button" class="explore-workout" data-page="train"><span class="explore-thumb et-one">S</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Saved · No equipment</p></div><em>›</em></button><button type="button" class="explore-workout" data-page="recovery"><span class="explore-thumb et-three">R</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Saved · Mobility</p></div><em>›</em></button></div>
-    <div class="stack-card"><span>▣</span><div><small>STACK</small><b>Post-workout reset</b><p>Strength → Cooldown · 58 min</p></div><button type="button" data-page="train">Play</button></div>
-  </div>
-</section>
-
-<section class="screen" id="train">
-  <div class="app-page">
-    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>WORKOUT</small><h1>Upper Body</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
-    <div class="workout-detail-hero"><div class="detail-art">FIT</div><div><small>STRENGTH · 48 MIN</small><h2>Upper Body Strength</h2><p>Moderate · No equipment</p><button type="button" class="start-pill" id="startWorkout">Start <b>›</b></button></div></div>
-    <div class="detail-meta"><span>Trainer · FIT-OS</span><span>Music · Energy</span><span>Equipment · None</span></div>
-    <div class="section-title"><h2>Workout Flow</h2><button type="button" id="warmupAction">Warm Up</button></div>
-    <div class="session-state" id="sessionState"><div><small>SESSION</small><b id="sessionLabel">Ready when you are</b></div><strong id="sessionProgress">0 / 6</strong></div>
-    <div class="exercise-list">
-      <button type="button" class="exercise train-exercise" data-exercise="0"><span>01</span><div><small>PREP</small><b>Warm Up</b><em>8 min · Mobility + pulse</em></div><i>›</i></button>
-      <button type="button" class="exercise train-exercise" data-exercise="1"><span>02</span><div><small>PRIMARY</small><b>Bench Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
-      <button type="button" class="exercise train-exercise" data-exercise="2"><span>03</span><div><small>PRIMARY</small><b>Seated Row</b><em>4 sets · 8–12 reps · 60–90s rest</em></div><i>›</i></button>
-      <button type="button" class="exercise train-exercise" data-exercise="3"><span>04</span><div><small>SECONDARY</small><b>Shoulder Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
-      <button type="button" class="exercise train-exercise" data-exercise="4"><span>05</span><div><small>SECONDARY</small><b>Lat Pulldown</b><em>3 sets · 10–12 reps · 60s rest</em></div><i>›</i></button>
-      <button type="button" class="exercise train-exercise" data-exercise="5"><span>06</span><div><small>FINISH</small><b>Cool Down</b><em>8 min · Breathing + mobility</em></div><i>›</i></button>
-    </div>
-    <div class="info-card"><small>FIT-OS TRAINING LOGIC</small><p><b>Readiness first.</b> Today's session adapts to recovery signals.</p><p><b>Quality before volume.</b> Reduce load when technique drops.</p><p><b>Progress gradually.</b> Log performance so future sessions can adapt.</p></div>
-  </div>
-  <div class="train-modal-backdrop" id="exerciseModal"><div class="exercise-modal glass"><button type="button" class="modal-close" id="exerciseClose">×</button><div id="exerciseModalContent"></div></div></div>
-</section>
-
-<section class="screen" id="recovery"><div class="app-page"><div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>VITALS</small><h1>Recovery</h1></div><button type="button" class="header-more" data-page="more">•••</button></div><div class="score-card"><small>RECOVERY SCORE</small><div><strong>82</strong><span>/ 100</span></div><p>Good recovery context for today's planned session.</p></div><div class="section-title"><h2>Vitals</h2></div><div class="vitals-list"><button type="button"><span class="vital-icon purple">◒</span><div><small>SLEEP</small><b>7h 32m</b><p>Within target</p></div><em>›</em></button><button type="button"><span class="vital-icon red">♥</span><div><small>RESTING HEART RATE</small><b>62 bpm</b><p>Current baseline</p></div><em>›</em></button><button type="button"><span class="vital-icon blue">⌁</span><div><small>HRV</small><b>58 ms</b><p>Recent reading</p></div><em>›</em></button><button type="button"><span class="vital-icon green">↘</span><div><small>TRAINING LOAD</small><b>42%</b><p>Moderate</p></div><em>›</em></button></div></div></section>
-
-<section class="screen" id="nutrition"><div class="app-page"><div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>FUEL</small><h1>Nutrition</h1></div><button type="button" class="header-more" data-page="more">•••</button></div><div class="nutrition-summary"><div><small>ENERGY</small><strong><span id="nutritionCalories">1,840</span> <em>/ 2,300 kcal</em></strong></div><b>80%</b></div><div class="macro-grid"><div><b><span id="nutritionProtein">126</span>g</b><small>Protein · 150g</small></div><div><b>182g</b><small>Carbs · 250g</small></div><div><b>54g</b><small>Fat · 70g</small></div></div><div class="section-title"><h2>Today's Meals</h2><button type="button" id="logMeal">Add</button></div><div class="meal-list"><div><span>01</span><div><b>Breakfast</b><small>Oats, eggs, banana</small></div><strong>420 kcal</strong></div><div><span>02</span><div><b>Lunch</b><small>Rice, dal, vegetables</small></div><strong>680 kcal</strong></div><div><span>03</span><div><b>Snack</b><small>Protein shake</small></div><strong>220 kcal</strong></div><div><span>04</span><div><b>Dinner</b><small>Paneer, salad</small></div><strong>520 kcal</strong></div></div></div></section>
-
-<section class="screen" id="more"><div class="app-page"><div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>PROFILE</small><h1>More</h1></div><button type="button" class="header-more">•••</button></div><div class="profile-card"><div class="profile-photo">S</div><div><h2>Swapnil</h2><p>33 years · 110 kg · 5'8"</p><button type="button">Edit Health Details ›</button></div></div><div class="section-title"><h2>Settings</h2></div><div class="settings-list"><button type="button" data-page="plans"><span>◎</span><div><b>Goals & Plans</b><small>Weight loss · Strength</small></div><i>›</i></button><button type="button" data-page="library"><span>▣</span><div><b>Library</b><small>Saved workouts and stacks</small></div><i>›</i></button><button type="button"><span>◷</span><div><b>Reminders</b><small>Workouts · Meals · Sleep</small></div><i>›</i></button><button type="button"><span>⌁</span><div><b>Data Sources</b><small>Wearables and apps</small></div><i>›</i></button><button type="button"><span>◐</span><div><b>Appearance</b><small>Light · System</small></div><i>›</i></button><button type="button"><span>▣</span><div><b>Data & Privacy</b><small>Your data, your control</small></div><i>›</i></button></div></div></section>
-
+<section class="screen" id="settings"><div class="wrap"><div class="head"><button class="back" data-page="profile">‹</button><div><small>SYSTEM SETTINGS</small><h1>Settings</h1></div></div><div class="settings-group"><small>PRODUCT</small><button class="setting"><span>✦</span><div><b>Adaptive recommendations</b><small>Use current context for sessions</small></div><i class="toggle on"></i></button><button class="setting"><span>◌</span><div><b>Explain recommendations</b><small>Show why the system changed something</small></div><i class="toggle on"></i></button></div><div class="settings-group"><small>DATA SOURCES</small><button class="setting" data-action="integration"><span>⌁</span><div><b>Health Connect</b><small>Not connected</small></div><strong>›</strong></button><button class="setting" data-action="integration"><span>⌁</span><div><b>Wearables</b><small>Not connected</small></div><strong>›</strong></button><button class="setting" data-action="integration"><span>⌁</span><div><b>AI Coach gateway</b><small>Provider not connected</small></div><strong>›</strong></button></div><div class="settings-group"><small>PRIVACY & DATA</small><button class="setting" data-action="toast"><span>◈</span><div><b>Local prototype data</b><small>Stored in this browser</small></div><strong>›</strong></button><button class="setting danger" data-action="reset"><span>×</span><div><b>Reset prototype data</b><small>Clear local activity and preferences</small></div><strong>›</strong></button></div><div class="card"><small class="eyebrow">SYSTEM CONTRACT</small><p>UI presents state and actions. Domain engines own calculations. Missing measurements remain missing.</p></div>
+</div></section>
 </main>
 
-<nav class="bottom-nav fp-nav os-nav" aria-label="Primary navigation">
-  <button type="button" class="dock-item active" data-page="home"><span>⌂</span><b>Today</b></button>
-  <button type="button" class="dock-item" data-page="explore"><span>⌁</span><b>Train</b></button>
-  <button type="button" class="dock-item" data-page="plans"><span>◫</span><b>Plans</b></button>
-  <button type="button" class="dock-coach" data-page="coach" aria-label="Open FIT-OS Coach"><span>✦</span><b>Coach</b></button>
-  <button type="button" class="dock-item" data-page="more"><span>○</span><b>Profile</b></button>
-</nav>
-
-<div class="modal-backdrop" id="todayModal" aria-hidden="true"><div class="today-modal glass"><button type="button" class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+<nav class="nav"><div class="nav-indicator" id="indicator"></div><button class="active" data-page="home"><span>⌂</span><b>Today</b></button><button data-page="train"><span>↗</span><b>Train</b></button><button data-page="plans"><span>▦</span><b>Plans</b></button><button data-page="coach"><span>✦</span><b>Coach</b></button><button data-page="profile"><span>◉</span><b>Profile</b></button></nav>
 <div class="toast" id="toast"></div>
-<script src="./app.js?v=20260922-15"></script>
+<div class="modal" id="modal"><div class="sheet"><button class="close" id="close">×</button><div id="modalBody"></div></div></div>
 </div>
+<script>
+(()=>{"use strict";
+const P=["home","explore","plans","coach","library","train","recovery","nutrition","progress","profile","settings"],N=["home","train","plans","coach","profile"],KEY="fitos.ui.v3";
+let S={water:2.4,done:[],coach:""};
+try{S={...S,...JSON.parse(localStorage.getItem(KEY)||"{}")}}catch(e){}
+if(!Array.isArray(S.done))S.done=[];
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const toast=m=>{const x=$("#toast");x.textContent=m;x.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>x.classList.remove("show"),2200)};
+function go(p){if(!P.includes(p))p="home";$(".screen.on")?.classList.remove("on");$("#"+p).classList.add("on");const a=N.includes(p)?p:p==="explore"||p==="library"?"train":p==="settings"||p==="recovery"||p==="nutrition"||p==="progress"?"profile":"home";$$(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===a));$("#indicator").style.transform="translateX("+N.indexOf(a)*100+"%)";const T={home:["PERSONAL FITNESS OS","Today"],explore:["DISCOVERY","Explore"],plans:["PERSONAL PROGRAMMING","Plans"],coach:["PERSONAL INTELLIGENCE","Coach"],library:["EXERCISE LIBRARY","Library"],train:["TRAINING ENGINE","Train"],recovery:["RECOVERY ENGINE","Recovery"],nutrition:["NUTRITION ENGINE","Nutrition"],progress:["PROGRESS ENGINE","Progress"],profile:["PERSONAL MODEL","Profile"],settings:["SYSTEM SETTINGS","Settings"]}[p];$("#routeSmall").textContent=T[0];$("#routeTitle").textContent=T[1];location.hash=p;scrollTo(0,0);render()}
+function render(){ $("#water").textContent=Number(S.water).toFixed(1);$("#sessionCount").textContent=S.done.length+" / 6";$("#sessionBar").style.width=(S.done.length/6*100)+"%";$$(".exercise").forEach((e,i)=>e.classList.toggle("done",S.done.includes(i)));if(S.coach)$("#chat").innerHTML='<div class="bubble">'+S.coach+"</div>"}
+const exercises=[["Warm Up","PREP","8 min"],["Bench Press","PRIMARY","4 × 8–10"],["Seated Row","PRIMARY","4 × 8–12"],["Shoulder Press","SECONDARY","3 × 8–10"],["Lat Pulldown","SECONDARY","3 × 10–12"],["Cool Down","FINISH","8 min"]];
+$("#exerciseList").innerHTML=exercises.map((x,i)=>'<button class="exercise" data-ex="'+i+'"><span class="art">'+String(i+1).padStart(2,"0")+'</span><div><small>'+x[1]+'</small><h3>'+x[0]+'</h3><p>'+x[2]+' · guided</p></div><strong>›</strong></button>').join("");
+$$(".exercise").forEach(b=>b.onclick=()=>exercise(+b.dataset.ex));
+function exercise(i){const x=exercises[i];$("#modalBody").innerHTML='<small class="eyebrow">'+x[1]+' · EXERCISE '+String(i+1).padStart(2,"0")+'</small><h2>'+x[0]+'</h2><p>Use controlled technique. Log actual performance so the future training engine can adapt.</p>'+(i>0&&i<5?'<div class="sets"><span>SET</span><span>LOAD</span><span>REPS</span><span>RPE</span>'+[1,2,3,4].map(n=>'<span>'+n+'</span><input placeholder="kg"><input placeholder="reps"><input placeholder="1–10">').join("")+'</div>':'<div class="card"><h3>'+x[2]+'</h3><p>Keep intensity comfortable and controlled.</p></div>')+'<button class="action" id="complete">'+(i===5?"Complete session":"Complete & continue")+' ›</button>';$("#modal").classList.add("open");$("#complete").onclick=()=>{if(!S.done.includes(i))S.done.push(i);save();render();$("#modal").classList.remove("open");toast(i===5?"Session logged.":"Movement logged.")}}
+function filters(){const g=k=>{const b=$('.chips[data-group="'+k+'"] .active');return b?.dataset.value||"all"};return{where:g("where"),goal:g("goal"),focus:$("#explore .focus .active")?.dataset.value||"all",duration:$("[data-refine=duration]")?.value||"all",level:$("[data-refine=level]")?.value||"all",equipment:$("[data-refine=equipment]")?.value||"all"}}
+function refresh(){const f=filters(),q=($("#search")?.value||"").toLowerCase().trim();let n=0;$$(".result").forEach(c=>{const ok=(k,v)=>v==="all"||String(c.dataset[k]||"").split(" ").includes(v);const show=ok("where",f.where)&&ok("goal",f.goal)&&ok("focus",f.focus)&&ok("duration",f.duration)&&ok("level",f.level)&&ok("equipment",f.equipment)&&(!q||c.dataset.search.includes(q));c.hidden=!show;if(show)n++});$("#count").textContent=String(n).padStart(2,"0");$("#empty").classList.toggle("show",n===0)}
+function clearFilters(){$$(".chips button").forEach(b=>b.classList.toggle("active",b.dataset.value==="all"));$$(".focus button").forEach(b=>b.classList.toggle("active",b.dataset.value==="all"));$$("[data-refine]").forEach(s=>s.value="all");$("#search").value="";refresh()}
+$$(".chips button").forEach(b=>b.onclick=()=>{$$("[data-group="+b.parentElement.dataset.group+"] button").forEach(x=>x.classList.remove("active"));b.classList.add("active");refresh()});
+$$(".focus button").forEach(b=>b.onclick=()=>{$$(".focus button").forEach(x=>x.classList.remove("active"));b.classList.add("active");refresh()});
+$$("[data-refine]").forEach(s=>s.onchange=refresh);$("#search").oninput=refresh;$("#clear").onclick=clearFilters;$("#emptyClear").onclick=clearFilters;$("#refineToggle").onclick=()=>$("#refine").classList.toggle("open");
+$("#coachSend").onclick=()=>coach();$("#coachInput").onkeydown=e=>{if(e.key==="Enter")coach()};$$(".suggestions button").forEach(b=>b.onclick=()=>{$("#coachInput").value=b.textContent;coach()});
+function coach(){const q=$("#coachInput").value.trim();if(!q)return;const l=q.toLowerCase();let a="I can use the training, recovery, nutrition and progress context currently available. Ask why today's workout was selected, how recovery affects it, or what to review in nutrition.";if(l.includes("why")&&l.includes("workout"))a="Today's upper-body session preserves the training intent while respecting recent lower-body work and the planned time window. It can be adapted if reality changes.";else if(l.includes("recover"))a="The current recovery view is an estimate from available prototype signals. It is not a physiological measurement. If your experience differs, update the check-in.";else if(l.includes("eat")||l.includes("nutrition")||l.includes("protein"))a="Today's nutrition view uses estimated energy and macro targets plus Indian meal options. Actual intake should replace prototype values over time.";else if(l.includes("week")||l.includes("plan"))a="The current week uses training exposures separated by recovery. The plan engine is designed to adapt details instead of blindly preserving a fixed prescription.";S.coach=a;save();$("#chat").innerHTML='<div class="bubble user">'+esc(q)+'</div><div class="bubble">'+a+"</div>";$("#coachInput").value=""}
+const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+$("#mealAdd").onclick=()=>{$("#modalBody").innerHTML='<small class="eyebrow">LOG MEAL</small><h2>Add a meal</h2><p>Prototype entry. The future nutrition engine will use structured food records.</p><input id="mealName" class="search" placeholder="Meal or food name"><button class="action" id="saveMeal">Save meal</button>';$("#modal").classList.add("open");$("#saveMeal").onclick=()=>{$("#modal").classList.remove("open");toast("Meal logged to prototype history.")}};
+$$(".meal").forEach(b=>b.onclick=()=>toast(b.dataset.meal+" selected."));
+$("#start").onclick=()=>{toast("Session started.");exercise(S.done.length||0)};$("#adapt").onclick=()=>{modal('<small class="eyebrow">SESSION ADAPTATION</small><h2>What changed?</h2><p>FIT-OS can preserve intent while changing the prescription.</p><div class="check-grid"><button>Less time</button><button>Equipment changed</button><button>More fatigue</button><button>Change focus</button></div>')};
+$("#customize").onclick=()=>modal('<small class="eyebrow">PLAN SETTINGS</small><h2>Adaptive week</h2><p>Training days, duration and location become constraints for the scheduling engine.</p><div class="check-grid"><button>3 days / week</button><button>4 days / week</button><button>30–45 min</button><button>45–60 min</button></div>');
+function modal(html){$("#modalBody").innerHTML=html;$("#modal").classList.add("open")}
+function action(a){if(a==="water"){S.water=Math.min(5,+(S.water+.25).toFixed(2));save();render();toast("Water logged · "+S.water.toFixed(1)+" L")}else if(a==="checkin")modal('<small class="eyebrow">RECOVERY CHECK-IN</small><h2>How are you today?</h2><p>User-entered signals stay separate from measurements.</p><div class="check-grid"><button>Sleep · Good</button><button>Sleep · Poor</button><button>Soreness · Low</button><button>Soreness · Moderate</button><button>Stress · Low</button><button>Stress · High</button></div><button class="action" onclick="document.getElementById(\'modal\').classList.remove(\'open\');toast(\'Check-in saved.\')">Save check-in</button>');else if(a==="measurement")modal('<small class="eyebrow">FITNESS MEMORY</small><h2>Add measurement</h2><p>Record a body or performance value as user-entered data.</p><input class="search" placeholder="e.g. body weight 110 kg"><button class="action" onclick="document.getElementById(\'modal\').classList.remove(\'open\');toast(\'Measurement saved.\')">Save</button>');else if(a==="profile")modal('<small class="eyebrow">PERSONAL MODEL</small><h2>Profile controls</h2><p>Goals, experience, schedule, location and nutrition preferences will become personalization inputs.</p><div class="check-grid"><button>Fat loss</button><button>Muscle gain</button><button>3 days / week</button><button>4 days / week</button><button>Gym + Home</button><button>Home only</button></div>');else if(a==="assessment")modal('<small class="eyebrow">ASSESSMENT</small><h2>Baseline check</h2><p>Capture experience, movement comfort, capacity and preferences before personalization.</p><button class="action">Start assessment</button>');else if(a==="integration")toast("Integration boundary ready; provider connection comes in the integration phase.");else if(a==="toast")toast("Prototype data is stored locally in this browser.");else if(a==="reset"){localStorage.removeItem(KEY);location.reload()}}
+document.addEventListener("click",e=>{const p=e.target.closest("[data-page]")?.dataset.page;if(p){e.preventDefault();go(p);return}const a=e.target.closest("[data-action]")?.dataset.action;if(a)action(a)});
+$("#close").onclick=()=>$("#modal").classList.remove("open");$("#modal").onclick=e=>{if(e.target.id==="modal")$("#modal").classList.remove("open")};
+$$(".tabs button").forEach(b=>b.onclick=()=>{$$(".tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active");toast(b.textContent+" view selected.")});
+const libs=[["Bench Press","CHEST · HORIZONTAL PUSH","Strength · Barbell"],["Seated Row","BACK · HORIZONTAL PULL","Strength · Machine / Cable"],["Goblet Squat","LEGS · SQUAT","Strength · Dumbbell"],["Push-up","CHEST · HORIZONTAL PUSH","Bodyweight · Home"],["Romanian Deadlift","LEGS · HINGE","Strength · Barbell / Dumbbell"],["Plank","ABS · ANTI-EXTENSION","Core · No equipment"],["Biceps Curl","BICEPS · ELBOW FLEXION","Isolation · Dumbbell"],["Triceps Extension","TRICEPS · ELBOW EXTENSION","Isolation · Cable / Dumbbell"]];
+$("#libraryGrid").innerHTML=libs.map(x=>'<button class="library-card" data-lib="'+x.join(" ").toLowerCase()+'"><b>'+x[0]+'</b><span>'+x[1]+'<br>'+x[2]+"</span></button>").join("");$$(".library-card").forEach(b=>b.onclick=()=>modal('<small class="eyebrow">EXERCISE LIBRARY</small><h2>'+b.querySelector("b").textContent+'</h2><p>'+b.querySelector("span").innerText+'</p><button class="action">Add to session</button>'));$("#librarySearch").oninput=()=>{const q=$("#librarySearch").value.toLowerCase();$$(".library-card").forEach(b=>b.hidden=!b.dataset.lib.includes(q))};
+$$(".setting").forEach(b=>{if(!b.dataset.action&&!b.dataset.page)b.onclick=()=>toast("Setting ready.")});
+render();refresh();const h=location.hash.slice(1);go(P.includes(h)?h:"home");window.onhashchange=()=>{const p=location.hash.slice(1);if(P.includes(p))go(p)};
+})();
+</script>
 </body>
-</html<section class="screen" id="explore">
-  <div class="app-page explore-screen">
-    <div class="page-header">
-      <button type="button" class="back" data-page="home" aria-label="Back">‹</button>
-      <div><small>FIT-OS TRAINING DISCOVERY</small><h1>Explore</h1></div>
-      <button type="button" class="header-more" data-page="more" aria-label="More">•••</button>
-    </div>
-
-    <section class="explore-hero">
-      <div class="explore-hero-glow"></div>
-      <small>DISCOVER · ADAPT · TRAIN</small>
-      <h2>Find the right<br>training for today.</h2>
-      <p>FIT-OS connects your goal, available equipment, time, training focus and recovery context before recommending a session.</p>
-      <label class="explore-searchbox" aria-label="Search workouts">
-        <span>⌕</span><input id="exploreSearchInput" type="search" placeholder="Search workouts, muscles or goals" autocomplete="off"><kbd>⌘ K</kbd>
-      </label>
-    </section>
-
-    <section class="explore-ai-pick">
-      <div class="ai-pick-mark">✦</div>
-      <div><small>FIT-OS RECOMMENDED</small><b>Upper Body Strength</b><p>48 min · Gym · Chest + Triceps · Recovery compatible</p></div>
-      <button type="button" data-page="train">Start ›</button>
-    </section>
-
-    <div class="explore-section-label"><span>WHERE YOU TRAIN</span><small>01</small></div>
-    <div class="explore-filter-row" data-filter-row="where">
-      <button type="button" class="explore-filter active" data-filter-group="where" data-value="all">All</button>
-      <button type="button" class="explore-filter" data-filter-group="where" data-value="gym">Gym</button>
-      <button type="button" class="explore-filter" data-filter-group="where" data-value="home">Home</button>
-      <button type="button" class="explore-filter" data-filter-group="where" data-value="outdoor">Outdoor</button>
-    </div>
-
-    <div class="explore-section-label"><span>NUTRITION & DIET</span><small>02</small></div>
-    <div class="explore-focus-grid explore-nutrition-grid" id="nutritionFilters">
-      <button type="button" class="active" data-filter-group="nutrition" data-value="all"><b>All nutrition</b><small>Meals · plans · guidance</small><span>›</span></button>
-      <button type="button" data-filter-group="nutrition" data-value="highprotein"><b>High protein</b><small>Protein focused</small><span>›</span></button>
-      <button type="button" data-filter-group="nutrition" data-value="fatloss"><b>Fat loss</b><small>Calorie aware</small><span>›</span></button>
-      <button type="button" data-filter-group="nutrition" data-value="muscle"><b>Muscle fuel</b><small>Training support</small><span>›</span></button>
-      <button type="button" data-filter-group="nutrition" data-value="vegetarian"><b>Vegetarian</b><small>Plant-forward</small><span>›</span></button>
-      <button type="button" data-filter-group="nutrition" data-value="indian"><b>Indian meals</b><small>Local cuisine</small><span>›</span></button>
-    </div>
-
-    <div class="explore-section-label"><span>TRAINING FOCUS</span><small>03</small></div>
-    <div class="explore-focus-grid" id="focusFilters">
-      <button type="button" class="active" data-filter-group="focus" data-value="all"><b>All training</b><small>Any focus</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="full"><b>Full body</b><small>Complete session</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="chest"><b>Chest</b><small>Press · Push</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="back"><b>Back</b><small>Pull · Row</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="triceps"><b>Triceps</b><small>Push · Extension</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="biceps"><b>Biceps</b><small>Curl · Pull</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="legs"><b>Legs</b><small>Squat · Hinge</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="abs"><b>Abs</b><small>Core · Stability</small><span>›</span></button>
-    </div>
-
-    <div class="explore-refine-head"><div><small>04 · REFINE</small><b>Make it fit your day</b></div><button type="button" id="exploreRefineToggle">Refine <span>⌄</span></button></div>
-    <div class="explore-refine" id="exploreRefine">
-      <div><label>GOAL</label><div class="mini-filter-row" data-filter-row="goal">
-        <button class="mini-filter active" type="button" data-filter-group="goal" data-value="all">All</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="strength">Strength</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="muscle">Muscle</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="fatloss">Fat loss</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="cardio">Cardio</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="mobility">Mobility</button>
-      </div></div>
-      <div><label>DURATION</label><div class="mini-filter-row" data-filter-row="duration">
-        <button class="mini-filter active" type="button" data-filter-group="duration" data-value="all">Any</button><button class="mini-filter" type="button" data-filter-group="duration" data-value="short">≤20 min</button><button class="mini-filter" type="button" data-filter-group="duration" data-value="medium">21–45 min</button><button class="mini-filter" type="button" data-filter-group="duration" data-value="long">46+ min</button>
-      </div></div>
-      <div><label>EXPERIENCE</label><div class="mini-filter-row" data-filter-row="level">
-        <button class="mini-filter active" type="button" data-filter-group="level" data-value="all">Any</button><button class="mini-filter" type="button" data-filter-group="level" data-value="beginner">Beginner</button><button class="mini-filter" type="button" data-filter-group="level" data-value="intermediate">Intermediate</button><button class="mini-filter" type="button" data-filter-group="level" data-value="advanced">Advanced</button>
-      </div></div>
-      <div><label>EQUIPMENT</label><div class="mini-filter-row" data-filter-row="equipment">
-        <button class="mini-filter active" type="button" data-filter-group="equipment" data-value="all">Any</button><button class="mini-filter" type="button" data-filter-group="equipment" data-value="none">No equipment</button><button class="mini-filter" type="button" data-filter-group="equipment" data-value="dumbbell">Dumbbell</button><button class="mini-filter" type="button" data-filter-group="equipment" data-value="barbell">Barbell</button><button class="mini-filter" type="button" data-filter-group="equipment" data-value="machine">Machines</button>
-      </div></div>
-    </div>
-
-    <div class="explore-section-label results-label"><span>SESSIONS</span><small><span id="exploreResultCount">09</span> MATCHED</small></div>
-    <div class="explore-results" id="exploreResults">
-      <button type="button" class="explore-result" data-page="train" data-where="gym" data-goal="strength muscle" data-focus="chest triceps" data-duration="long" data-level="intermediate" data-equipment="barbell machine dumbbell" data-search="upper body strength chest triceps shoulders bench press gym muscle">
-        <span class="result-art art-strength"><b>01</b><i>STRENGTH</i></span><div><small>GYM · 48 MIN · INTERMEDIATE</small><b>Upper Body Strength</b><p>Chest · Triceps · Shoulders</p><em>4 movements · Guided progression</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="home" data-goal="hiit fatloss functional" data-focus="full" data-duration="short" data-level="beginner intermediate" data-equipment="none" data-search="home hiit fat loss full body no equipment">
-        <span class="result-art art-hiit"><b>02</b><i>HIIT</i></span><div><small>HOME · 20 MIN · BEGINNER</small><b>Move With Power</b><p>Full body · No equipment</p><em>6 rounds · Adaptive intensity</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="recovery" data-where="home" data-goal="mobility" data-focus="full" data-duration="short" data-level="beginner intermediate advanced" data-equipment="none" data-search="mobility recovery home no equipment cooldown">
-        <span class="result-art art-mobility"><b>03</b><i>RECOVERY</i></span><div><small>HOME · 10 MIN · ALL LEVELS</small><b>Mindful Cooldown</b><p>Full body · Breathing · Mobility</p><em>Reset · Low intensity</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="gym" data-goal="muscle strength" data-focus="back biceps" data-duration="medium" data-level="intermediate" data-equipment="machine dumbbell" data-search="gym back biceps muscle strength pull row">
-        <span class="result-art art-back"><b>04</b><i>PULL</i></span><div><small>GYM · 42 MIN · INTERMEDIATE</small><b>Back Builder</b><p>Back · Biceps · Rear delts</p><em>5 movements · Progressive</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle functional" data-focus="legs" data-duration="medium" data-level="beginner intermediate" data-equipment="dumbbell barbell" data-search="legs strength muscle gym home squat lower body glutes">
-        <span class="result-art art-legs"><b>05</b><i>LOWER</i></span><div><small>GYM / HOME · 35 MIN · INTERMEDIATE</small><b>Lower Body Foundation</b><p>Legs · Glutes · Core</p><em>5 movements · Form first</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="outdoor home" data-goal="cardio fatloss functional" data-focus="full" data-duration="medium" data-level="beginner intermediate" data-equipment="none" data-search="outdoor cardio fat loss no equipment walking run conditioning">
-        <span class="result-art art-cardio"><b>06</b><i>CARDIO</i></span><div><small>OUTDOOR · 30 MIN · BEGINNER</small><b>Outdoor Conditioning</b><p>Full body · No equipment</p><em>Walk / run · Aerobic base</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle" data-focus="triceps" data-duration="short" data-level="beginner intermediate" data-equipment="dumbbell machine" data-search="triceps arms strength muscle push extension">
-        <span class="result-art art-strength"><b>07</b><i>ARMS</i></span><div><small>GYM / HOME · 28 MIN · INTERMEDIATE</small><b>Triceps Builder</b><p>Triceps · Chest</p><em>4 movements · Push focus</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle" data-focus="biceps" data-duration="short" data-level="beginner intermediate" data-equipment="dumbbell machine" data-search="biceps arms strength muscle curl pull">
-        <span class="result-art art-back"><b>08</b><i>ARMS</i></span><div><small>GYM / HOME · 28 MIN · INTERMEDIATE</small><b>Biceps Builder</b><p>Biceps · Back</p><em>4 movements · Pull focus</em></div><span class="result-arrow">›</span>
-      </button>
-      <button type="button" class="explore-result" data-page="train" data-where="home" data-goal="strength functional" data-focus="abs" data-duration="short" data-level="beginner intermediate" data-equipment="none" data-search="abs core strength functional home no equipment abdominal">
-        <span class="result-art art-mobility"><b>09</b><i>CORE</i></span><div><small>HOME · 15 MIN · BEGINNER</small><b>Core Foundation</b><p>Abs · Core stability</p><em>5 movements · No equipment</em></div><span class="result-arrow">›</span>
-      </button>
-    </div>
-
-    <div class="explore-empty" id="exploreEmpty"><span>⌕</span><b>No sessions match these constraints.</b><p>Relax one filter or ask FIT-OS Coach to adapt the session.</p><button type="button" id="clearExploreFilters">Clear filters</button></div>
-    <section class="explore-insight"><span>✦</span><div><small>WHY THIS WORKS</small><b>Discovery is constraint-first.</b><p>Location and equipment narrow what's possible. Goal, muscle focus, time and experience determine what FIT-OS can safely recommend.</p></div></section>
-  </div>
-</section>
-
->
+</html>
