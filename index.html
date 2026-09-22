@@ -85,19 +85,89 @@
 </section>
 
 <section class="screen" id="explore">
-  <div class="app-page fp-page">
-    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>WORKOUT LIBRARY</small><h1>Explore</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
-    <div class="explore-hero"><small>FIND YOUR NEXT SESSION</small><h2>Train the way<br>you want today.</h2><p>Browse by activity, duration, trainer, music or equipment.</p></div>
-    <div class="filter-scroll"><button type="button" class="filter active">All</button><button type="button" class="filter">Strength</button><button type="button" class="filter">HIIT</button><button type="button" class="filter">Yoga</button><button type="button" class="filter">Core</button><button type="button" class="filter">Cardio</button></div>
-    <div class="filter-grid"><button type="button"><small>DURATION</small><b>5–45 min</b><span>›</span></button><button type="button"><small>TRAINER</small><b>Any trainer</b><span>›</span></button><button type="button"><small>MUSIC</small><b>Any music</b><span>›</span></button><button type="button"><small>EQUIPMENT</small><b>None</b><span>›</span></button></div>
-    <div class="section-title"><h2>Featured</h2><button type="button">See All</button></div>
-    <div class="explore-list">
-      <button type="button" class="explore-workout" data-page="train"><span class="explore-thumb et-one">S</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Moderate · No equipment</p></div><em>›</em></button>
-      <button type="button" class="explore-workout" data-page="train"><span class="explore-thumb et-two">H</span><div><small>HIIT · 20 MIN</small><b>Move With Power</b><p>High energy · Full body</p></div><em>›</em></button>
-      <button type="button" class="explore-workout" data-page="recovery"><span class="explore-thumb et-three">R</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Breathing · Mobility</p></div><em>›</em></button>
+  <div class="app-page explore-screen">
+    <div class="page-header">
+      <button type="button" class="back" data-page="home" aria-label="Back">‹</button>
+      <div><small>FIT-OS TRAINING DISCOVERY</small><h1>Explore</h1></div>
+      <button type="button" class="header-more" data-page="more" aria-label="More">•••</button>
     </div>
-    <div class="section-title"><h2>Trainer Tips</h2></div>
-    <div class="tip-card"><span>✦</span><div><small>FIT-OS COACH</small><b>Start where your body is today.</b><p>Use readiness as context, not as a restriction.</p></div></div>
+
+    <section class="explore-hero">
+      <div class="explore-hero-glow"></div>
+      <small>FIND YOUR NEXT SESSION</small>
+      <h2>Train for what<br>you need today.</h2>
+      <p>Personalized discovery across gym, home, no-equipment and outdoor training.</p>
+      <button type="button" class="explore-search" id="exploreSearch" aria-label="Search workouts">
+        <span>⌕</span><b>Search workouts, goals or muscles</b><em>⌘ K</em>
+      </button>
+    </section>
+
+    <div class="explore-section-label"><span>WHERE YOU TRAIN</span><small>01</small></div>
+    <div class="explore-filter-row" id="whereFilters">
+      <button type="button" class="explore-filter active" data-filter-group="where" data-value="all"><span>✦</span>All</button>
+      <button type="button" class="explore-filter" data-filter-group="where" data-value="gym"><span>▦</span>Gym</button>
+      <button type="button" class="explore-filter" data-filter-group="where" data-value="home"><span>⌂</span>Home</button>
+      <button type="button" class="explore-filter" data-filter-group="where" data-value="none"><span>○</span>No equipment</button>
+      <button type="button" class="explore-filter" data-filter-group="where" data-value="outdoor"><span>↗</span>Outdoor</button>
+    </div>
+
+    <div class="explore-section-label"><span>WHAT YOU WANT TO TRAIN</span><small>02</small></div>
+    <div class="explore-filter-row compact" id="goalFilters">
+      <button type="button" class="explore-filter active" data-filter-group="goal" data-value="all">All</button>
+      <button type="button" class="explore-filter" data-filter-group="goal" data-value="strength">Strength</button>
+      <button type="button" class="explore-filter" data-filter-group="goal" data-value="muscle">Muscle building</button>
+      <button type="button" class="explore-filter" data-filter-group="goal" data-value="fatloss">Fat loss</button>
+      <button type="button" class="explore-filter" data-filter-group="goal" data-value="hiit">HIIT</button>
+      <button type="button" class="explore-filter" data-filter-group="goal" data-value="cardio">Cardio</button>
+      <button type="button" class="explore-filter" data-filter-group="goal" data-value="functional">Functional</button>
+      <button type="button" class="explore-filter" data-filter-group="goal" data-value="mobility">Mobility</button>
+    </div>
+
+    <div class="explore-section-label"><span>TRAINING FOCUS</span><small>03</small></div>
+    <div class="explore-focus-grid" id="focusFilters">
+      <button type="button" data-filter-group="focus" data-value="full"><b>Full body</b><small>Complete session</small><span>›</span></button>
+      <button type="button" data-filter-group="focus" data-value="chest"><b>Chest</b><small>Press · Push</small><span>›</span></button>
+      <button type="button" data-filter-group="focus" data-value="back"><b>Back</b><small>Pull · Row</small><span>›</span></button>
+      <button type="button" data-filter-group="focus" data-value="legs"><b>Legs</b><small>Squat · Hinge</small><span>›</span></button>
+      <button type="button" data-filter-group="focus" data-value="shoulders"><b>Shoulders</b><small>Press · Raise</small><span>›</span></button>
+      <button type="button" data-filter-group="focus" data-value="core"><b>Core</b><small>Stability · Control</small><span>›</span></button>
+    </div>
+
+    <div class="explore-section-label results-label"><span>SESSIONS FOR YOU</span><small id="exploreResultCount">06</small></div>
+    <div class="explore-results" id="exploreResults">
+      <button type="button" class="explore-result" data-page="train" data-where="gym" data-goal="strength muscle" data-focus="chest" data-search="upper body strength chest bench press gym muscle building">
+        <span class="result-art art-strength"><b>01</b><i>STRENGTH</i></span>
+        <div><small>GYM · 48 MIN · MODERATE</small><b>Upper Body Strength</b><p>Chest · Shoulders · Triceps</p><em>4 movements · Guided</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result" data-page="train" data-where="home none" data-goal="hiit fatloss functional" data-focus="full" data-search="home hiit fat loss full body no equipment">
+        <span class="result-art art-hiit"><b>02</b><i>HIIT</i></span>
+        <div><small>HOME · 20 MIN · HIGH</small><b>Move With Power</b><p>Full body · No equipment</p><em>Intervals · 6 rounds</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result" data-page="recovery" data-where="home none" data-goal="mobility" data-focus="full" data-search="mobility recovery home no equipment cooldown">
+        <span class="result-art art-mobility"><b>03</b><i>MOBILITY</i></span>
+        <div><small>HOME · 10 MIN · EASY</small><b>Mindful Cooldown</b><p>Full body · Breathing</p><em>Reset · Mobility flow</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result" data-page="train" data-where="gym" data-goal="muscle strength" data-focus="back" data-search="gym back muscle strength pull row">
+        <span class="result-art art-back"><b>04</b><i>PULL</i></span>
+        <div><small>GYM · 42 MIN · MODERATE</small><b>Back Builder</b><p>Back · Biceps · Rear delts</p><em>5 movements · Progressive</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle functional" data-focus="legs" data-search="legs strength muscle gym home squat lower body">
+        <span class="result-art art-legs"><b>05</b><i>LOWER</i></span>
+        <div><small>GYM / HOME · 35 MIN · MODERATE</small><b>Lower Body Foundation</b><p>Legs · Glutes · Core</p><em>5 movements · Form first</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result" data-page="train" data-where="outdoor none" data-goal="cardio fatloss functional" data-focus="full" data-search="outdoor cardio fat loss no equipment walking run">
+        <span class="result-art art-cardio"><b>06</b><i>CARDIO</i></span>
+        <div><small>OUTDOOR · 30 MIN · STEADY</small><b>Outdoor Conditioning</b><p>Full body · No equipment</p><em>Walk / run · Aerobic base</em></div><span class="result-arrow">›</span>
+      </button>
+    </div>
+
+    <div class="explore-empty" id="exploreEmpty">
+      <span>⌕</span><b>No sessions match these filters.</b><p>Try another training goal, location or focus.</p><button type="button" id="clearExploreFilters">Clear filters</button>
+    </div>
+
+    <section class="explore-insight">
+      <span>✦</span><div><small>FIT-OS DISCOVERY</small><b>Start with your constraint.</b><p>Choose where you can train first. FIT-OS then narrows sessions by goal, focus and equipment.</p></div>
+    </section>
   </div>
 </section>
 
