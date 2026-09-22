@@ -9,7 +9,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="description" content="FIT-OS — personal fitness intelligence.">
 <link rel="manifest" href="./manifest.json">
-<link rel="stylesheet" href="./styles.css?v=20260922-13">
+<link rel="stylesheet" href="./styles.css?v=20260922-14">
 <title>FIT-OS</title>
 </head>
 <body class="fitos-dark">
@@ -137,6 +137,16 @@
 
     <div class="explore-section-label results-label"><span>SESSIONS FOR YOU</span><small id="exploreResultCount">09</small></div>
     <div class="explore-results" id="exploreResults">
+      <button type="button" class="explore-result nutrition-result" data-page="nutrition" data-where="home" data-goal="fatloss" data-focus="all" data-duration="medium" data-level="all" data-equipment="none" data-nutrition="fatloss indian" data-search="indian fat loss high protein meal plan nutrition">
+        <span class="result-art art-mobility"><b>N1</b><i>NUTRITION</i></span><div><small>MEAL PLAN · INDIAN · FAT LOSS</small><b>Indian Fat-Loss Day</b><p>Protein-aware · Balanced meals</p><em>Breakfast · Lunch · Dinner · Snacks</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result nutrition-result" data-page="nutrition" data-where="home gym" data-goal="muscle strength" data-focus="all" data-duration="short" data-level="all" data-equipment="none" data-nutrition="highprotein muscle vegetarian indian" data-search="high protein vegetarian indian muscle building nutrition meals">
+        <span class="result-art art-strength"><b>N2</b><i>PROTEIN</i></span><div><small>NUTRITION · HIGH PROTEIN · VEGETARIAN</small><b>High-Protein Indian Fuel</b><p>Vegetarian · Training support</p><em>Protein targets · Meal swaps</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result nutrition-result" data-page="nutrition" data-where="home" data-goal="strength muscle" data-focus="all" data-duration="short" data-level="all" data-equipment="none" data-nutrition="muscle highprotein" data-search="post workout meal protein recovery nutrition">
+        <span class="result-art art-cardio"><b>N3</b><i>RECOVERY</i></span><div><small>POST-WORKOUT · 30–90 MIN WINDOW</small><b>Recovery Fuel</b><p>Protein · Carbohydrate · Hydration</p><em>What to eat next · Portion guidance</em></div><span class="result-arrow">›</span>
+      </button>
+
       <button type="button" class="explore-result" data-page="train" data-where="gym" data-goal="strength muscle" data-focus="chest" data-search="upper body strength chest bench press gym muscle building">
         <span class="result-art art-strength"><b>01</b><i>STRENGTH</i></span>
         <div><small>GYM · 48 MIN · MODERATE</small><b>Upper Body Strength</b><p>Chest · Shoulders · Triceps</p><em>4 movements · Guided</em></div><span class="result-arrow">›</span>
@@ -257,7 +267,7 @@
 
 <div class="modal-backdrop" id="todayModal" aria-hidden="true"><div class="today-modal glass"><button type="button" class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
 <div class="toast" id="toast"></div>
-<script src="./app.js?v=20260922-13"></script>
+<script src="./app.js?v=20260922-14"></script>
 </div>
 </body>
 </html<section class="screen" id="explore">
@@ -292,9 +302,19 @@
       <button type="button" class="explore-filter" data-filter-group="where" data-value="outdoor">Outdoor</button>
     </div>
 
-    <div class="explore-section-label"><span>TRAINING FOCUS</span><small>02</small></div>
+    <div class="explore-section-label"><span>NUTRITION & DIET</span><small>02</small></div>
+    <div class="explore-focus-grid explore-nutrition-grid" id="nutritionFilters">
+      <button type="button" class="active" data-filter-group="nutrition" data-value="all"><b>All nutrition</b><small>Meals · plans · guidance</small><span>›</span></button>
+      <button type="button" data-filter-group="nutrition" data-value="highprotein"><b>High protein</b><small>Protein focused</small><span>›</span></button>
+      <button type="button" data-filter-group="nutrition" data-value="fatloss"><b>Fat loss</b><small>Calorie aware</small><span>›</span></button>
+      <button type="button" data-filter-group="nutrition" data-value="muscle"><b>Muscle fuel</b><small>Training support</small><span>›</span></button>
+      <button type="button" data-filter-group="nutrition" data-value="vegetarian"><b>Vegetarian</b><small>Plant-forward</small><span>›</span></button>
+      <button type="button" data-filter-group="nutrition" data-value="indian"><b>Indian meals</b><small>Local cuisine</small><span>›</span></button>
+    </div>
+
+    <div class="explore-section-label"><span>TRAINING FOCUS</span><small>03</small></div>
     <div class="explore-focus-grid" id="focusFilters">
-      <button type="button" class="active" data-filter-group="focus" data-value="all"><b>All</b><small>Any focus</small><span>›</span></button>
+      <button type="button" class="active" data-filter-group="focus" data-value="all"><b>All training</b><small>Any focus</small><span>›</span></button>
       <button type="button" data-filter-group="focus" data-value="full"><b>Full body</b><small>Complete session</small><span>›</span></button>
       <button type="button" data-filter-group="focus" data-value="chest"><b>Chest</b><small>Press · Push</small><span>›</span></button>
       <button type="button" data-filter-group="focus" data-value="back"><b>Back</b><small>Pull · Row</small><span>›</span></button>
@@ -304,7 +324,7 @@
       <button type="button" data-filter-group="focus" data-value="abs"><b>Abs</b><small>Core · Stability</small><span>›</span></button>
     </div>
 
-    <div class="explore-refine-head"><div><small>03 · REFINE</small><b>Make it fit your day</b></div><button type="button" id="exploreRefineToggle">Refine <span>⌄</span></button></div>
+    <div class="explore-refine-head"><div><small>04 · REFINE</small><b>Make it fit your day</b></div><button type="button" id="exploreRefineToggle">Refine <span>⌄</span></button></div>
     <div class="explore-refine" id="exploreRefine">
       <div><label>GOAL</label><div class="mini-filter-row" data-filter-row="goal">
         <button class="mini-filter active" type="button" data-filter-group="goal" data-value="all">All</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="strength">Strength</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="muscle">Muscle</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="fatloss">Fat loss</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="cardio">Cardio</button><button class="mini-filter" type="button" data-filter-group="goal" data-value="mobility">Mobility</button>
