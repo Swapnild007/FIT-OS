@@ -114,3 +114,129 @@ body{background:#fff;color:var(--fp-ink)}
 .fp-nav .dock-item b,.fp-nav .dock-coach b{font-size:8px}
 .fp-nav .dock-coach span{background:#111!important;color:#fff!important}
 @media(max-width:600px){.fp-nav{height:70px!important}.fp-nav .dock-coach span{width:34px;height:34px}}
+
+
+/* ============================================================
+   FIT-OS SIGNATURE DASHBOARD · 2026-09-22
+   Premium activity OS visual system. FIT-OS identity first.
+   ============================================================ */
+.fitos-dark{
+  --os-bg:#101013;
+  --os-surface:#18181d;
+  --os-surface-2:#1d1d23;
+  --os-line:rgba(255,255,255,.09);
+  --os-text:#f7f7f8;
+  --os-muted:#8f9098;
+  --os-pink:#ff7898;
+  --os-purple:#9a8cff;
+  --os-lime:#c8e85b;
+  --os-teal:#63d8c9;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(255,102,144,.11),transparent 30rem),
+    radial-gradient(circle at 100% 50%,rgba(108,93,255,.07),transparent 26rem),
+    var(--os-bg);
+  color:var(--os-text);
+}
+.fitos-dark .app-shell,.fitos-dark .screen{background:transparent;color:var(--os-text)}
+.fitos-dark .app-page{background:transparent;color:var(--os-text)}
+.os-dashboard{width:min(100%,760px);margin:0 auto;padding:28px 22px 122px}
+.os-header{display:flex;justify-content:space-between;align-items:flex-start;padding:4px 2px 22px}
+.os-brand{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.16em;color:#aaa}
+.os-brand-mark{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:linear-gradient(145deg,#ff8aa4,#7d6cff);color:#fff;font-size:12px;letter-spacing:0}
+.os-header h1{font-size:43px;line-height:.95;letter-spacing:-.055em;margin:12px 0 7px}
+.os-header p{margin:0;color:#73747d;font-size:10px;font-weight:700;letter-spacing:.12em}
+.os-profile{border:1px solid rgba(255,255,255,.12);background:linear-gradient(145deg,#303039,#18181d);color:#fff;width:44px;height:44px;border-radius:50%;font-weight:800;box-shadow:0 10px 28px rgba(0,0,0,.25)}
+
+.os-hero{position:relative;overflow:hidden;min-height:250px;border:1px solid var(--os-line);border-radius:27px;padding:23px;background:
+ radial-gradient(circle at 88% 50%,rgba(255,102,145,.14),transparent 11rem),
+ linear-gradient(145deg,#1d1d23,#15151a 72%);box-shadow:0 24px 55px rgba(0,0,0,.22)}
+.os-hero:after{content:"";position:absolute;right:-80px;bottom:-95px;width:230px;height:230px;border:30px solid rgba(255,115,151,.13);border-radius:50%}
+.os-hero-top{display:flex;justify-content:space-between;position:relative;z-index:2}
+.os-hero-top span,.os-hero-top b{font-size:10px;letter-spacing:.08em;color:#d98b9e}
+.os-hero-top b{color:#9b9ba3}
+.os-steps{position:relative;z-index:2;margin-top:32px}
+.os-steps strong{display:block;font-size:66px;line-height:.9;letter-spacing:-.07em}
+.os-steps span{display:block;margin-top:9px;color:var(--os-pink);font-size:11px;font-weight:800;letter-spacing:.09em}
+.os-hero p{position:relative;z-index:2;color:#7e7f87;font-size:11px;max-width:280px;margin-top:26px}
+.os-ring{position:absolute;right:43px;top:87px;width:96px;height:96px;border-radius:50%;background:conic-gradient(var(--os-pink) 0 80%,#343039 80%);display:grid;place-items:center}
+.os-ring:before{content:"";width:70px;height:70px;border-radius:50%;background:#17171c}
+.os-ring i{display:none}
+
+.os-metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.os-metric{position:relative;text-align:left;min-height:145px;border:1px solid var(--os-line);border-radius:22px;background:linear-gradient(145deg,#1b1b21,#151519);padding:17px;color:#fff}
+.os-metric span{display:block;font-size:10px;font-weight:800;letter-spacing:.06em}
+.os-metric strong{display:block;font-size:34px;letter-spacing:-.05em;margin-top:29px}
+.os-metric small{display:block;font-size:9px;font-weight:800;margin-top:3px;letter-spacing:.06em}
+.os-metric.heart span,.os-metric.heart small{color:#ff7b99}
+.os-metric.sleep span,.os-metric.sleep small{color:#9b8cff}
+.os-metric.fuel span,.os-metric.fuel small{color:var(--os-lime)}
+.os-metric.water span,.os-metric.water small{color:var(--os-teal)}
+.os-metric:after{content:"";position:absolute;inset:auto 15px 14px auto;width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.07)}
+
+.os-recovery{margin-top:10px;border:1px solid var(--os-line);border-radius:22px;padding:17px;background:#17171c}
+.os-recovery-head{display:flex;justify-content:space-between;align-items:center}
+.os-recovery-head span{font-size:10px;font-weight:800;color:#a99bff;letter-spacing:.07em}
+.os-recovery-head strong{font-size:22px;color:#b0a6ff}
+.os-recovery-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:14px}
+.os-recovery-bar i{height:10px;border-radius:999px;background:#30303a}
+.os-recovery-bar i:nth-child(-n+4){background:linear-gradient(90deg,#8d7ff2,#b1a5ff)}
+.os-recovery p{color:#777880;font-size:10px;margin:11px 0 0}
+
+.os-section{margin-top:28px}
+.os-section-head{display:flex;align-items:center;justify-content:space-between;margin:0 2px 10px}
+.os-section-head h2{font-size:18px;letter-spacing:-.035em;margin:0}
+.os-section-head button{border:0;background:none;color:#777a85;font-size:10px}
+.os-chart{height:190px;display:grid;grid-template-columns:repeat(7,1fr);gap:9px;align-items:end;border:1px solid var(--os-line);border-radius:22px;background:#17171c;padding:20px 15px 14px}
+.os-chart>div{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px}
+.os-chart i{display:block;width:100%;max-width:31px;min-height:25px;border-radius:999px;background:linear-gradient(180deg,#ff7898,#8b4d61)}
+.os-chart b{font-size:8px;color:#686a73}
+
+.os-workout{width:100%;display:grid;grid-template-columns:104px 1fr 16px;gap:14px;align-items:center;text-align:left;border:1px solid var(--os-line);border-radius:22px;background:#17171c;padding:10px;color:#fff}
+.os-workout-art{height:96px;border-radius:16px;display:grid;place-items:center;background:radial-gradient(circle at 70% 25%,#ff8d72,#653449 44%,#202029);font-size:27px;font-weight:900;letter-spacing:-.08em}
+.os-workout small,.os-workout p{display:block;color:#777982;font-size:8px;margin:0}
+.os-workout b{display:block;font-size:15px;margin:6px 0}
+.os-workout em{font-style:normal;color:#777}
+
+.os-insight{width:100%;display:grid;grid-template-columns:42px 1fr 15px;gap:12px;align-items:center;text-align:left;border:1px solid var(--os-line);border-radius:20px;background:#17171c;padding:14px;color:#fff}
+.os-insight-icon{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#ff7898,#7f6fff);font-weight:900}
+.os-insight small,.os-insight p{display:block;color:#777982;font-size:8px;margin:0}
+.os-insight b{display:block;font-size:13px;margin:5px 0}
+.os-insight em{font-style:normal;color:#777}
+.os-progress-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.os-progress-grid>div{border:1px solid var(--os-line);border-radius:18px;background:#17171c;padding:15px}
+.os-progress-grid small,.os-progress-grid span{display:block;color:#73757e;font-size:8px}
+.os-progress-grid strong{display:block;font-size:25px;margin:17px 0 2px;letter-spacing:-.04em}
+
+.fitos-dark .bottom-nav{background:rgba(24,24,29,.9)!important;border:1px solid rgba(255,255,255,.08)!important;box-shadow:0 18px 55px rgba(0,0,0,.42)!important;backdrop-filter:blur(22px)}
+.fitos-dark .fp-nav .dock-item,.fitos-dark .fp-nav .dock-coach{color:#7b7c84!important}
+.fitos-dark .fp-nav .dock-item.active{color:#fff!important}
+.fitos-dark .fp-nav .dock-coach span{background:linear-gradient(145deg,#ff7898,#7e70ff)!important;box-shadow:0 7px 20px rgba(150,115,255,.25)}
+.fitos-dark .fp-nav .dock-coach{color:#fff!important}
+.fitos-dark .fp-nav .dock-item span{color:inherit}
+
+.fitos-dark .page-header{color:#fff}.fitos-dark .page-header small,.fitos-dark .section-title button,.fitos-dark .page-header .header-more{color:#777982}
+.fitos-dark .page-header h1{color:#fff}
+.fitos-dark .explore-hero,.fitos-dark .plan-hero,.fitos-dark .library-feature,.fitos-dark .score-card,.fitos-dark .nutrition-summary,.fitos-dark .coach-profile,.fitos-dark .workout-detail-hero,.fitos-dark .info-card,.fitos-dark .profile-card{background:#18181d!important;color:#fff;border:1px solid var(--os-line)}
+.fitos-dark .filter-scroll button,.fitos-dark .filter-grid button,.fitos-dark .explore-list,.fitos-dark .plan-session,.fitos-dark .week-strip button,.fitos-dark .library-tabs,.fitos-dark .stack-card,.fitos-dark .vitals-list,.fitos-dark .meal-list,.fitos-dark .coach-actions button,.fitos-dark .coach-input,.fitos-dark .suggestions button,.fitos-dark .detail-meta span{background:#18181d!important;color:#fff;border-color:var(--os-line)}
+.fitos-dark .explore-workout,.fitos-dark .plan-session,.fitos-dark .vitals-list button,.fitos-dark .meal-list>div,.fitos-dark .coach-actions button{color:#fff;border-color:var(--os-line)}
+.fitos-dark .workout-detail-hero h2,.fitos-dark .workout-detail-hero p,.fitos-dark .score-card strong,.fitos-dark .nutrition-summary strong{color:#fff}
+.fitos-dark .back,.fitos-dark .header-more{color:#aaa!important;background:#18181d!important;border-color:var(--os-line)!important}
+
+@media(max-width:600px){
+ .os-dashboard{padding:20px 16px 112px}
+ .os-header h1{font-size:40px}
+ .os-hero{min-height:238px;padding:20px;border-radius:23px}
+ .os-steps strong{font-size:59px}
+ .os-ring{right:24px;top:84px;width:82px;height:82px}
+ .os-ring:before{width:59px;height:59px}
+ .os-metric{min-height:132px;padding:15px;border-radius:19px}
+ .os-metric strong{font-size:31px;margin-top:25px}
+ .os-chart{height:165px;padding:17px 11px 12px}
+ .os-workout{grid-template-columns:88px 1fr 14px}
+ .os-workout-art{height:82px}
+}
+@media(min-width:900px){
+ .os-dashboard{padding-top:42px}
+ .os-hero{min-height:285px}
+ .os-steps strong{font-size:76px}
+}
