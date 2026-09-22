@@ -32,24 +32,30 @@
 <div class="today-footer">FIT-OS · Your daily fitness environment · Demo state until personal data sources are connected.</div></section>
 <div class="modal-backdrop" id="todayModal" aria-hidden="true"><div class="today-modal glass"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
 <section class="screen" id="train">
-      <div class="hero-scene workout-scene">
-        <div class="back-row"><button class="back" data-page="home">‹</button><div><small>TRAIN</small><b>Today's Workout</b></div><button class="settings" data-page="more">⚙</button></div>
-        <div class="workout-title"><h1>Upper Body<br>Strength</h1><p>48 min · Moderate</p><div class="chips"><span>Strength</span><span>Hypertrophy</span><span>Functional</span></div></div>
-        <button class="workout-start" id="startWorkout"><span>▶</span> Start Workout <b>›</b></button>
-      </div>
-      <div class="content-block compact"><div class="block-head"><div><small>WORKOUT PLAN</small></div></div>
-        <div class="exercise-list">
-          <button class="exercise"><span>1</span><div><b>Warm Up</b><small>8 min</small></div><i>›</i></button>
-          <button class="exercise"><span>2</span><div><b>Bench Press</b><small>4 sets · 8–10 reps</small></div><i>›</i></button>
-          <button class="exercise"><span>3</span><div><b>Seated Row</b><small>4 sets · 8–12 reps</small></div><i>›</i></button>
-          <button class="exercise"><span>4</span><div><b>Shoulder Press</b><small>4 sets · 8–10 reps</small></div><i>›</i></button>
-          <button class="exercise"><span>5</span><div><b>Lat Pulldown</b><small>3 sets · 10–12 reps</small></div><i>›</i></button>
-          <button class="exercise"><span>6</span><div><b>Cool Down</b><small>8 min</small></div><i>›</i></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="screen" id="coach">
+<div class="train-hero">
+  <div class="train-bg"></div>
+  <div class="back-row train-nav"><button class="back" data-page="home">‹</button><div><small>02 · TRAIN</small><b>Today's Session</b></div><button class="settings" data-page="more">⚙</button></div>
+  <div class="train-kicker"><span>READINESS MATCHED</span><span>48 MIN</span></div>
+  <div class="train-title"><small>UPPER BODY</small><h1>Strength<br>Session.</h1><p>Build strength without wasting effort.</p></div>
+  <div class="train-summary glass"><div><small>INTENSITY</small><b>MODERATE</b></div><div><small>VOLUME</small><b>18 SETS</b></div><div><small>FOCUS</small><b>UPPER</b></div></div>
+  <button class="workout-start train-start" id="startWorkout"><span>▶</span> Start Session <b>›</b></button>
+</div>
+<div class="train-content">
+  <div class="session-state glass-light" id="sessionState"><div><small>SESSION</small><b id="sessionLabel">Ready when you are</b></div><strong id="sessionProgress">0 / 6</strong></div>
+  <div class="train-section-head"><div><small>WORKOUT FLOW</small><h2>Move with intent.</h2></div><button class="text-btn" id="warmupAction">Warm up ›</button></div>
+  <div class="exercise-list train-exercises">
+    <button class="exercise train-exercise" data-exercise="0"><span>01</span><div><small>PREP</small><b>Warm Up</b><em>8 min · Mobility + pulse</em></div><i>›</i></button>
+    <button class="exercise train-exercise" data-exercise="1"><span>02</span><div><small>PRIMARY</small><b>Bench Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
+    <button class="exercise train-exercise" data-exercise="2"><span>03</span><div><small>PRIMARY</small><b>Seated Row</b><em>4 sets · 8–12 reps · 60–90s rest</em></div><i>›</i></button>
+    <button class="exercise train-exercise" data-exercise="3"><span>04</span><div><small>SECONDARY</small><b>Shoulder Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
+    <button class="exercise train-exercise" data-exercise="4"><span>05</span><div><small>SECONDARY</small><b>Lat Pulldown</b><em>3 sets · 10–12 reps · 60s rest</em></div><i>›</i></button>
+    <button class="exercise train-exercise" data-exercise="5"><span>06</span><div><small>FINISH</small><b>Cool Down</b><em>8 min · Breathing + mobility</em></div><i>›</i></button>
+  </div>
+  <div class="training-principles glass-light"><small>FIT-OS TRAINING LOGIC</small><div><span>01</span><p><b>Readiness first</b>Today's session is matched to the current demo readiness signal.</p></div><div><span>02</span><p><b>Quality before volume</b>Stop or reduce load when technique cannot be maintained.</p></div><div><span>03</span><p><b>Progress gradually</b>Log performance so future sessions can adapt.</p></div></div>
+</div>
+<div class="train-modal-backdrop" id="exerciseModal"><div class="exercise-modal glass"><button class="modal-close" id="exerciseClose">×</button><div id="exerciseModalContent"></div></div></div>
+</section>
+<section class="screen" id="coach">
       <div class="coach-bg">
         <div class="back-row"><button class="back" data-page="home">‹</button><div><small>COACH</small><b>Your AI Coach</b></div><button class="settings" data-page="more">⚙</button></div>
         <div class="coach-hero"><div class="ai-face">◈</div><h1>Your AI Coach</h1><p>Always here. Always with you.</p></div>
