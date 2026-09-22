@@ -793,3 +793,85 @@ body{background:#fff;color:var(--fp-ink)}
   .fitos-dark .filter-grid{grid-template-columns:repeat(2,1fr)}
   .fitos-dark .macro-grid{grid-template-columns:1fr 1fr 1fr}
 }
+
+
+/* FINAL TRAINING SCREEN CORRECTION */
+.fitos-dark #train .session-state{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  min-height:42px!important;
+  margin:0 0 10px!important;
+  padding:12px 15px!important;
+  border-radius:15px!important;
+  background:#1a1a20!important;
+  border:1px solid rgba(255,255,255,.07)!important;
+  color:#fff!important;
+}
+.fitos-dark #train .session-state small,
+.fitos-dark #train .session-state b{color:#777982!important}
+.fitos-dark #train .session-state strong{color:#ff7898!important}
+.fitos-dark #train .exercise-list{
+  background:#141419!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+  border-radius:20px!important;
+  padding:7px!important;
+}
+.fitos-dark #train .exercise-list .exercise.train-exercise{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  display:grid!important;
+  width:100%!important;
+  min-height:66px!important;
+  margin:0!important;
+  padding:13px!important;
+  grid-template-columns:38px 1fr 16px!important;
+  align-items:center!important;
+  gap:12px!important;
+  background:#1a1a20!important;
+  background-image:none!important;
+  color:#f7f7f8!important;
+  border:0!important;
+  border-bottom:1px solid rgba(255,255,255,.07)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.fitos-dark #train .exercise-list .exercise.train-exercise:first-child{border-radius:14px 14px 0 0!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise:last-child{border-radius:0 0 14px 14px!important;border-bottom:0!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise:active{background:#222229!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise>span{color:#666871!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise small{color:#747680!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise b{color:#f4f4f5!important;font-size:12px!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise em{color:#747680!important;font-style:normal!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise i{color:#6d6e77!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise.completed{background:#202026!important}
+.fitos-dark #train .exercise-list .exercise.train-exercise.completed b{color:#777982!important}
+
+.fitos-dark #train .exercise-modal{
+  background:rgba(24,24,29,.97)!important;
+  color:#f7f7f8!important;
+  border:1px solid rgba(255,255,255,.11)!important;
+  border-radius:24px!important;
+}
+.fitos-dark #train .exercise-modal .modal-title,
+.fitos-dark #train .exercise-modal h2,
+.fitos-dark #train .exercise-modal b{color:#fff!important}
+.fitos-dark #train .exercise-modal .modal-sub,
+.fitos-dark #train .exercise-modal p,
+.fitos-dark #train .exercise-modal small,
+.fitos-dark #train .exercise-modal label{color:#85868e!important}
+.fitos-dark #train .exercise-modal input,
+.fitos-dark #train .exercise-modal select{
+  background:#202027!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.08)!important;
+}
+.fitos-dark #train .exercise-modal .modal-close{
+  background:#25252d!important;
+  color:#aaa!important;
+}
+.fitos-dark #train .exercise-modal .modal-submit,
+.fitos-dark #train .exercise-modal .exercise-main-action{
+  background:linear-gradient(135deg,#ff7898,#7e70ff)!important;
+  color:#fff!important;
+}
