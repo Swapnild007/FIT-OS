@@ -93,56 +93,73 @@ document.querySelectorAll(".segmented button").forEach(button=>button.addEventLi
 (function initExplore(){
   const screen=document.getElementById("explore");
   if(!screen)return;
-  const state={where:"all",goal:"all",focus:"all"};
-  const buttons=[...screen.querySelectorAll("[data-filter-group]")];
+  const state={where:"all",goal:"all",focus:"all",duration:"all",level:"all",equipment:"all",query:""};
+  const controls=[...screen.querySelectorAll("[data-filter-group]")];
   const results=[...screen.querySelectorAll(".explore-result")];
   const count=document.getElementById("exploreResultCount");
   const empty=document.getElementById("exploreEmpty");
   const clear=document.getElementById("clearExploreFilters");
-  const search=document.getElementById("exploreSearch");
+  const input=document.getElementById("exploreSearchInput");
+  const refineToggle=document.getElementById("exploreRefineToggle");
+  const refine=document.getElementById("exploreRefine");
+
+  function matches(card){
+    const attr=(name)=>String(card.dataset[name]||"").split(" ").filter(Boolean);
+    const checks=[
+      ["where",state.where],["goal",state.goal],["focus",state.focus],
+      ["duration",state.duration],["level",state.level],["equipment",state.equipment]
+    ];
+    const filtersOK=checks.every(([key,value])=>value==="all"||attr(key).includes(value));
+    const query=state.query;
+    const searchOK=!query||String(card.dataset.search||"").includes(query);
+    return filtersOK&&searchOK;
+  }
 
   function refresh(){
     let visible=0;
     results.forEach(card=>{
-      const where=card.dataset.where.split(" ");
-      const goals=card.dataset.goal.split(" ");
-      const focus=card.dataset.focus;
-      const whereOK=state.where==="all"||where.includes(state.where);
-      const goalOK=state.goal==="all"||goals.includes(state.goal);
-      const focusOK=state.focus==="all"||focus===state.focus;
-      const show=whereOK&&goalOK&&focusOK;
+      const show=matches(card);
       card.hidden=!show;
       if(show)visible++;
     });
     if(count)count.textContent=String(visible).padStart(2,"0");
     if(empty)empty.classList.toggle("show",visible===0);
   }
-  buttons.forEach(button=>button.addEventListener("click",()=>{
+
+  controls.forEach(button=>button.addEventListener("click",()=>{
     const group=button.dataset.filterGroup;
     state[group]=button.dataset.value;
     screen.querySelectorAll('[data-filter-group="'+group+'"]').forEach(x=>x.classList.remove("active"));
     button.classList.add("active");
     refresh();
   }));
+
+  input?.addEventListener("input",()=>{
+    state.query=input.value.trim().toLowerCase();
+    refresh();
+  });
+
+  refineToggle?.addEventListener("click",()=>{
+    const open=refine.classList.toggle("open");
+    refineToggle.classList.toggle("active",open);
+    refineToggle.querySelector("span").textContent=open?"⌃":"⌄";
+  });
+
   clear?.addEventListener("click",()=>{
-    Object.keys(state).forEach(key=>state[key]="all");
+    Object.keys(state).forEach(key=>state[key]=key==="query"?"all":"all");
+    state.query="";
+    if(input)input.value="";
     screen.querySelectorAll("[data-filter-group]").forEach(x=>x.classList.toggle("active",x.dataset.value==="all"));
     refresh();
   });
-  search?.addEventListener("click",()=>{
-    const query=window.prompt("Search FIT-OS workouts");
-    if(query===null)return;
-    const q=query.trim().toLowerCase();
-    if(!q){results.forEach(x=>x.hidden=false);refresh();return}
-    let visible=0;
-    results.forEach(card=>{
-      const show=card.dataset.search.includes(q);
-      card.hidden=!show;
-      if(show)visible++;
-    });
-    if(count)count.textContent=String(visible).padStart(2,"0");
-    if(empty)empty.classList.toggle("show",visible===0);
+
+  document.addEventListener("keydown",event=>{
+    if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==="k"){
+      event.preventDefault();
+      input?.focus();
+    }
   });
+
   refresh();
 })();
 updateTopDate();setTodayCopy();updateToday();syncTrainingUI();syncLiquidNav(location.hash.slice(1)||"home");const osDate=document.getElementById("osDate");if(osDate){const now=new Date();osDate.textContent=now.toLocaleDateString("en-IN",{weekday:"short",day:"2-digit",month:"short"}).toUpperCase()}
