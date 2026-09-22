@@ -1136,3 +1136,6 @@ body{background:#fff;color:var(--fp-ink)}
  .fitos-dark #explore .explore-ai-pick button{padding:9px}
  .fitos-dark #explore .explore-searchbox kbd{display:none}
 }
+
+.fitos-dark #explore .explore-nutrition-grid{margin-bottom:4px}
+.fitos-dark #explore .nutrition-result .result-art{filter:saturate(.9)}
