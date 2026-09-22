@@ -1,0 +1,18 @@
+const pages={home:"Today",coach:"AI Coach",train:"Train",recovery:"Recovery",nutrition:"Nutrition",progress:"Progress",settings:"Settings"};const nav=[...document.querySelectorAll("[data-page]")];const pageTitle=document.getElementById("pageTitle");const sidebar=document.getElementById("sidebar");const toast=document.getElementById("toast");let toastTimer;
+
+function showPage(name){if(!pages[name])name="home";document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===`page-${name}`));document.querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===name));pageTitle.textContent=pages[name];history.replaceState(null,"",`#${name}`);sidebar.classList.remove("open");window.scrollTo({top:0,behavior:"smooth"})}
+nav.forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+document.getElementById("menuBtn").addEventListener("click",()=>sidebar.classList.toggle("open"));
+document.getElementById("notificationBtn").addEventListener("click",()=>notify("You're all caught up."));
+document.querySelectorAll(".suggestions button").forEach(b=>b.addEventListener("click",()=>{document.getElementById("chatInput").value=b.dataset.prompt;document.getElementById("chatForm").requestSubmit()}));
+
+function notify(message){clearTimeout(toastTimer);toast.textContent=message;toast.classList.add("show");toastTimer=setTimeout(()=>toast.classList.remove("show"),2600)}
+function addMessage(role,text){const wrap=document.createElement("div");wrap.className=`message ${role}`;wrap.innerHTML=`<span class="avatar">${role==="coach"?"✦":"S"}</span><div><small>${role==="coach"?"FIT-OS Coach":"You"}</small><p></p></div>`;wrap.querySelector("p").textContent=text;document.getElementById("chatMessages").appendChild(wrap);wrap.scrollIntoView({behavior:"smooth",block:"nearest"})}
+
+document.getElementById("chatForm").addEventListener("submit",e=>{e.preventDefault();const input=document.getElementById("chatInput");const value=input.value.trim();if(!value)return;addMessage("user",value);input.value="";setTimeout(()=>{const q=value.toLowerCase();let reply="I can help connect that question to your training, recovery and nutrition context. The remote AI layer is not connected in this prototype yet.";if(q.includes("train")||q.includes("workout"))reply="Based on today's prototype readiness of 78, FIT-OS has scheduled Upper Body Strength for 45 minutes at moderate intensity. Keep 1–3 reps in reserve.";else if(q.includes("recover"))reply="Your prototype recovery view is stable: 7h 32m sleep, resting HR 61 bpm and moderate training load. The recommendation is to train without adding unnecessary volume.";else if(q.includes("protein"))reply="Your current prototype intake is 112g against a 130g target. A protein-rich dinner or snack would close most of the gap.";addMessage("coach",reply)},450)});
+
+document.getElementById("startWorkout").addEventListener("click",()=>{notify("Workout session started · Upper Body Strength");document.getElementById("startWorkout").textContent="Session active";document.getElementById("startWorkout").disabled=true});
+document.getElementById("logMeal").addEventListener("click",()=>notify("Meal logging interface is ready for the AI nutrition layer."));
+document.getElementById("addDinner").addEventListener("click",()=>notify("Dinner planning will use your remaining calorie and protein targets."));
+window.addEventListener("hashchange",()=>showPage(location.hash.slice(1)||"home"));
+showPage(location.hash.slice(1)||"home");
