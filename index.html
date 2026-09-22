@@ -2,35 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f6f8fc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f7fb">
   <meta name="description" content="FIT-OS — a next-generation personal fitness operating system.">
+  <link rel="manifest" href="./manifest.json">
   <title>FIT-OS · Personal Fitness OS</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="brand-mark"><span></span><span></span><span></span></div>
-        <div><strong>FIT-OS</strong><small>Personal Fitness OS</small></div>
-      </div>
-
+      <div class="brand"><div class="brand-mark"><span></span><span></span><span></span></div><div><strong>FIT-OS</strong><small>Personal Fitness OS</small></div></div>
       <nav class="nav" aria-label="Primary">
         <button class="nav-item active" data-page="home"><span class="nav-icon">⌂</span><span>Today</span></button>
-        <button class="nav-item" data-page="coach"><span class="nav-icon">✦</span><span>AI Coach</span></button>
+        <button class="nav-item" data-page="journey"><span class="nav-icon">◒</span><span>Journey</span></button>
         <button class="nav-item" data-page="train"><span class="nav-icon">◈</span><span>Train</span></button>
+        <button class="nav-item" data-page="coach"><span class="nav-icon">✦</span><span>Live Coach</span></button>
         <button class="nav-item" data-page="recovery"><span class="nav-icon">◌</span><span>Recovery</span></button>
         <button class="nav-item" data-page="nutrition"><span class="nav-icon">⌁</span><span>Nutrition</span></button>
         <button class="nav-item" data-page="progress"><span class="nav-icon">↗</span><span>Progress</span></button>
       </nav>
-
       <div class="sidebar-bottom">
-        <div class="mini-profile">
-          <div class="avatar">S</div>
-          <div><strong>My Profile</strong><small>Personal model active</small></div>
-          <button class="icon-btn" data-page="settings" aria-label="Settings">⚙</button>
-        </div>
+        <div class="mini-profile"><div class="avatar">S</div><div><strong>My Profile</strong><small>Personal model active</small></div><button class="icon-btn" data-page="settings" aria-label="Settings">⚙</button></div>
         <div class="privacy-note"><span></span> Your data stays yours</div>
       </div>
     </aside>
@@ -39,137 +33,106 @@
       <header class="topbar">
         <button class="mobile-menu icon-btn" id="menuBtn" aria-label="Open menu">☰</button>
         <div class="breadcrumb"><span>FIT-OS</span><b>/</b><strong id="pageTitle">Today</strong></div>
-        <div class="top-actions">
-          <button class="icon-btn" id="notificationBtn" aria-label="Notifications">◔</button>
-          <button class="profile-chip" data-page="settings"><span class="avatar small">S</span><span>Swapnil</span><i>⌄</i></button>
-        </div>
+        <div class="top-actions"><button class="icon-btn" id="notificationBtn" aria-label="Notifications">◔</button><button class="profile-chip" data-page="settings"><span class="avatar small">S</span><span>Swapnil</span><i>⌄</i></button></div>
       </header>
 
       <section class="content">
         <div id="toast" class="toast" role="status"></div>
 
         <section class="page active" id="page-home">
-          <div class="hero">
-            <div>
-              <p class="eyebrow">MONDAY · 22 SEPTEMBER</p>
-              <h1>Good morning, Swapnil.</h1>
-              <p class="hero-copy">Your body has a signal. FIT-OS turns it into what you should do next.</p>
-            </div>
-            <button class="primary-btn" data-page="coach"><span>✦</span> Ask your coach</button>
+          <div class="hero"><div><p class="eyebrow">MONDAY · 22 SEPTEMBER</p><h1>Good morning, Swapnil.</h1><p class="hero-copy">Your body has a signal. FIT-OS turns it into what you should do next.</p></div><button class="primary-btn" data-page="coach">✦ Ask your coach</button></div>
+
+          <div class="spatial-stage glass">
+            <div class="stage-copy"><span class="status-pill good">● BODY CONDITIONS · GOOD</span><p class="eyebrow">TODAY'S BODY FORECAST</p><h2>Ready for strength.</h2><p>Recovery is stable, training load is moderate and your plan can move forward without chasing fatigue.</p><div class="stage-actions"><button class="primary-btn compact" data-page="train">Start today's session →</button><button class="glass-btn" data-page="journey">View journey</button></div></div>
+            <div class="readiness-orbit"><div class="orbit-ring"></div><div class="orbit-value"><strong id="readinessValue">78</strong><small>READY</small></div><span class="orbit-dot dot-a"></span><span class="orbit-dot dot-b"></span><span class="orbit-dot dot-c"></span></div>
+            <div class="floating-card float-one"><span>Sleep</span><strong>7h 32m</strong><small>Good recovery signal</small></div>
+            <div class="floating-card float-two"><span>Training load</span><strong>42%</strong><small>Moderate · room to train</small></div>
+            <div class="floating-card float-three"><span>Movement</span><strong>68%</strong><small>Daily target</small></div>
           </div>
 
-          <div class="readiness-card glass">
-            <div class="readiness-main">
-              <div class="readiness-ring">
-                <div><strong id="readinessValue">78</strong><small>READY</small></div>
-              </div>
-              <div class="readiness-copy">
-                <span class="status-pill good">● Good to train</span>
-                <h2>Your body is ready for a productive session.</h2>
-                <p>Recovery signals look stable. FIT-OS recommends strength work with moderate intensity today.</p>
-                <button class="text-btn" data-page="recovery">See why <span>→</span></button>
-              </div>
-            </div>
-            <div class="signal-grid">
-              <div class="signal"><span>Sleep</span><strong>7h 32m</strong><small>Good</small></div>
-              <div class="signal"><span>Recovery</span><strong>78%</strong><small>Stable</small></div>
-              <div class="signal"><span>Load</span><strong>42%</strong><small>Moderate</small></div>
-              <div class="signal"><span>Resting HR</span><strong>61 bpm</strong><small>Baseline</small></div>
-            </div>
+          <div class="section-heading"><div><p class="eyebrow">NEXT BEST ACTION</p><h2>One day, one clear plan</h2></div><button class="ghost-btn" data-page="coach">Personalize →</button></div>
+          <div class="action-grid">
+            <article class="action-card featured"><div class="card-top"><span class="card-icon">◈</span><span class="tag">45 MIN</span></div><p class="eyebrow">TRAIN</p><h3>Upper Body Strength</h3><p>6 movements · moderate volume · 1–3 reps in reserve</p><button class="primary-btn compact" data-page="train">Start session →</button></article>
+            <article class="action-card"><div class="card-top"><span class="card-icon">◌</span><span class="tag">RECOVER</span></div><p class="eyebrow">BODY CARE</p><h3>Walk + mobility</h3><p>Short movement breaks and 10 minutes of mobility support today's workload.</p><button class="text-btn" data-page="recovery">Open recovery →</button></article>
+            <article class="action-card"><div class="card-top"><span class="card-icon">⌁</span><span class="tag">FUEL</span></div><p class="eyebrow">NUTRITION</p><h3>Close the protein gap</h3><p>Current prototype intake is 112g against a 130g target.</p><button class="text-btn" data-page="nutrition">Plan food →</button></article>
           </div>
 
-          <div class="section-heading"><div><p class="eyebrow">YOUR DAY</p><h2>Built around your body</h2></div><button class="ghost-btn" data-page="coach">Personalize →</button></div>
-
-          <div class="dashboard-grid">
-            <article class="action-card train-card">
-              <div class="card-top"><span class="card-icon">◈</span><span class="tag">45 MIN</span></div>
-              <p class="eyebrow">RECOMMENDED</p>
-              <h3>Upper Body Strength</h3>
-              <p>Moderate volume · 6 movements · Progressive overload</p>
-              <button class="primary-btn compact" data-page="train">Start session <span>→</span></button>
-            </article>
-
-            <article class="action-card recovery-tile">
-              <div class="card-top"><span class="card-icon">◌</span><span class="tag">RECOVERY</span></div>
-              <h3>Keep the momentum</h3>
-              <p>A short walk and 10 minutes of mobility will support today's training.</p>
-              <div class="progress-line"><span style="width:68%"></span></div><small>68% of today's movement target</small>
-            </article>
-
-            <article class="action-card nutrition-tile">
-              <div class="card-top"><span class="card-icon">⌁</span><span class="tag">NUTRITION</span></div>
-              <h3>Fuel the session</h3>
-              <div class="macro-row"><span><b>1,840</b><small>kcal</small></span><span><b>112g</b><small>protein</small></span><span><b>2.1L</b><small>water</small></span></div>
-              <button class="text-btn" data-page="nutrition">Log a meal <span>+</span></button>
-            </article>
+          <div class="section-heading"><div><p class="eyebrow">DAILY CHECK-IN</p><h2>Tell FIT-OS how you feel</h2></div><span class="muted" id="checkinState">Not checked in</span></div>
+          <div class="checkin glass">
+            <div><span class="check-label">Energy</span><div class="choice-row" data-choice="energy"><button>Low</button><button>Okay</button><button>Good</button><button>High</button></div></div>
+            <div><span class="check-label">Soreness</span><div class="choice-row" data-choice="soreness"><button>Low</button><button>Normal</button><button>High</button></div></div>
+            <button class="primary-btn compact" id="saveCheckin">Save check-in</button>
           </div>
 
           <div class="section-heading"><div><p class="eyebrow">BODY SIGNALS</p><h2>What changed</h2></div><span class="muted">Last 7 days</span></div>
-          <div class="insight-row">
-            <article class="insight glass"><span class="insight-icon">↗</span><div><strong>Strength trend</strong><p>Upper-body volume is up 8% over your baseline.</p></div><b class="trend up">+8%</b></article>
-            <article class="insight glass"><span class="insight-icon">◷</span><div><strong>Sleep consistency</strong><p>Your average bedtime is becoming more consistent.</p></div><b class="trend up">+12%</b></article>
-            <article class="insight glass"><span class="insight-icon">⌁</span><div><strong>Protein intake</strong><p>You're averaging 112g. Today's target is 130g.</p></div><b class="trend neutral">86%</b></article>
-          </div>
+          <div class="insight-row"><article class="insight glass"><span class="insight-icon">↗</span><div><strong>Strength trend</strong><p>Upper-body volume is up 8% over your baseline.</p></div><b class="trend up">+8%</b></article><article class="insight glass"><span class="insight-icon">◷</span><div><strong>Sleep consistency</strong><p>Your average bedtime is becoming more consistent.</p></div><b class="trend up">+12%</b></article><article class="insight glass"><span class="insight-icon">⌁</span><div><strong>Protein intake</strong><p>You're averaging 112g. Today's target is 130g.</p></div><b class="trend neutral">86%</b></article></div>
         </section>
 
-        <section class="page" id="page-coach">
-          <div class="page-head"><div><p class="eyebrow">INTELLIGENCE LAYER</p><h1>AI Coach</h1><p>Ask about training, recovery, nutrition or your progress.</p></div><span class="live-dot">● ONLINE</span></div>
-          <div class="coach-layout">
-            <div class="coach-panel glass">
-              <div class="coach-orb"><span>✦</span></div>
-              <h2>Your coach knows today's context.</h2>
-              <p>FIT-OS combines your goals, training history and daily signals to make recommendations. This prototype keeps the intelligence layer local to the interface until a remote AI provider is connected.</p>
-              <div class="suggestions"><button data-prompt="What should I train today?">What should I train today?</button><button data-prompt="How is my recovery?">How is my recovery?</button><button data-prompt="Help me hit my protein target">Help me hit my protein target</button></div>
-            </div>
-            <div class="chat-panel glass">
-              <div class="chat-messages" id="chatMessages"><div class="message coach"><span class="avatar">✦</span><div><small>FIT-OS Coach</small><p>You're ready to train today. Ask me anything about your plan.</p></div></div></div>
-              <form class="chat-form" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Ask your coach…" aria-label="Message"><button class="primary-btn" type="submit">Send</button></form>
-            </div>
+        <section class="page" id="page-journey">
+          <div class="page-head"><div><p class="eyebrow">THE LONG GAME</p><h1>Your fitness journey</h1><p>A single system for goals, habits, training, recovery, nutrition and progress.</p></div><button class="primary-btn" id="journeyCheckin">＋ Weekly check-in</button></div>
+          <div class="journey-hero glass"><div><span class="status-pill good">● PHASE 01 · FOUNDATION</span><h2>Build consistency before intensity.</h2><p>FIT-OS starts with repeatable training, adequate recovery and nutrition habits. Your plan can evolve as the system learns what works for you.</p></div><div class="journey-progress"><strong>28%</strong><span>journey setup</span><div class="mini-bar"><i style="width:28%"></i></div></div></div>
+          <div class="journey-grid">
+            <article class="journey-card done"><span>01</span><div><b>Define your goal</b><p>Outcome, timeline and success measures.</p></div><i>✓</i></article>
+            <article class="journey-card active-step"><span>02</span><div><b>Build your baseline</b><p>Movement, recovery, nutrition and routine.</p></div><i>→</i></article>
+            <article class="journey-card"><span>03</span><div><b>Train consistently</b><p>Progressive sessions matched to readiness.</p></div><i>○</i></article>
+            <article class="journey-card"><span>04</span><div><b>Recover intelligently</b><p>Sleep, rest, load and fatigue management.</p></div><i>○</i></article>
+            <article class="journey-card"><span>05</span><div><b>Fuel the goal</b><p>Meals, hydration and protein consistency.</p></div><i>○</i></article>
+            <article class="journey-card"><span>06</span><div><b>Measure & adapt</b><p>Trends, adherence, performance and milestones.</p></div><i>○</i></article>
           </div>
+          <div class="week-strip glass"><div><p class="eyebrow">THIS WEEK</p><h2>Consistency score</h2><strong>5 / 7</strong><div class="week-days"><span class="done">M</span><span class="done">T</span><span>W</span><span>Th</span><span>F</span><span>S</span><span>S</span></div></div><div class="weekly-stats"><div><b>2</b><span>workouts</span></div><div><b>4</b><span>habits</span></div><div><b>5.8h</b><span>avg sleep</span></div><div><b>86%</b><span>nutrition</span></div></div></div>
         </section>
 
         <section class="page" id="page-train">
           <div class="page-head"><div><p class="eyebrow">TRAINING ENGINE</p><h1>Today's session</h1><p>Upper Body Strength · 45 minutes · Moderate</p></div><button class="primary-btn" id="startWorkout">Start workout</button></div>
-          <div class="workout-hero glass"><div><span class="status-pill good">● Recommended</span><h2>Upper Body Strength</h2><p>Designed around today's readiness. 6 movements · 18 working sets.</p></div><div class="workout-score"><span>Readiness</span><strong>78</strong><small>/ 100</small></div></div>
+          <div class="workout-hero glass"><div><span class="status-pill good">● READINESS MATCHED</span><h2>Upper Body Strength</h2><p>6 movements · 18 working sets · target effort RPE 7.</p><div class="workout-meta"><span>Warm-up <b>6 min</b></span><span>Strength <b>32 min</b></span><span>Cool-down <b>7 min</b></span></div></div><div class="workout-score"><span>Readiness</span><strong>78</strong><small>/ 100</small></div></div>
+          <div class="live-banner glass"><div><span class="card-icon">✦</span><div><b>Live Coach ready</b><p>Use your camera during training for rep counting, tempo and movement cues when supported.</p></div></div><button class="glass-btn" data-page="coach">Open Live Coach →</button></div>
+          <div class="section-heading"><div><p class="eyebrow">SESSION PLAN</p><h2>6 movements</h2></div><span class="muted">Progressive overload</span></div>
           <div class="exercise-list" id="exerciseList">
-            <div class="exercise"><span class="exercise-num">01</span><div><strong>Incline Dumbbell Press</strong><small>3 sets · 8–10 reps · RPE 7</small></div><b>12 kg</b></div>
-            <div class="exercise"><span class="exercise-num">02</span><div><strong>Seated Cable Row</strong><small>3 sets · 10–12 reps · RPE 7</small></div><b>35 kg</b></div>
-            <div class="exercise"><span class="exercise-num">03</span><div><strong>Lat Pulldown</strong><small>3 sets · 10–12 reps · RPE 7</small></div><b>40 kg</b></div>
-            <div class="exercise"><span class="exercise-num">04</span><div><strong>Shoulder Press</strong><small>3 sets · 8–10 reps · RPE 7</small></div><b>10 kg</b></div>
-            <div class="exercise"><span class="exercise-num">05</span><div><strong>Lateral Raise</strong><small>3 sets · 12–15 reps · RPE 7</small></div><b>6 kg</b></div>
-            <div class="exercise"><span class="exercise-num">06</span><div><strong>Triceps Pressdown</strong><small>3 sets · 12–15 reps · RPE 7</small></div><b>20 kg</b></div>
+            <div class="exercise"><span class="exercise-num">01</span><div><strong>Incline Dumbbell Press</strong><small>3 sets · 8–10 reps · RPE 7</small></div><b>12 kg</b><button class="set-btn">Log</button></div>
+            <div class="exercise"><span class="exercise-num">02</span><div><strong>Seated Cable Row</strong><small>3 sets · 10–12 reps · RPE 7</small></div><b>35 kg</b><button class="set-btn">Log</button></div>
+            <div class="exercise"><span class="exercise-num">03</span><div><strong>Lat Pulldown</strong><small>3 sets · 10–12 reps · RPE 7</small></div><b>40 kg</b><button class="set-btn">Log</button></div>
+            <div class="exercise"><span class="exercise-num">04</span><div><strong>Shoulder Press</strong><small>3 sets · 8–10 reps · RPE 7</small></div><b>10 kg</b><button class="set-btn">Log</button></div>
+            <div class="exercise"><span class="exercise-num">05</span><div><strong>Lateral Raise</strong><small>3 sets · 12–15 reps · RPE 7</small></div><b>6 kg</b><button class="set-btn">Log</button></div>
+            <div class="exercise"><span class="exercise-num">06</span><div><strong>Triceps Pressdown</strong><small>3 sets · 12–15 reps · RPE 7</small></div><b>20 kg</b><button class="set-btn">Log</button></div>
+          </div>
+        </section>
+
+        <section class="page" id="page-coach">
+          <div class="page-head"><div><p class="eyebrow">INTELLIGENCE + LIVE MOVEMENT</p><h1>Live Coach</h1><p>Conversation is secondary. Useful coaching is the product.</p></div><span class="live-dot">● ONLINE</span></div>
+          <div class="coach-layout">
+            <div class="coach-panel glass"><div class="coach-orb"><span>✦</span></div><span class="status-pill good">REMOTE AI READY</span><h2>Your coach should understand the whole day.</h2><p>Training, recovery, nutrition, goals and history become one context. When a remote AI provider is connected, FIT-OS can turn that context into explanations and adaptive plans without storing an LLM on your device.</p><div class="coach-stats"><span><b>78</b><small>readiness</small></span><span><b>45m</b><small>session</small></span><span><b>130g</b><small>protein target</small></span></div><div class="suggestions"><button data-prompt="What should I train today?">What should I train today?</button><button data-prompt="How is my recovery?">How is my recovery?</button><button data-prompt="Help me hit my protein target">Help me hit my protein target</button></div></div>
+            <div class="chat-panel glass"><div class="chat-messages" id="chatMessages"><div class="message coach"><span class="avatar">✦</span><div><small>FIT-OS Coach</small><p>You're ready to train today. Ask me anything about your plan.</p></div></div></div><form class="chat-form" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Ask your coach…" aria-label="Message"><button class="primary-btn" type="submit">Send</button></form></div>
           </div>
         </section>
 
         <section class="page" id="page-recovery">
-          <div class="page-head"><div><p class="eyebrow">RECOVERY ENGINE</p><h1>Recovery</h1><p>Understand the signals behind today's recommendation.</p></div></div>
-          <div class="metric-grid">
-            <div class="metric-card glass"><span>Readiness</span><strong>78</strong><small>Good</small><div class="mini-bar"><i style="width:78%"></i></div></div>
-            <div class="metric-card glass"><span>Sleep</span><strong>7h 32m</strong><small>89% consistency</small><div class="mini-bar"><i style="width:89%"></i></div></div>
-            <div class="metric-card glass"><span>Resting HR</span><strong>61</strong><small>bpm · baseline</small><div class="mini-bar"><i style="width:72%"></i></div></div>
-            <div class="metric-card glass"><span>Training load</span><strong>42%</strong><small>Moderate</small><div class="mini-bar"><i style="width:42%"></i></div></div>
-          </div>
-          <div class="analysis-card glass"><div><p class="eyebrow">FIT-OS INTERPRETATION</p><h2>Train, but don't chase fatigue.</h2><p>Your recent recovery pattern supports strength work. Keep 1–3 reps in reserve and avoid adding extra volume today. If you feel materially different during the session, adjust effort rather than forcing the plan.</p></div><div class="signal-orbit"><span>78</span><small>READY</small></div></div>
+          <div class="page-head"><div><p class="eyebrow">RECOVERY ENGINE</p><h1>Body conditions</h1><p>Recovery should change the plan, not just create another score.</p></div></div>
+          <div class="metric-grid"><div class="metric-card glass"><span>Readiness</span><strong>78</strong><small>Good</small><div class="mini-bar"><i style="width:78%"></i></div></div><div class="metric-card glass"><span>Sleep</span><strong>7h 32m</strong><small>89% consistency</small><div class="mini-bar"><i style="width:89%"></i></div></div><div class="metric-card glass"><span>Resting HR</span><strong>61</strong><small>bpm · baseline</small><div class="mini-bar"><i style="width:72%"></i></div></div><div class="metric-card glass"><span>Training load</span><strong>42%</strong><small>Moderate</small><div class="mini-bar"><i style="width:42%"></i></div></div></div>
+          <div class="recovery-forecast glass"><div><p class="eyebrow">BODY FORECAST</p><h2>Today: train normally.</h2><p>Keep 1–3 reps in reserve. Avoid adding extra volume. If your perceived effort changes materially, FIT-OS should reduce intensity rather than force the plan.</p></div><div class="forecast-wheel"><strong>78</strong><small>READY</small></div></div>
+          <div class="recovery-grid"><article class="recovery-detail glass"><span>Sleep debt</span><strong>Low</strong><p>Keep a consistent sleep window tonight.</p></article><article class="recovery-detail glass"><span>Mobility</span><strong>10 min</strong><p>Prioritize shoulders, thoracic spine and hips.</p></article><article class="recovery-detail glass"><span>Rest day rule</span><strong>Flexible</strong><p>Use how you feel plus objective signals.</p></article></div>
         </section>
 
         <section class="page" id="page-nutrition">
-          <div class="page-head"><div><p class="eyebrow">NUTRITION ENGINE</p><h1>Fuel</h1><p>Simple inputs, useful context. Your targets adapt with your training.</p></div><button class="primary-btn" id="logMeal">＋ Log meal</button></div>
-          <div class="nutrition-summary glass"><div><span>Today's intake</span><strong>1,840 <small>/ 2,350 kcal</small></strong><div class="macro-bar"><i></i></div></div><div class="macro"><b>112g</b><span>Protein</span></div><div class="macro"><b>198g</b><span>Carbs</span></div><div class="macro"><b>61g</b><span>Fat</span></div></div>
+          <div class="page-head"><div><p class="eyebrow">NUTRITION ENGINE</p><h1>Fuel the goal</h1><p>Meals, hydration and protein should support the training plan.</p></div><button class="primary-btn" id="logMeal">＋ Log meal</button></div>
+          <div class="nutrition-summary glass"><div><span>Today's intake</span><strong>1,840 <small>/ 2,350 kcal</small></strong><div class="macro-bar"><i style="width:78%"></i></div></div><div class="macro"><b>112g</b><span>Protein</span></div><div class="macro"><b>198g</b><span>Carbs</span></div><div class="macro"><b>61g</b><span>Fat</span></div></div>
+          <div class="hydration glass"><div><span class="card-icon">≈</span><div><p class="eyebrow">HYDRATION</p><h3>2.1L / 3.0L</h3><p>Good start. Keep water available through the training window.</p></div></div><button class="glass-btn" id="waterBtn">＋ 250 ml</button></div>
           <div class="meal-grid"><article class="meal glass"><span class="meal-time">08:30</span><h3>Breakfast</h3><p>Vegetable omelette · toast · fruit</p><b>420 kcal</b></article><article class="meal glass"><span class="meal-time">13:15</span><h3>Lunch</h3><p>Dal · rice · salad · curd</p><b>610 kcal</b></article><article class="meal glass"><span class="meal-time">17:30</span><h3>Snack</h3><p>Protein-rich snack · fruit</p><b>280 kcal</b></article><article class="meal empty glass"><span class="meal-time">NEXT</span><h3>Dinner</h3><p>Target: 540–700 kcal · 35g+ protein</p><button class="text-btn" id="addDinner">Plan dinner →</button></article></div>
+          <div class="food-principles"><span>01 · Protein anchor each meal</span><span>02 · Hydrate around training</span><span>03 · Adjust intake to the goal</span><span>04 · Use real food first</span></div>
         </section>
 
         <section class="page" id="page-progress">
-          <div class="page-head"><div><p class="eyebrow">PERSONAL MODEL</p><h1>Progress</h1><p>FIT-OS learns from the relationship between your habits and outcomes.</p></div><span class="muted">90 days</span></div>
+          <div class="page-head"><div><p class="eyebrow">PERSONAL MODEL</p><h1>Progress</h1><p>Measure outcomes, performance and consistency together.</p></div><span class="muted">90 days</span></div>
           <div class="progress-grid"><div class="big-stat glass"><span>Weight trend</span><strong>110.0 <small>kg</small></strong><p>Baseline tracked · goal can be configured in Settings</p><div class="chart"><i style="height:72%"></i><i style="height:67%"></i><i style="height:69%"></i><i style="height:62%"></i><i style="height:59%"></i><i style="height:54%"></i><i style="height:51%"></i><i style="height:47%"></i></div></div><div class="big-stat glass"><span>Strength volume</span><strong>+8%</strong><p>Compared with your 4-week baseline</p><div class="line-chart"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
-          <div class="memory-card glass"><span class="card-icon">✦</span><div><p class="eyebrow">FITNESS MEMORY</p><h2>Patterns become useful when they repeat.</h2><p>As FIT-OS receives more sessions and recovery data, it can surface relationships such as training volume, sleep consistency and performance changes. Nothing here is a medical diagnosis.</p></div></div>
+          <div class="progress-metrics"><div><b>72%</b><span>Training adherence</span></div><div><b>86%</b><span>Nutrition consistency</span></div><div><b>79%</b><span>Sleep consistency</span></div><div><b>68%</b><span>Movement target</span></div></div>
+          <div class="memory-card glass"><span class="card-icon">✦</span><div><p class="eyebrow">FITNESS MEMORY</p><h2>Patterns become useful when they repeat.</h2><p>As FIT-OS receives more sessions and recovery data, it can surface relationships between training, sleep, nutrition and performance. This is an observation layer, not a medical diagnosis.</p></div></div>
+          <div class="milestones"><p class="eyebrow">MILESTONES</p><div class="milestone-row"><span>✓</span><div><b>First 10 sessions</b><small>Foundation completed</small></div><strong>Done</strong></div><div class="milestone-row"><span>○</span><div><b>30 consistent sessions</b><small>Build the habit</small></div><strong>12 / 30</strong></div><div class="milestone-row"><span>○</span><div><b>First performance PR</b><small>Track a meaningful strength improvement</small></div><strong>Tracking</strong></div></div>
         </section>
 
         <section class="page" id="page-settings">
-          <div class="page-head"><div><p class="eyebrow">SYSTEM</p><h1>Settings</h1><p>Control your FIT-OS experience.</p></div></div>
-          <div class="settings-list glass">
-            <label><span><strong>Adaptive coaching</strong><small>Allow recommendations to respond to recent training and recovery.</small></span><input type="checkbox" checked></label>
-            <label><span><strong>Workout reminders</strong><small>Show reminders when a planned session is approaching.</small></span><input type="checkbox" checked></label>
-            <label><span><strong>Private prototype mode</strong><small>Keep this demo entirely in your browser using local state.</small></span><input type="checkbox" checked></label>
+          <div class="page-head"><div><p class="eyebrow">SYSTEM</p><h1>Settings</h1><p>Control your goals, data and FIT-OS behavior.</p></div></div>
+          <div class="settings-grid">
+            <div class="settings-list glass"><h3>Personal model</h3><label><span><strong>Adaptive coaching</strong><small>Respond to recent training and recovery.</small></span><input type="checkbox" checked></label><label><span><strong>Workout reminders</strong><small>Remind you when a planned session approaches.</small></span><input type="checkbox" checked></label><label><span><strong>Wearable sync</strong><small>Connect supported recovery and activity sources later.</small></span><input type="checkbox"></label></div>
+            <div class="settings-list glass"><h3>Goals</h3><label><span><strong>Primary goal</strong><small>Configure the outcome FIT-OS should optimize for.</small></span><button class="small-control">Configure</button></label><label><span><strong>Training days</strong><small>Current prototype: 3–4 days/week.</small></span><button class="small-control">Edit</button></label><label><span><strong>Privacy</strong><small>AI inference should remain remote; your device stores no LLM.</small></span><button class="small-control">Review</button></label></div>
           </div>
         </section>
       </section>
