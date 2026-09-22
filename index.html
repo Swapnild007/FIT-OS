@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#101013">
+<meta name="color-scheme" content="dark">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="description" content="FIT-OS — personal fitness intelligence.">
 <link rel="manifest" href="./manifest.json">
-<link rel="stylesheet" href="./styles.css?v=20260922-07">
+<link rel="stylesheet" href="./styles.css?v=20260922-08">
 <title>FIT-OS</title>
 </head>
 <body class="fitos-dark">
@@ -25,7 +25,7 @@
         <h1>Today</h1>
         <p id="osDate">MON · 22 SEP</p>
       </div>
-      <button class="os-profile" data-page="more" aria-label="Profile">S</button>
+      <button type="button" class="os-profile" data-page="more" aria-label="Profile">S</button>
     </header>
 
     <section class="os-hero">
@@ -36,10 +36,10 @@
     </section>
 
     <section class="os-metric-grid">
-      <button class="os-metric heart" data-page="recovery"><span>♥ HEART</span><strong>72</strong><small>BPM AVG</small></button>
-      <button class="os-metric sleep" data-page="recovery"><span>◔ SLEEP</span><strong>88</strong><small>SCORE</small></button>
-      <button class="os-metric fuel" data-page="nutrition"><span>● FUEL</span><strong>1,840</strong><small>KCAL IN</small></button>
-      <button class="os-metric water" data-action="hydration"><span>◆ WATER</span><strong id="osWater">2.4</strong><small>L INTAKE</small></button>
+      <button type="button" class="os-metric heart" data-page="recovery"><span>♥ HEART</span><strong>72</strong><small>BPM AVG</small></button>
+      <button type="button" class="os-metric sleep" data-page="recovery"><span>◔ SLEEP</span><strong>88</strong><small>SCORE</small></button>
+      <button type="button" class="os-metric fuel" data-page="nutrition"><span>● FUEL</span><strong>1,840</strong><small>KCAL IN</small></button>
+      <button type="button" class="os-metric water" data-action="hydration"><span>◆ WATER</span><strong id="osWater">2.4</strong><small>L INTAKE</small></button>
     </section>
 
     <section class="os-recovery">
@@ -49,15 +49,15 @@
     </section>
 
     <section class="os-section">
-      <div class="os-section-head"><h2>Weekly activity</h2><button data-page="explore">View</button></div>
+      <div class="os-section-head"><h2>Weekly activity</h2><button type="button" data-page="explore">View</button></div>
       <div class="os-chart">
         <div><i style="height:42%"></i><b>M</b></div><div><i style="height:67%"></i><b>T</b></div><div><i style="height:88%"></i><b>W</b></div><div><i style="height:54%"></i><b>T</b></div><div><i style="height:76%"></i><b>F</b></div><div><i style="height:48%"></i><b>S</b></div><div><i style="height:31%"></i><b>S</b></div>
       </div>
     </section>
 
     <section class="os-section">
-      <div class="os-section-head"><h2>Today's training</h2><button data-page="train">Open</button></div>
-      <button class="os-workout" data-page="train">
+      <div class="os-section-head"><h2>Today's training</h2><button type="button" data-page="train">Open</button></div>
+      <button type="button" class="os-workout" data-page="train">
         <div class="os-workout-art"><span>FIT</span></div>
         <div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Moderate · No equipment</p></div>
         <em>›</em>
@@ -65,8 +65,8 @@
     </section>
 
     <section class="os-section">
-      <div class="os-section-head"><h2>FIT-OS insight</h2><button data-page="coach">Coach</button></div>
-      <button class="os-insight" data-page="coach">
+      <div class="os-section-head"><h2>FIT-OS insight</h2><button type="button" data-page="coach">Coach</button></div>
+      <button type="button" class="os-insight" data-page="coach">
         <span class="os-insight-icon">✦</span>
         <div><small>PERSONAL INTELLIGENCE</small><b>Train with quality today.</b><p>Your recovery context supports the planned session. FIT-OS will adjust future sessions from what you log.</p></div>
         <em>›</em>
@@ -74,7 +74,7 @@
     </section>
 
     <section class="os-section os-progress">
-      <div class="os-section-head"><h2>Progress</h2><button data-page="plans">See all</button></div>
+      <div class="os-section-head"><h2>Progress</h2><button type="button" data-page="plans">See all</button></div>
       <div class="os-progress-grid">
         <div><small>CONSISTENCY</small><strong>4/5</strong><span>sessions</span></div>
         <div><small>ACTIVE TIME</small><strong>186</strong><span>min this week</span></div>
@@ -86,15 +86,15 @@
 
 <section class="screen" id="explore">
   <div class="app-page fp-page">
-    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>WORKOUT LIBRARY</small><h1>Explore</h1></div><button class="header-more" data-page="more">•••</button></div>
+    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>WORKOUT LIBRARY</small><h1>Explore</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
     <div class="explore-hero"><small>FIND YOUR NEXT SESSION</small><h2>Train the way<br>you want today.</h2><p>Browse by activity, duration, trainer, music or equipment.</p></div>
-    <div class="filter-scroll"><button class="filter active">All</button><button class="filter">Strength</button><button class="filter">HIIT</button><button class="filter">Yoga</button><button class="filter">Core</button><button class="filter">Cardio</button></div>
-    <div class="filter-grid"><button><small>DURATION</small><b>5–45 min</b><span>›</span></button><button><small>TRAINER</small><b>Any trainer</b><span>›</span></button><button><small>MUSIC</small><b>Any music</b><span>›</span></button><button><small>EQUIPMENT</small><b>None</b><span>›</span></button></div>
-    <div class="section-title"><h2>Featured</h2><button>See All</button></div>
+    <div class="filter-scroll"><button type="button" class="filter active">All</button><button type="button" class="filter">Strength</button><button type="button" class="filter">HIIT</button><button type="button" class="filter">Yoga</button><button type="button" class="filter">Core</button><button type="button" class="filter">Cardio</button></div>
+    <div class="filter-grid"><button type="button"><small>DURATION</small><b>5–45 min</b><span>›</span></button><button type="button"><small>TRAINER</small><b>Any trainer</b><span>›</span></button><button type="button"><small>MUSIC</small><b>Any music</b><span>›</span></button><button type="button"><small>EQUIPMENT</small><b>None</b><span>›</span></button></div>
+    <div class="section-title"><h2>Featured</h2><button type="button">See All</button></div>
     <div class="explore-list">
-      <button class="explore-workout" data-page="train"><span class="explore-thumb et-one">S</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Moderate · No equipment</p></div><em>›</em></button>
-      <button class="explore-workout" data-page="train"><span class="explore-thumb et-two">H</span><div><small>HIIT · 20 MIN</small><b>Move With Power</b><p>High energy · Full body</p></div><em>›</em></button>
-      <button class="explore-workout" data-page="recovery"><span class="explore-thumb et-three">R</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Breathing · Mobility</p></div><em>›</em></button>
+      <button type="button" class="explore-workout" data-page="train"><span class="explore-thumb et-one">S</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Moderate · No equipment</p></div><em>›</em></button>
+      <button type="button" class="explore-workout" data-page="train"><span class="explore-thumb et-two">H</span><div><small>HIIT · 20 MIN</small><b>Move With Power</b><p>High energy · Full body</p></div><em>›</em></button>
+      <button type="button" class="explore-workout" data-page="recovery"><span class="explore-thumb et-three">R</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Breathing · Mobility</p></div><em>›</em></button>
     </div>
     <div class="section-title"><h2>Trainer Tips</h2></div>
     <div class="tip-card"><span>✦</span><div><small>FIT-OS COACH</small><b>Start where your body is today.</b><p>Use readiness as context, not as a restriction.</p></div></div>
@@ -103,77 +103,77 @@
 
 <section class="screen" id="plans">
   <div class="app-page fp-page">
-    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>PERSONAL PLAN</small><h1>Plans</h1></div><button class="header-more" data-page="more">•••</button></div>
-    <div class="plan-hero"><small>THIS WEEK</small><h2>Build consistency.</h2><p>Three training days, recovery between sessions, and room for real life.</p><button data-page="train">Start today's session ›</button></div>
-    <div class="section-title"><h2>Weekly schedule</h2><button>Customize</button></div>
-    <div class="week-strip"><button class="selected"><small>MON</small><b>22</b><span>Train</span></button><button><small>TUE</small><b>23</b><span>Recover</span></button><button><small>WED</small><b>24</b><span>Train</span></button><button><small>THU</small><b>25</b><span>Rest</span></button><button><small>FRI</small><b>26</b><span>Train</span></button><button><small>SAT</small><b>27</b><span>Move</span></button><button><small>SUN</small><b>28</b><span>Rest</span></button></div>
+    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>PERSONAL PLAN</small><h1>Plans</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
+    <div class="plan-hero"><small>THIS WEEK</small><h2>Build consistency.</h2><p>Three training days, recovery between sessions, and room for real life.</p><button type="button" data-page="train">Start today's session ›</button></div>
+    <div class="section-title"><h2>Weekly schedule</h2><button type="button">Customize</button></div>
+    <div class="week-strip"><button type="button" class="selected"><small>MON</small><b>22</b><span>Train</span></button><button type="button"><small>TUE</small><b>23</b><span>Recover</span></button><button type="button"><small>WED</small><b>24</b><span>Train</span></button><button type="button"><small>THU</small><b>25</b><span>Rest</span></button><button type="button"><small>FRI</small><b>26</b><span>Train</span></button><button type="button"><small>SAT</small><b>27</b><span>Move</span></button><button type="button"><small>SUN</small><b>28</b><span>Rest</span></button></div>
     <div class="section-title"><h2>Today's session</h2></div>
-    <button class="plan-session" data-page="train"><span class="plan-session-art">01</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Moderate · Recovery-informed</p></div><em>›</em></button>
-    <button class="plan-session" data-page="recovery"><span class="plan-session-art recovery">02</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Breathing · Mobility</p></div><em>›</em></button>
+    <button type="button" class="plan-session" data-page="train"><span class="plan-session-art">01</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Moderate · Recovery-informed</p></div><em>›</em></button>
+    <button type="button" class="plan-session" data-page="recovery"><span class="plan-session-art recovery">02</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Breathing · Mobility</p></div><em>›</em></button>
     <div class="info-card"><small>PLAN LOGIC</small><p><b>Adaptable.</b> Sessions are designed around your available time, training goal and recovery context.</p></div>
   </div>
 </section>
 
 <section class="screen" id="coach">
   <div class="app-page fp-page">
-    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>FIT-OS INTELLIGENCE</small><h1>Coach</h1></div><button class="header-more" data-page="more">•••</button></div>
+    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>FIT-OS INTELLIGENCE</small><h1>Coach</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
     <div class="coach-profile"><div class="coach-avatar">✦</div><div><small>YOUR FITNESS INTELLIGENCE</small><h2>What should I do today?</h2><p>Your coach can use recovery, training, nutrition and progress data when those sources are connected.</p></div></div>
-    <div class="coach-actions"><button data-page="train"><span>↗</span><div><b>Start today's workout</b><small>Upper Body Strength · 48 min</small></div><em>›</em></button><button data-page="recovery"><span>◔</span><div><b>Explain my recovery</b><small>Sleep, resting heart rate and load</small></div><em>›</em></button><button data-page="nutrition"><span>ϟ</span><div><b>Help with nutrition</b><small>Calories and protein targets</small></div><em>›</em></button></div>
-    <div class="coach-input"><span>Ask FIT-OS anything…</span><button id="coachSend">↑</button></div>
-    <div class="suggestions"><button>Why this workout?</button><button>How is my recovery?</button><button>What should I eat?</button><button>Plan my week</button></div>
+    <div class="coach-actions"><button type="button" data-page="train"><span>↗</span><div><b>Start today's workout</b><small>Upper Body Strength · 48 min</small></div><em>›</em></button><button type="button" data-page="recovery"><span>◔</span><div><b>Explain my recovery</b><small>Sleep, resting heart rate and load</small></div><em>›</em></button><button type="button" data-page="nutrition"><span>ϟ</span><div><b>Help with nutrition</b><small>Calories and protein targets</small></div><em>›</em></button></div>
+    <div class="coach-input"><span>Ask FIT-OS anything…</span><button type="button" id="coachSend">↑</button></div>
+    <div class="suggestions"><button type="button">Why this workout?</button><button type="button">How is my recovery?</button><button type="button">What should I eat?</button><button type="button">Plan my week</button></div>
   </div>
 </section>
 
 <section class="screen" id="library">
   <div class="app-page fp-page">
-    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>YOUR COLLECTION</small><h1>Library</h1></div><button class="header-more" data-page="more">•••</button></div>
-    <div class="library-tabs"><button class="active">Saved</button><button>Stacks</button><button>History</button></div>
-    <div class="library-feature"><small>SAVED COLLECTION</small><h2>Stronger,<br>one session at a time.</h2><p>Keep your favorite sessions together for easy access.</p><button data-page="train">Open collection ›</button></div>
-    <div class="section-title"><h2>Saved workouts</h2><button>Edit</button></div>
-    <div class="explore-list"><button class="explore-workout" data-page="train"><span class="explore-thumb et-one">S</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Saved · No equipment</p></div><em>›</em></button><button class="explore-workout" data-page="recovery"><span class="explore-thumb et-three">R</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Saved · Mobility</p></div><em>›</em></button></div>
-    <div class="stack-card"><span>▣</span><div><small>STACK</small><b>Post-workout reset</b><p>Strength → Cooldown · 58 min</p></div><button data-page="train">Play</button></div>
+    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>YOUR COLLECTION</small><h1>Library</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
+    <div class="library-tabs"><button type="button" class="active">Saved</button><button type="button">Stacks</button><button type="button">History</button></div>
+    <div class="library-feature"><small>SAVED COLLECTION</small><h2>Stronger,<br>one session at a time.</h2><p>Keep your favorite sessions together for easy access.</p><button type="button" data-page="train">Open collection ›</button></div>
+    <div class="section-title"><h2>Saved workouts</h2><button type="button">Edit</button></div>
+    <div class="explore-list"><button type="button" class="explore-workout" data-page="train"><span class="explore-thumb et-one">S</span><div><small>STRENGTH · 48 MIN</small><b>Upper Body Strength</b><p>Saved · No equipment</p></div><em>›</em></button><button type="button" class="explore-workout" data-page="recovery"><span class="explore-thumb et-three">R</span><div><small>MINDFUL · 10 MIN</small><b>Mindful Cooldown</b><p>Saved · Mobility</p></div><em>›</em></button></div>
+    <div class="stack-card"><span>▣</span><div><small>STACK</small><b>Post-workout reset</b><p>Strength → Cooldown · 58 min</p></div><button type="button" data-page="train">Play</button></div>
   </div>
 </section>
 
 <section class="screen" id="train">
   <div class="app-page">
-    <div class="page-header"><button class="back" data-page="home">‹</button><div><small>WORKOUT</small><h1>Upper Body</h1></div><button class="header-more" data-page="more">•••</button></div>
-    <div class="workout-detail-hero"><div class="detail-art">FIT</div><div><small>STRENGTH · 48 MIN</small><h2>Upper Body Strength</h2><p>Moderate · No equipment</p><button class="start-pill" id="startWorkout">Start <b>›</b></button></div></div>
+    <div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>WORKOUT</small><h1>Upper Body</h1></div><button type="button" class="header-more" data-page="more">•••</button></div>
+    <div class="workout-detail-hero"><div class="detail-art">FIT</div><div><small>STRENGTH · 48 MIN</small><h2>Upper Body Strength</h2><p>Moderate · No equipment</p><button type="button" class="start-pill" id="startWorkout">Start <b>›</b></button></div></div>
     <div class="detail-meta"><span>Trainer · FIT-OS</span><span>Music · Energy</span><span>Equipment · None</span></div>
-    <div class="section-title"><h2>Workout Flow</h2><button id="warmupAction">Warm Up</button></div>
+    <div class="section-title"><h2>Workout Flow</h2><button type="button" id="warmupAction">Warm Up</button></div>
     <div class="session-state" id="sessionState"><div><small>SESSION</small><b id="sessionLabel">Ready when you are</b></div><strong id="sessionProgress">0 / 6</strong></div>
     <div class="exercise-list">
-      <button class="exercise train-exercise" data-exercise="0"><span>01</span><div><small>PREP</small><b>Warm Up</b><em>8 min · Mobility + pulse</em></div><i>›</i></button>
-      <button class="exercise train-exercise" data-exercise="1"><span>02</span><div><small>PRIMARY</small><b>Bench Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
-      <button class="exercise train-exercise" data-exercise="2"><span>03</span><div><small>PRIMARY</small><b>Seated Row</b><em>4 sets · 8–12 reps · 60–90s rest</em></div><i>›</i></button>
-      <button class="exercise train-exercise" data-exercise="3"><span>04</span><div><small>SECONDARY</small><b>Shoulder Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
-      <button class="exercise train-exercise" data-exercise="4"><span>05</span><div><small>SECONDARY</small><b>Lat Pulldown</b><em>3 sets · 10–12 reps · 60s rest</em></div><i>›</i></button>
-      <button class="exercise train-exercise" data-exercise="5"><span>06</span><div><small>FINISH</small><b>Cool Down</b><em>8 min · Breathing + mobility</em></div><i>›</i></button>
+      <button type="button" class="exercise train-exercise" data-exercise="0"><span>01</span><div><small>PREP</small><b>Warm Up</b><em>8 min · Mobility + pulse</em></div><i>›</i></button>
+      <button type="button" class="exercise train-exercise" data-exercise="1"><span>02</span><div><small>PRIMARY</small><b>Bench Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
+      <button type="button" class="exercise train-exercise" data-exercise="2"><span>03</span><div><small>PRIMARY</small><b>Seated Row</b><em>4 sets · 8–12 reps · 60–90s rest</em></div><i>›</i></button>
+      <button type="button" class="exercise train-exercise" data-exercise="3"><span>04</span><div><small>SECONDARY</small><b>Shoulder Press</b><em>4 sets · 8–10 reps · 60–90s rest</em></div><i>›</i></button>
+      <button type="button" class="exercise train-exercise" data-exercise="4"><span>05</span><div><small>SECONDARY</small><b>Lat Pulldown</b><em>3 sets · 10–12 reps · 60s rest</em></div><i>›</i></button>
+      <button type="button" class="exercise train-exercise" data-exercise="5"><span>06</span><div><small>FINISH</small><b>Cool Down</b><em>8 min · Breathing + mobility</em></div><i>›</i></button>
     </div>
     <div class="info-card"><small>FIT-OS TRAINING LOGIC</small><p><b>Readiness first.</b> Today's session adapts to recovery signals.</p><p><b>Quality before volume.</b> Reduce load when technique drops.</p><p><b>Progress gradually.</b> Log performance so future sessions can adapt.</p></div>
   </div>
-  <div class="train-modal-backdrop" id="exerciseModal"><div class="exercise-modal glass"><button class="modal-close" id="exerciseClose">×</button><div id="exerciseModalContent"></div></div></div>
+  <div class="train-modal-backdrop" id="exerciseModal"><div class="exercise-modal glass"><button type="button" class="modal-close" id="exerciseClose">×</button><div id="exerciseModalContent"></div></div></div>
 </section>
 
-<section class="screen" id="recovery"><div class="app-page"><div class="page-header"><button class="back" data-page="home">‹</button><div><small>VITALS</small><h1>Recovery</h1></div><button class="header-more" data-page="more">•••</button></div><div class="score-card"><small>RECOVERY SCORE</small><div><strong>82</strong><span>/ 100</span></div><p>Good recovery context for today's planned session.</p></div><div class="section-title"><h2>Vitals</h2></div><div class="vitals-list"><button><span class="vital-icon purple">◒</span><div><small>SLEEP</small><b>7h 32m</b><p>Within target</p></div><em>›</em></button><button><span class="vital-icon red">♥</span><div><small>RESTING HEART RATE</small><b>62 bpm</b><p>Current baseline</p></div><em>›</em></button><button><span class="vital-icon blue">⌁</span><div><small>HRV</small><b>58 ms</b><p>Recent reading</p></div><em>›</em></button><button><span class="vital-icon green">↘</span><div><small>TRAINING LOAD</small><b>42%</b><p>Moderate</p></div><em>›</em></button></div></div></section>
+<section class="screen" id="recovery"><div class="app-page"><div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>VITALS</small><h1>Recovery</h1></div><button type="button" class="header-more" data-page="more">•••</button></div><div class="score-card"><small>RECOVERY SCORE</small><div><strong>82</strong><span>/ 100</span></div><p>Good recovery context for today's planned session.</p></div><div class="section-title"><h2>Vitals</h2></div><div class="vitals-list"><button type="button"><span class="vital-icon purple">◒</span><div><small>SLEEP</small><b>7h 32m</b><p>Within target</p></div><em>›</em></button><button type="button"><span class="vital-icon red">♥</span><div><small>RESTING HEART RATE</small><b>62 bpm</b><p>Current baseline</p></div><em>›</em></button><button type="button"><span class="vital-icon blue">⌁</span><div><small>HRV</small><b>58 ms</b><p>Recent reading</p></div><em>›</em></button><button type="button"><span class="vital-icon green">↘</span><div><small>TRAINING LOAD</small><b>42%</b><p>Moderate</p></div><em>›</em></button></div></div></section>
 
-<section class="screen" id="nutrition"><div class="app-page"><div class="page-header"><button class="back" data-page="home">‹</button><div><small>FUEL</small><h1>Nutrition</h1></div><button class="header-more" data-page="more">•••</button></div><div class="nutrition-summary"><div><small>ENERGY</small><strong><span id="nutritionCalories">1,840</span> <em>/ 2,300 kcal</em></strong></div><b>80%</b></div><div class="macro-grid"><div><b><span id="nutritionProtein">126</span>g</b><small>Protein · 150g</small></div><div><b>182g</b><small>Carbs · 250g</small></div><div><b>54g</b><small>Fat · 70g</small></div></div><div class="section-title"><h2>Today's Meals</h2><button id="logMeal">Add</button></div><div class="meal-list"><div><span>01</span><div><b>Breakfast</b><small>Oats, eggs, banana</small></div><strong>420 kcal</strong></div><div><span>02</span><div><b>Lunch</b><small>Rice, dal, vegetables</small></div><strong>680 kcal</strong></div><div><span>03</span><div><b>Snack</b><small>Protein shake</small></div><strong>220 kcal</strong></div><div><span>04</span><div><b>Dinner</b><small>Paneer, salad</small></div><strong>520 kcal</strong></div></div></div></section>
+<section class="screen" id="nutrition"><div class="app-page"><div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>FUEL</small><h1>Nutrition</h1></div><button type="button" class="header-more" data-page="more">•••</button></div><div class="nutrition-summary"><div><small>ENERGY</small><strong><span id="nutritionCalories">1,840</span> <em>/ 2,300 kcal</em></strong></div><b>80%</b></div><div class="macro-grid"><div><b><span id="nutritionProtein">126</span>g</b><small>Protein · 150g</small></div><div><b>182g</b><small>Carbs · 250g</small></div><div><b>54g</b><small>Fat · 70g</small></div></div><div class="section-title"><h2>Today's Meals</h2><button type="button" id="logMeal">Add</button></div><div class="meal-list"><div><span>01</span><div><b>Breakfast</b><small>Oats, eggs, banana</small></div><strong>420 kcal</strong></div><div><span>02</span><div><b>Lunch</b><small>Rice, dal, vegetables</small></div><strong>680 kcal</strong></div><div><span>03</span><div><b>Snack</b><small>Protein shake</small></div><strong>220 kcal</strong></div><div><span>04</span><div><b>Dinner</b><small>Paneer, salad</small></div><strong>520 kcal</strong></div></div></div></section>
 
-<section class="screen" id="more"><div class="app-page"><div class="page-header"><button class="back" data-page="home">‹</button><div><small>PROFILE</small><h1>More</h1></div><button class="header-more">•••</button></div><div class="profile-card"><div class="profile-photo">S</div><div><h2>Swapnil</h2><p>33 years · 110 kg · 5'8"</p><button>Edit Health Details ›</button></div></div><div class="section-title"><h2>Settings</h2></div><div class="settings-list"><button data-page="plans"><span>◎</span><div><b>Goals & Plans</b><small>Weight loss · Strength</small></div><i>›</i></button><button data-page="library"><span>▣</span><div><b>Library</b><small>Saved workouts and stacks</small></div><i>›</i></button><button><span>◷</span><div><b>Reminders</b><small>Workouts · Meals · Sleep</small></div><i>›</i></button><button><span>⌁</span><div><b>Data Sources</b><small>Wearables and apps</small></div><i>›</i></button><button><span>◐</span><div><b>Appearance</b><small>Light · System</small></div><i>›</i></button><button><span>▣</span><div><b>Data & Privacy</b><small>Your data, your control</small></div><i>›</i></button></div></div></section>
+<section class="screen" id="more"><div class="app-page"><div class="page-header"><button type="button" class="back" data-page="home">‹</button><div><small>PROFILE</small><h1>More</h1></div><button type="button" class="header-more">•••</button></div><div class="profile-card"><div class="profile-photo">S</div><div><h2>Swapnil</h2><p>33 years · 110 kg · 5'8"</p><button type="button">Edit Health Details ›</button></div></div><div class="section-title"><h2>Settings</h2></div><div class="settings-list"><button type="button" data-page="plans"><span>◎</span><div><b>Goals & Plans</b><small>Weight loss · Strength</small></div><i>›</i></button><button type="button" data-page="library"><span>▣</span><div><b>Library</b><small>Saved workouts and stacks</small></div><i>›</i></button><button type="button"><span>◷</span><div><b>Reminders</b><small>Workouts · Meals · Sleep</small></div><i>›</i></button><button type="button"><span>⌁</span><div><b>Data Sources</b><small>Wearables and apps</small></div><i>›</i></button><button type="button"><span>◐</span><div><b>Appearance</b><small>Light · System</small></div><i>›</i></button><button type="button"><span>▣</span><div><b>Data & Privacy</b><small>Your data, your control</small></div><i>›</i></button></div></div></section>
 
 </main>
 
 <nav class="bottom-nav fp-nav os-nav" aria-label="Primary navigation">
-  <button class="dock-item active" data-page="home"><span>⌂</span><b>Today</b></button>
-  <button class="dock-item" data-page="explore"><span>⌁</span><b>Train</b></button>
-  <button class="dock-item" data-page="plans"><span>◫</span><b>Plans</b></button>
-  <button class="dock-coach" data-page="coach" aria-label="Open FIT-OS Coach"><span>✦</span><b>Coach</b></button>
-  <button class="dock-item" data-page="more"><span>○</span><b>Profile</b></button>
+  <button type="button" class="dock-item active" data-page="home"><span>⌂</span><b>Today</b></button>
+  <button type="button" class="dock-item" data-page="explore"><span>⌁</span><b>Train</b></button>
+  <button type="button" class="dock-item" data-page="plans"><span>◫</span><b>Plans</b></button>
+  <button type="button" class="dock-coach" data-page="coach" aria-label="Open FIT-OS Coach"><span>✦</span><b>Coach</b></button>
+  <button type="button" class="dock-item" data-page="more"><span>○</span><b>Profile</b></button>
 </nav>
 
-<div class="modal-backdrop" id="todayModal" aria-hidden="true"><div class="today-modal glass"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+<div class="modal-backdrop" id="todayModal" aria-hidden="true"><div class="today-modal glass"><button type="button" class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
 <div class="toast" id="toast"></div>
-<script src="./app.js?v=20260922-07"></script>
+<script src="./app.js?v=20260922-08"></script>
 </div>
 </body>
 </html>
