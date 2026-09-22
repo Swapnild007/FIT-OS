@@ -9,7 +9,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="description" content="FIT-OS — personal fitness intelligence.">
 <link rel="manifest" href="./manifest.json">
-<link rel="stylesheet" href="./styles.css?v=20260922-10">
+<link rel="stylesheet" href="./styles.css?v=20260922-11">
 <title>FIT-OS</title>
 </head>
 <body class="fitos-dark">
@@ -125,15 +125,17 @@
 
     <div class="explore-section-label"><span>TRAINING FOCUS</span><small>03</small></div>
     <div class="explore-focus-grid" id="focusFilters">
+      <button type="button" class="active" data-filter-group="focus" data-value="all"><b>All focus</b><small>Any muscle group</small><span>›</span></button>
       <button type="button" data-filter-group="focus" data-value="full"><b>Full body</b><small>Complete session</small><span>›</span></button>
       <button type="button" data-filter-group="focus" data-value="chest"><b>Chest</b><small>Press · Push</small><span>›</span></button>
       <button type="button" data-filter-group="focus" data-value="back"><b>Back</b><small>Pull · Row</small><span>›</span></button>
+      <button type="button" data-filter-group="focus" data-value="triceps"><b>Triceps</b><small>Push · Extension</small><span>›</span></button>
+      <button type="button" data-filter-group="focus" data-value="biceps"><b>Biceps</b><small>Curl · Pull</small><span>›</span></button>
       <button type="button" data-filter-group="focus" data-value="legs"><b>Legs</b><small>Squat · Hinge</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="shoulders"><b>Shoulders</b><small>Press · Raise</small><span>›</span></button>
-      <button type="button" data-filter-group="focus" data-value="core"><b>Core</b><small>Stability · Control</small><span>›</span></button>
+      <button type="button" data-filter-group="focus" data-value="abs"><b>Abs</b><small>Flexion · Stability</small><span>›</span></button>
     </div>
 
-    <div class="explore-section-label results-label"><span>SESSIONS FOR YOU</span><small id="exploreResultCount">06</small></div>
+    <div class="explore-section-label results-label"><span>SESSIONS FOR YOU</span><small id="exploreResultCount">09</small></div>
     <div class="explore-results" id="exploreResults">
       <button type="button" class="explore-result" data-page="train" data-where="gym" data-goal="strength muscle" data-focus="chest" data-search="upper body strength chest bench press gym muscle building">
         <span class="result-art art-strength"><b>01</b><i>STRENGTH</i></span>
@@ -158,6 +160,18 @@
       <button type="button" class="explore-result" data-page="train" data-where="outdoor none" data-goal="cardio fatloss functional" data-focus="full" data-search="outdoor cardio fat loss no equipment walking run">
         <span class="result-art art-cardio"><b>06</b><i>CARDIO</i></span>
         <div><small>OUTDOOR · 30 MIN · STEADY</small><b>Outdoor Conditioning</b><p>Full body · No equipment</p><em>Walk / run · Aerobic base</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle" data-focus="triceps" data-search="triceps arms strength muscle gym home push extension">
+        <span class="result-art art-strength"><b>07</b><i>ARMS</i></span>
+        <div><small>GYM / HOME · 28 MIN · MODERATE</small><b>Triceps Builder</b><p>Triceps · Chest</p><em>4 movements · Push focus</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result" data-page="train" data-where="gym home" data-goal="strength muscle" data-focus="biceps" data-search="biceps arms strength muscle gym home curl pull">
+        <span class="result-art art-back"><b>08</b><i>ARMS</i></span>
+        <div><small>GYM / HOME · 28 MIN · MODERATE</small><b>Biceps Builder</b><p>Biceps · Back</p><em>4 movements · Pull focus</em></div><span class="result-arrow">›</span>
+      </button>
+      <button type="button" class="explore-result" data-page="home" data-where="home none" data-goal="strength functional" data-focus="abs" data-search="abs core strength functional home no equipment abdominal">
+        <span class="result-art art-mobility"><b>09</b><i>CORE</i></span>
+        <div><small>HOME · 15 MIN · MODERATE</small><b>Core Foundation</b><p>Abs · Core stability</p><em>5 movements · No equipment</em></div><span class="result-arrow">›</span>
       </button>
     </div>
 
@@ -243,7 +257,7 @@
 
 <div class="modal-backdrop" id="todayModal" aria-hidden="true"><div class="today-modal glass"><button type="button" class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
 <div class="toast" id="toast"></div>
-<script src="./app.js?v=20260922-10"></script>
+<script src="./app.js?v=20260922-11"></script>
 </div>
 </body>
 </html>
