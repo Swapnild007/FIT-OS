@@ -20,28 +20,18 @@
 
   <main id="app">
     <section class="screen active" id="home">
-      <div class="hero-scene scene-home">
-        <div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="mist"></div>
-        <div class="hero-copy"><span>Good Morning,</span><h1>Swapnil</h1><p>“Discipline today,<br>a stronger tomorrow.”</p></div>
-        <div class="glass-stack">
-          <button class="metric-card readiness" data-page="recovery"><small>⌁ BODY READINESS <b>›</b></small><strong>78</strong><span>READY</span><em>Your body is ready<br>for a productive day.</em></button>
-          <button class="metric-card" data-page="recovery"><small>◔ SLEEP <b>›</b></small><strong>7h 32m</strong><em>Good recovery</em></button>
-          <button class="metric-card" data-page="recovery"><small>♡ RESTING HR <b>›</b></small><strong>62 bpm</strong><em>Near baseline</em></button>
-          <button class="metric-card" data-page="recovery"><small>⌁ TRAINING LOAD <b>›</b></small><strong>42%</strong><em>Moderate</em></button>
-          <button class="metric-card" data-page="recovery"><small>⌁ STRESS <b>›</b></small><strong>Low</strong><em>Good state</em></button>
-        </div>
-        <button class="hero-action" data-page="train"><span>♟</span> Start Today <b>›</b></button>
-      </div>
-      <div class="subline">Fitness · Nutrition · Recovery · A Better You</div>
-      <div class="content-block">
-        <div class="block-head"><div><small>TODAY'S PLAN</small><h2>Built around your body.</h2></div><button class="text-btn" data-page="train">View Plan ›</button></div>
-        <button class="wide-glass" data-page="train"><span class="round-icon">✦</span><div><b>Upper Body Strength</b><small>48 min · Moderate</small></div><strong>▶</strong></button>
-        <div class="mini-grid"><button class="mini-card" data-page="nutrition"><span>◫</span><b>1,840</b><small>/ 2,300 kcal</small></button><button class="mini-card"><span>⌁</span><b>2,864</b><small>/ 8,000 steps</small></button></div>
-        <button class="quote-card">“Small steps every day<br>create big results.” <b>›</b></button>
-      </div>
-    </section>
-
-    <section class="screen" id="train">
+<div class="today-hero"><div class="today-atmosphere"></div><div class="today-topline"><span id="todayDate">TODAY</span><span id="dayStatus">SYNCED</span></div><div class="today-greeting"><small id="greetingTime">GOOD MORNING</small><h1>Swapnil<span>.</span></h1><p id="dailyMessage">Your body is ready. Let's make today count.</p></div>
+<div class="today-readiness glass"><div class="readiness-top"><div><small>BODY READINESS</small><b>READY TO TRAIN</b></div><button class="round-action" id="readinessInfo">i</button></div><div class="readiness-core"><div class="readiness-ring"><strong>78</strong><span>/ 100</span></div><div class="readiness-copy"><b>Good day for strength.</b><p>Sleep and recent load are supporting a normal training session.</p><button class="inline-link" data-page="recovery">See recovery details ›</button></div></div><div class="readiness-signals"><div><small>SLEEP</small><b>7h 32m</b></div><div><small>RHR</small><b>62 bpm</b></div><div><small>LOAD</small><b>42%</b></div><div><small>STRESS</small><b>LOW</b></div></div></div><div class="today-orb orb-one"></div><div class="today-orb orb-two"></div></div>
+<div class="today-strip"><button data-action="checkin"><span class="strip-icon">◌</span><div><small>HOW DO YOU FEEL?</small><b id="checkinStatus">Quick check-in</b></div><strong>›</strong></button><button data-action="hydration"><span class="strip-icon">◒</span><div><small>HYDRATION</small><b><span id="waterValue">2.1</span> / 3.0 L</b></div><strong>＋</strong></button><button data-action="steps"><span class="strip-icon">⌁</span><div><small>ACTIVITY</small><b><span id="stepsValue">2,864</span> / 8,000 steps</b></div><strong>＋</strong></button></div>
+<div class="today-content"><div class="today-section-head"><div><small>YOUR DAY</small><h2>One clear plan.</h2></div><button class="text-btn" data-page="journey">Journey ›</button></div>
+<div class="day-progress glass-light"><div class="day-progress-main"><span>DAY COMPLETION</span><strong id="dayPercent">0%</strong></div><div class="day-progress-bar"><i id="dayBar"></i></div><div class="day-progress-items"><span id="planDone">0 of 4 complete</span><span id="nextAction">Next: Start workout</span></div></div>
+<div class="today-plan"><button class="today-plan-item" data-page="train"><span class="task-number">01</span><div><small>TRAIN</small><b>Upper Body Strength</b><em>48 min · Moderate · Readiness matched</em></div><span class="task-state" id="workoutState">START ›</span></button><button class="today-plan-item" data-action="steps"><span class="task-number">02</span><div><small>MOVE</small><b>8,000 steps</b><em><span id="planSteps">2,864</span> completed · Easy movement throughout the day</em></div><span class="task-state" id="walkState">36%</span></button><button class="today-plan-item" data-page="nutrition"><span class="task-number">03</span><div><small>FUEL</small><b>Protein target</b><em><span id="proteinToday">126</span> / 150g · Keep a protein anchor at dinner</em></div><span class="task-state" id="fuelState">84%</span></button><button class="today-plan-item" data-action="checkin"><span class="task-number">04</span><div><small>RECOVER</small><b>Evening check-in</b><em>Log energy, soreness and how today's session felt</em></div><span class="task-state" id="recoverState">OPEN</span></button></div>
+<div class="today-two-col"><div class="today-card glass-light"><div class="card-head"><small>ENERGY BALANCE</small><button data-page="nutrition">›</button></div><div class="balance-number"><b id="caloriesToday">1,840</b><span>/ 2,300 kcal</span></div><div class="thin-bar"><i id="calorieBar"></i></div><div class="balance-row"><span>Protein <b id="proteinSmall">126g</b></span><span>Water <b id="waterSmall">2.1L</b></span></div></div><div class="today-card glass-light"><div class="card-head"><small>CONSISTENCY</small><button data-page="progress">›</button></div><div class="streak"><strong>5</strong><span>days<br>this week</span></div><div class="week-dots"><i class="on">M</i><i class="on">T</i><i class="on">W</i><i class="on">T</i><i class="on">F</i><i>S</i><i>S</i></div></div></div>
+<button class="today-insight glass-light" data-page="coach"><span class="insight-orb">✦</span><div><small>FIT-OS INSIGHT</small><b>Your current readiness supports the planned strength session.</b><p>Tap to ask your coach why.</p></div><strong>›</strong></button>
+<div class="today-section-head later"><div><small>QUICK ACTIONS</small><h2>Keep momentum.</h2></div></div><div class="quick-actions"><button data-action="hydration"><span>＋</span><b>Add 250 ml</b><small>Water</small></button><button data-action="steps"><span>＋</span><b>Add 500 steps</b><small>Activity</small></button><button data-action="meal"><span>＋</span><b>Log meal</b><small>Nutrition</small></button><button data-action="checkin"><span>◌</span><b>Check in</b><small>Body state</small></button></div></div>
+<div class="today-footer">FIT-OS · Your daily fitness environment · Demo state until personal data sources are connected.</div></section>
+<div class="modal-backdrop" id="todayModal" aria-hidden="true"><div class="today-modal glass"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+<section class="screen" id="train">
       <div class="hero-scene workout-scene">
         <div class="back-row"><button class="back" data-page="home">‹</button><div><small>TRAIN</small><b>Today's Workout</b></div><button class="settings" data-page="more">⚙</button></div>
         <div class="workout-title"><h1>Upper Body<br>Strength</h1><p>48 min · Moderate</p><div class="chips"><span>Strength</span><span>Hypertrophy</span><span>Functional</span></div></div>
