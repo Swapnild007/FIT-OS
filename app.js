@@ -83,7 +83,7 @@ document.getElementById("exerciseClose")?.addEventListener("click",closeExercise
 document.getElementById("exerciseModal")?.addEventListener("click",event=>{if(event.target.id==="exerciseModal")closeExercise()});
 document.querySelectorAll(".train-exercise").forEach(button=>button.addEventListener("click",()=>openExercise(Number(button.dataset.exercise))));
 document.getElementById("warmupAction")?.addEventListener("click",()=>openExercise(0));
-document.getElementById("startWorkout")?.addEventListener("click",()=>{if(state.workout){showToast("This session is already complete.")}else{showToast("Session started. Begin with Warm Up.");openExercise(state.exerciseDone.length)}});
+document.getElementById("startWorkout")?.addEventListener("click",()=>{if(state.workout){showToast("This session is already complete.")}else{showToast("Session started. Begin with Warm Up.");openExercise(exercises.findIndex((_,index)=>!state.exerciseDone.includes(index)))}});
 
 document.getElementById("coachSend")?.addEventListener("click",()=>showToast("Remote AI coach connection will be added in the AI layer."));
 document.querySelectorAll(".segmented button").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll(".segmented button").forEach(x=>x.classList.remove("active"));button.classList.add("active");showToast(button.textContent+" view selected.")}));
