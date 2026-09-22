@@ -1,45 +1,79 @@
 # FIT-OS
 
-Next-generation personal fitness operating system prototype.
+Next-generation personal fitness operating system.
 
 ## Current build
 
-This is the first complete web-app foundation for FIT-OS. It is a responsive, GitHub Pages-compatible single-page web application with:
+FIT-OS is a responsive, GitHub Pages-compatible single-page application with the complete UI shell built in one dependency-free page:
 
-- Today dashboard
-- Readiness and body-signal overview
-- AI Coach interface
-- Training session
-- Recovery engine UI
-- Nutrition UI
-- Progress and fitness-memory UI
+- Today
+- Explore
+- Plans
+- Coach
+- Library
+- Train
+- Recovery
+- Nutrition
+- Progress
+- Profile
 - Settings
-- Responsive mobile navigation
-- Local prototype interactions and toast feedback
+- Liquid primary navigation
+- Hash-based routing
+- Local prototype state
+- Workout exercise logging and session progress
+- Explore discovery filters and search
+- Recovery check-in surface
+- Nutrition meal logging surface
+- Progress and fitness-memory surface
+- Personal model and integration boundaries
+- Responsive mobile and desktop layouts
+
+The UI deliberately separates prototype/demo values from user-entered or derived context. It does not claim to measure physiology that is not actually connected.
+
+## Product architecture
+
+FIT-OS is being built around:
+
+**Personal Model → Current State → Domain Engines → Adaptation → Recommendation → Coach → Outcome**
+
+Training, nutrition, recovery and progress are connected domains. The conversational AI layer is an interface and explanation layer, not the source of truth for calculations.
+
+Core domain specifications and taxonomies are in `docs/` and `data/`.
+
+## Runtime
+
+- Static HTML/CSS/JavaScript
+- No framework
 - No local LLM
 - No external runtime dependency
+- Browser localStorage for prototype state
+- GitHub Pages compatible
 
-## Product direction
+The production architecture will later add authenticated persistence, remote AI gateway, wearable/health integrations, structured food/exercise data and computer-vision capabilities.
 
-FIT-OS is being designed around a personal model that connects:
+## QA
 
-**Movement + Recovery + Nutrition → Personal Model → Training Engine + Recovery Engine → AI Coach**
+`.github/workflows/qa.yml` runs automated checks for:
 
-The prototype intentionally does not make medical diagnoses. AI/provider integrations, wearable APIs, computer vision and persistent backend storage will be added as separate engineering phases.
+- JavaScript syntax
+- HTML parsing
+- duplicate IDs
+- required screens
+- manifest JSON
 
 ## Run
 
-Open `index.html` directly, or serve the repository with any static HTTP server.
+Open `index.html` directly or serve the repository with any static HTTP server. GitHub Pages can serve the root of `main`.
 
-GitHub Pages can serve the root of the `main` branch.
+## Engineering order
 
-## Next engineering phases
-
-1. Design system hardening and component architecture
-2. Real workout data model
-3. Remote AI gateway
-4. Wearable/health integrations
-5. Computer-vision movement engine
-6. Persistent user profile and fitness memory
-7. Authentication and privacy controls
-8. Automated testing and CI
+1. Training engine
+2. Nutrition engine
+3. Recovery engine
+4. Progress/measurement engine
+5. Personalization/context engine
+6. Coach orchestration
+7. Persistence/API boundary
+8. Integration adapters
+9. UI integration
+10. QA/security/performance hardening
