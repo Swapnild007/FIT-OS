@@ -1,0 +1,7 @@
+{
+  "version": "0.1",
+  "signals": ["sleep","soreness","stress","resting_hr","hrv","subjective_readiness","recent_training_load"],
+  "signal_sources": ["user_entered","wearable","health_platform","derived"],
+  "actions": ["train_as_planned","reduce_volume","reduce_intensity","change_session","mobility","rest","hydration","sleep_priority"],
+  "principles": ["No single signal determines readiness.","Missing signals remain missing.","Recommendations explain which available context influenced them.","Pain/injury reports are not treated as ordinary fatigue."]
+}
