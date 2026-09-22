@@ -1,0 +1,41 @@
+name: FIT-OS QA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  static-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JavaScript syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html=Path("index.html").read_text(encoding="utf-8")
+          scripts=re.findall(r"<script>(.*?)</script>", html, flags=re.S)
+          assert scripts, "No inline application script found"
+          Path("/tmp/app.js").write_text(scripts[-1], encoding="utf-8")
+          PY
+          node --check /tmp/app.js
+      - name: HTML structure
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import re
+          html=Path("index.html").read_text(encoding="utf-8")
+          HTMLParser().feed(html)
+          ids=re.findall(r'\bid=["\']([^"\']+)', html)
+          dup=sorted({x for x in ids if ids.count(x)>1})
+          assert not dup, f"Duplicate IDs: {dup}"
+          required=["home","explore","plans","coach","library","train","recovery","nutrition","progress","profile","settings"]
+          for page in required:
+              assert f'id="{page}"' in html, f"Missing screen: {page}"
+          print("HTML structure OK")
+          PY
+      - name: JSON validation
+        run: python -m json.tool manifest.json >/dev/null
