@@ -93,7 +93,7 @@ document.querySelectorAll(".segmented button").forEach(button=>button.addEventLi
 (function initExplore(){
   const screen=document.getElementById("explore");
   if(!screen)return;
-  const state={where:"all",goal:"all",focus:"all",duration:"all",level:"all",equipment:"all",query:""};
+  const state={where:"all",goal:"all",focus:"all",duration:"all",level:"all",equipment:"all",nutrition:"all",query:""};
   const controls=[...screen.querySelectorAll("[data-filter-group]")];
   const results=[...screen.querySelectorAll(".explore-result")];
   const count=document.getElementById("exploreResultCount");
@@ -107,7 +107,7 @@ document.querySelectorAll(".segmented button").forEach(button=>button.addEventLi
     const attr=(name)=>String(card.dataset[name]||"").split(" ").filter(Boolean);
     const checks=[
       ["where",state.where],["goal",state.goal],["focus",state.focus],
-      ["duration",state.duration],["level",state.level],["equipment",state.equipment]
+      ["duration",state.duration],["level",state.level],["equipment",state.equipment],["nutrition",state.nutrition]
     ];
     const filtersOK=checks.every(([key,value])=>value==="all"||attr(key).includes(value));
     const query=state.query;
