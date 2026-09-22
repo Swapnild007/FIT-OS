@@ -1,0 +1,9 @@
+{
+  "name":"FIT-OS",
+  "short_name":"FIT-OS",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f4f7fb",
+  "theme_color":"#f4f7fb",
+  "description":"Personal Fitness Operating System"
+}
